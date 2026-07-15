@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, follow" />
+    <meta name="theme-color" content="#111111" />
+    <meta name="description" content="Catálogo público de conceptos web por giro de NEXO26 Digital." />
+    <title>Conceptos web por giro | NEXO26 Digital</title>
+    <link rel="stylesheet" href="shared/demo-shell.css" />
+    <style>
+      :root { --ink:#171717; --paper:#f7f4ee; --line:rgba(0,0,0,.12); --accent:#b99752; --radius:8px; --max:1180px; font-family:"Segoe UI",system-ui,sans-serif; }
+      * { box-sizing:border-box; }
+      body { margin:0; min-width:320px; color:var(--ink); background:var(--paper); line-height:1.55; }
+      a { color:inherit; text-decoration:none; }
+      :focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+      .skip-link { position:fixed; top:12px; left:12px; z-index:10; transform:translateY(-140%); background:#fff; padding:10px 12px; border-radius:var(--radius); }
+      .skip-link:focus { transform:translateY(0); }
+      header, main, footer { width:min(100% - 28px,var(--max)); margin-inline:auto; }
+      header { display:flex; justify-content:space-between; align-items:center; gap:16px; padding-block:22px; }
+      header a { min-height:44px; display:inline-flex; align-items:center; font-weight:900; }
+      .hero { padding:54px 0 28px; }
+      .eyebrow { color:var(--accent); font-size:.78rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+      h1 { max-width:900px; margin:0; font-size:clamp(2.3rem,7vw,5rem); line-height:.98; letter-spacing:0; }
+      .hero p { max-width:760px; color:#5f5a52; font-size:1.05rem; }
+      .filters { display:flex; flex-wrap:wrap; gap:8px; margin:22px 0; }
+      .filters button { min-height:44px; border:1px solid var(--line); border-radius:var(--radius); padding:10px 12px; background:#fff; font-weight:850; }
+      .filters button[aria-pressed=true] { background:#171717; color:#fff; }
+      .grid { display:grid; gap:16px; padding-bottom:58px; }
+      .card { display:grid; gap:14px; border:1px solid var(--line); border-radius:var(--radius); background:#fff; overflow:hidden; box-shadow:0 14px 40px rgba(0,0,0,.06); }
+      .card img { width:100%; aspect-ratio:16/9; object-fit:cover; background:#eee; }
+      .card-body { display:grid; gap:10px; padding:18px; }
+      .meta { display:flex; flex-wrap:wrap; gap:6px; }
+      .meta span, .features span { border:1px solid var(--line); border-radius:var(--radius); padding:5px 8px; font-size:.78rem; font-weight:800; color:#625a50; }
+      h2, p { margin:0; }
+      .features { display:flex; flex-wrap:wrap; gap:6px; }
+      .actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:4px; }
+      .button { min-height:44px; display:inline-flex; align-items:center; justify-content:center; border-radius:var(--radius); padding:10px 12px; font-weight:900; }
+      .primary { background:#171717; color:#fff; }
+      .ghost { border:1px solid var(--line); }
+      footer { border-top:1px solid var(--line); padding-block:28px; color:#625a50; }
+      @media (min-width:720px){ .grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
+      @media (min-width:1040px){ .grid{grid-template-columns:repeat(3,minmax(0,1fr));} }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header>
+      <a href="../">NEXO26 Digital</a>
+      <nav aria-label="Navegación"><a href="../#portafolio">Portafolio</a></nav>
+    </header>
+    <main id="contenido">
+      <section class="hero">
+        <p class="eyebrow">Conceptos web por giro</p>
+        <h1>Explora cómo podría presentarse cada tipo de negocio.</h1>
+        <p>Estas demostraciones utilizan nombres e identidades ficticias para mostrar posibles estructuras, estilos y funciones. No representan clientes contratados ni resultados garantizados.</p>
+      </section>
+      <section aria-label="Filtros">
+        <div class="filters" id="filters"></div>
+        <div class="grid" id="catalog-grid"></div>
+      </section>
+    </main>
+    <footer>
+      <p>Concepto base desarrollado por NEXO26 Digital. El alcance final se adapta a cada negocio.</p>
+    </footer>
+    <script>
+      const concepts = [
+  {
+    "name": "Kalma Spa",
+    "slug": "kalma-spa-demo",
+    "industry": "Spa",
+    "category": "Bienestar",
+    "package": "NEXO Profesional",
+    "packageType": "Profesional",
+    "type": "Concepto visual",
+    "description": "Concepto visual existente para belleza y bienestar, integrado al catálogo sin reconstruir el micrositio original.",
+    "functions": [
+      "Servicios",
+      "Horarios",
+      "WhatsApp",
+      "FAQ"
+    ],
+    "status": "Publicado",
+    "preview": "../kalma-spa-demo/assets/img/social-preview.webp",
+    "liveUrl": "../kalma-spa-demo/",
+    "cta": "Quiero una página similar para mi spa"
+  },
+  {
+    "name": "NUBO Centro Veterinario",
+    "slug": "nubo-veterinaria",
+    "industry": "Veterinaria",
+    "category": "Salud",
+    "package": "NEXO Profesional",
+    "packageType": "Profesional",
+    "type": "Concepto base",
+    "description": "Conoce las áreas de atención, horarios y datos importantes antes de comunicarte con el equipo veterinario.",
+    "functions": [
+      "Consulta general",
+      "Medicina preventiva",
+      "Seguimiento",
+      "Contacto directo"
+    ],
+    "status": "Publicado",
+    "preview": "nubo-veterinaria/assets/img/social-preview.svg",
+    "liveUrl": "nubo-veterinaria/",
+    "cta": "Quiero una página similar para mi veterinaria"
+  },
+  {
+    "name": "CLARIA Estudio Dental",
+    "slug": "claria-dental",
+    "industry": "Dental",
+    "category": "Salud",
+    "package": "NEXO Profesional",
+    "packageType": "Profesional",
+    "type": "Concepto base",
+    "description": "Conoce las áreas de atención, resuelve preguntas frecuentes y consulta disponibilidad directamente.",
+    "functions": [
+      "Valoración inicial",
+      "Limpieza",
+      "Ortodoncia",
+      "Ubicación"
+    ],
+    "status": "Publicado",
+    "preview": "claria-dental/assets/img/social-preview.svg",
+    "liveUrl": "claria-dental/",
+    "cta": "Quiero una página similar para mi consultorio"
+  },
+  {
+    "name": "LUMBRE CAUCE",
+    "slug": "lumbre-cauce",
+    "industry": "Restaurante",
+    "category": "Restaurantes",
+    "package": "NEXO A Medida",
+    "packageType": "A Medida",
+    "type": "Concepto base",
+    "description": "Explora el concepto, revisa un menú demostrativo y consulta información para visitas, grupos o celebraciones.",
+    "functions": [
+      "Menú",
+      "Horarios",
+      "Grupos",
+      "Eventos"
+    ],
+    "status": "Publicado",
+    "preview": "lumbre-cauce/assets/img/social-preview.svg",
+    "liveUrl": "lumbre-cauce/",
+    "cta": "Quiero una página similar para mi restaurante"
+  },
+  {
+    "name": "EJE NORTE Entrenamiento",
+    "slug": "eje-norte",
+    "industry": "Gimnasio",
+    "category": "Fitness",
+    "package": "NEXO Profesional",
+    "packageType": "Profesional",
+    "type": "Concepto base",
+    "description": "Consulta modalidades, horarios e información antes de visitar las instalaciones.",
+    "functions": [
+      "Modalidades",
+      "Horarios",
+      "Instalaciones",
+      "Primera visita"
+    ],
+    "status": "Publicado",
+    "preview": "eje-norte/assets/img/social-preview.svg",
+    "liveUrl": "eje-norte/",
+    "cta": "Quiero una página similar para mi gimnasio"
+  },
+  {
+    "name": "SENDA NÍTIDA Óptica",
+    "slug": "senda-nitida",
+    "industry": "Óptica",
+    "category": "Comercio",
+    "package": "NEXO Profesional",
+    "packageType": "Profesional",
+    "type": "Concepto base",
+    "description": "Explora estilos, servicios y datos de atención antes de visitar la óptica.",
+    "functions": [
+      "Armazones",
+      "Examen visual",
+      "Ajustes",
+      "Estilo"
+    ],
+    "status": "Publicado",
+    "preview": "senda-nitida/assets/img/social-preview.svg",
+    "liveUrl": "senda-nitida/",
+    "cta": "Quiero una página similar para mi óptica"
+  },
+  {
+    "name": "SURCO LENTO Objetos",
+    "slug": "surco-lento",
+    "industry": "Tienda",
+    "category": "Comercio",
+    "package": "NEXO Tienda Inicial",
+    "packageType": "Tienda",
+    "type": "Concepto base",
+    "description": "Explora diez productos ficticios, agrega al carrito y revisa un checkout representado sin cobro real.",
+    "functions": [
+      "10 productos",
+      "3 categorías",
+      "Carrito",
+      "Checkout simulado"
+    ],
+    "status": "Publicado",
+    "preview": "surco-lento/assets/img/social-preview.svg",
+    "liveUrl": "surco-lento/",
+    "cta": "Quiero una tienda similar"
+  },
+  {
+    "name": "NODO TERMIA Servicio Técnico",
+    "slug": "nodo-termia",
+    "industry": "Servicio técnico",
+    "category": "Servicios",
+    "package": "NEXO Esencial",
+    "packageType": "Esencial",
+    "type": "Concepto base",
+    "description": "Consulta servicios, cobertura y forma de atención desde un solo lugar.",
+    "functions": [
+      "Servicios",
+      "Cobertura",
+      "Proceso",
+      "WhatsApp"
+    ],
+    "status": "Publicado",
+    "preview": "nodo-termia/assets/img/social-preview.svg",
+    "liveUrl": "nodo-termia/",
+    "cta": "Quiero una página sencilla para mi servicio"
+  }
+];
+      const filters = ["Todos","Esencial","Profesional","A Medida","Tienda","Salud","Restaurantes","Bienestar","Fitness","Comercio","Servicios"].filter((filter) => filter === "Todos" || concepts.some((item) => item.package.includes(filter) || item.packageType === filter || item.category === filter || item.industry === filter));
+      const grid = document.getElementById("catalog-grid");
+      const filterBar = document.getElementById("filters");
+      const nexo = "https://wa.me/message/ZPTEPGUHA3O2B1";
+      function render(filter = "Todos") {
+        const visible = filter === "Todos" ? concepts : concepts.filter((item) => item.package.includes(filter) || item.packageType === filter || item.category === filter || item.industry === filter);
+        grid.innerHTML = visible.map((item) => '<article class="card"><img src="' + item.preview + '" alt="" loading="lazy" /><div class="card-body"><div class="meta"><span>' + item.industry + '</span><span>' + item.package + '</span><span>' + item.type + '</span><span>' + item.status + '</span></div><h2>' + item.name + '</h2><p>' + item.description + '</p><div class="features">' + item.functions.map((feature) => '<span>' + feature + '</span>').join("") + '</div><div class="actions"><a class="button primary" href="' + item.liveUrl + '">Enlace en vivo</a><a class="button ghost" href="' + nexo + '" target="_blank" rel="noopener noreferrer">CTA NEXO26</a></div></div></article>').join("");
+      }
+      filterBar.innerHTML = filters.map((filter, index) => '<button type="button" aria-pressed="' + (index === 0) + '" data-filter="' + filter + '">' + filter + '</button>').join("");
+      filterBar.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-filter]");
+        if (!button) return;
+        filterBar.querySelectorAll("button").forEach((item) => item.setAttribute("aria-pressed", "false"));
+        button.setAttribute("aria-pressed", "true");
+        render(button.dataset.filter);
+      });
+      render();
+    </script>
+  </body>
+</html>

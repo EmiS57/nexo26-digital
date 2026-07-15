@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#191613"/>
+  <rect x="70" y="70" width="1060" height="490" rx="32" fill="#f3eadb" stroke="#b9663b" stroke-width="8"/>
+  <path d="M130 440 C280 260 360 500 520 300 S820 220 1030 390" fill="none" stroke="#ad8a60" stroke-width="18" stroke-linecap="round"/>
+  <text x="130" y="220" font-family="Arial, sans-serif" font-size="70" font-weight="800" fill="#221a15">LUMBRE CAUCE</text>
+  <text x="130" y="305" font-family="Arial, sans-serif" font-size="34" fill="#755f51">Restaurante · NEXO A Medida</text>
+  <text x="130" y="500" font-family="Arial, sans-serif" font-size="26" fill="#755f51">Concepto base desarrollado por NEXO26 Digital</text>
+</svg>

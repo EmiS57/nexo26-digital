@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#bd714b" />
+    <meta name="description" content="Explora diez productos ficticios, agrega al carrito y revisa un checkout representado sin cobro real." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:title" content="SURCO LENTO Objetos | Concepto NEXO26" />
+    <meta property="og:description" content="Explora diez productos ficticios, agrega al carrito y revisa un checkout representado sin cobro real." />
+    <meta property="og:image" content="https://emis57.github.io/nexo26-digital/demos/surco-lento/assets/img/social-preview.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>SURCO LENTO Objetos | Concepto NEXO26 Digital</title>
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../shared/demo-shell.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/config.js" defer></script>
+    <script src="../shared/demo-utils.js" defer></script>
+    <script src="../shared/demo-shell.js" defer></script>
+  </head>
+  <body class="demo-body surco-lento layout-shop">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="concept-header">
+      <a class="concept-brand" href="./" aria-label="Ir al inicio de SURCO LENTO Objetos">
+        <img src="./assets/img/favicon.svg" width="42" height="42" alt="" />
+        <span><strong>SURCO LENTO</strong><small>Tienda</small></span>
+      </a>
+      <nav aria-label="Navegación del concepto">
+        <a href="./#servicios">Servicios</a>
+        
+        <a href="./#contacto">Contacto</a>
+        <a href="../">Catálogo</a>
+      </nav>
+    </header>
+    <main id="contenido">
+      <section class="concept-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">HOGAR · ESCRITORIO · REGALOS</p>
+        <h1>Un catálogo inicial para comprar sin fricción innecesaria.</h1>
+        <p>Explora diez productos ficticios, agrega al carrito y revisa un checkout representado sin cobro real.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#servicios">Ver productos</a>
+          <button class="button secondary" type="button" data-demo-action>Abrir carrito</button>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </section>
+      <section class="quick-info" aria-label="Información rápida">
+      <article><span>10 productos</span><strong>Atención por mensaje en horario comercial</strong></article>
+      <article><span>3 categorías</span><strong>Atención por mensaje en horario comercial</strong></article>
+      <article><span>Carrito</span><strong>Atención por mensaje en horario comercial</strong></article>
+      <article><span>Checkout simulado</span><strong>Atención por mensaje en horario comercial</strong></article>
+    </section>
+      <section class="section services-section" id="servicios">
+      <div class="section-heading">
+        <p class="eyebrow">Comercio</p>
+        <h2>Categorías y productos demostrativos.</h2>
+        <p>Productos y precios demostrativos. La información final se reemplaza con el catálogo real del negocio.</p>
+      </div>
+      <div class="service-list shop">
+        <article><span>01</span><h3>Hogar</h3><p>Categoría demostrativa dentro del límite de tres categorías de NEXO Tienda Inicial.</p></article>
+        <article><span>02</span><h3>Escritorio</h3><p>Categoría demostrativa dentro del límite de tres categorías de NEXO Tienda Inicial.</p></article>
+        <article><span>03</span><h3>Regalos</h3><p>Categoría demostrativa dentro del límite de tres categorías de NEXO Tienda Inicial.</p></article>
+      </div>
+    </section>
+      <section class="section shop-section" id="productos">
+        <div class="section-heading">
+          <p class="eyebrow">Catálogo</p>
+          <h2>Productos y precios demostrativos.</h2>
+          <p>El carrito persiste en localStorage y el checkout no cobra ni solicita datos bancarios.</p>
+        </div>
+        <div class="shop-tools" aria-label="Filtrar productos">
+          <button type="button" class="filter-chip" data-shop-filter="Todos" aria-pressed="true">Todos</button>
+          <button type="button" class="filter-chip" data-shop-filter="Hogar" aria-pressed="false">Hogar</button>
+          <button type="button" class="filter-chip" data-shop-filter="Escritorio" aria-pressed="false">Escritorio</button>
+          <button type="button" class="filter-chip" data-shop-filter="Regalos" aria-pressed="false">Regalos</button>
+        </div>
+        <div class="shop-layout">
+          <div class="product-grid" id="product-grid" aria-live="polite"></div>
+          <aside class="cart-panel" id="carrito" aria-labelledby="cart-title">
+            <h2 id="cart-title">Carrito</h2>
+            <div id="cart-items"></div>
+            <p class="cart-empty" id="cart-empty">Tu carrito está vacío.</p>
+            <div class="cart-summary"><span>Subtotal</span><strong id="cart-subtotal">$0 MXN</strong></div>
+            <fieldset class="delivery-options">
+              <legend>Entrega demostrativa</legend>
+              <label><input type="radio" name="delivery" value="Envío local" checked /> Envío local</label>
+              <label><input type="radio" name="delivery" value="Recolección" /> Recolección</label>
+            </fieldset>
+            <button class="button primary full" type="button" id="checkout-button">Continuar checkout simulado</button>
+            <button class="button ghost full" type="button" id="clear-cart">Vaciar carrito</button>
+          </aside>
+        </div>
+      </section>
+      <section class="section faq-section" id="faq">
+      <div class="section-heading"><p class="eyebrow">Preguntas</p><h2>Respuestas breves antes del contacto.</h2></div>
+      <div class="faq-list">
+        <details><summary>¿La demo cobra?</summary><p>No. No solicita tarjeta, datos bancarios, contraseñas ni identificación.</p></details>
+        <details><summary>¿Los productos existen?</summary><p>No. Productos y precios son demostrativos.</p></details>
+        <details><summary>¿Cuántos productos representa?</summary><p>Exactamente diez productos simples y tres categorías.</p></details>
+      </div>
+    </section>
+      <section class="section contact-section" id="contacto">
+      <div>
+        <p class="eyebrow">Contacto</p>
+        <h2>Acción demostrativa, contacto real en proyecto final.</h2>
+        <p>Concepto base desarrollado por NEXO26 Digital. El nombre, identidad y contenido son demostrativos. El proyecto final se adapta a la marca, materiales, objetivos y alcance contratado por cada negocio.</p>
+      </div>
+      <div class="contact-card">
+        <p><strong>Horario:</strong> Atención por mensaje en horario comercial. Dato demostrativo.</p>
+        <p><strong>Zona:</strong> Entrega demostrativa: local o recolección.</p>
+        <p><strong>Contenido:</strong> ficticio y reemplazable.</p>
+        <button class="button primary" type="button" data-demo-action>Abrir carrito</button>
+        <a class="button ghost" href="#" data-nexo-whatsapp>Quiero una tienda similar</a>
+      </div>
+    </section>
+    </main>
+    <footer class="concept-footer">
+      <div>
+        <strong>SURCO LENTO Objetos</strong>
+        <p>Nombre ficticio utilizado exclusivamente con fines demostrativos.</p>
+      </div>
+      <p>Concepto base desarrollado por NEXO26 Digital. El proyecto final se adapta a la marca, materiales, objetivos y alcance contratado.</p>
+      <a data-nexo-link href="https://emis57.github.io/nexo26-digital/?utm_source=demo&utm_medium=referral&utm_campaign=surco-lento">Explorar NEXO26 Digital</a>
+    </footer>
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>

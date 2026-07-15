@@ -1,0 +1,30 @@
+.demo-shell { position: sticky; top: 0; z-index: 90; color: #181818; font-family: inherit; }
+.demo-shell-bar { min-height: 42px; display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; padding: 8px 12px; background: rgba(255,255,255,.94); border-bottom: 1px solid rgba(0,0,0,.12); backdrop-filter: blur(14px); }
+.demo-shell-bar p { margin: 0; font-size: .82rem; font-weight: 900; }
+.demo-shell-bar button, .demo-shell-bar a { min-height: 34px; border: 1px solid rgba(0,0,0,.16); border-radius: 8px; padding: 6px 10px; background: #fff; color: #181818; font-weight: 850; text-decoration: none; }
+.demo-shell-bar a { background: #181818; color: #fff; }
+.demo-scope-panel { position: absolute; left: 50%; transform: translateX(-50%); width: min(100% - 24px, 960px); max-height: min(78vh, 720px); overflow: auto; margin-top: 8px; padding: 18px; border: 1px solid rgba(0,0,0,.14); border-radius: 8px; background: #fff; box-shadow: 0 24px 70px rgba(0,0,0,.22); }
+.demo-scope-panel h2, .demo-scope-panel h3, .demo-scope-panel p { margin-top: 0; }
+.scope-label { color: #666; font-size: .78rem; font-weight: 900; text-transform: uppercase; letter-spacing: .08em; }
+.scope-price { font-size: 1.4rem; font-weight: 900; }
+.demo-scope-panel dl { display: grid; gap: 10px; margin: 16px 0; }
+.demo-scope-panel dl div { display: grid; gap: 3px; border: 1px solid rgba(0,0,0,.1); border-radius: 8px; padding: 10px; }
+.demo-scope-panel dt { color: #666; font-size: .78rem; font-weight: 900; text-transform: uppercase; }
+.demo-scope-panel dd { margin: 0; }
+.scope-columns { display: grid; gap: 12px; }
+.scope-columns ul { margin: 8px 0 0; padding-left: 20px; }
+.scope-notice { margin-top: 14px; color: #555; font-size: .92rem; }
+.scope-actions, .dialog-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.demo-action-dialog { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; padding: 16px; }
+.demo-action-dialog[hidden] { display: none; }
+.dialog-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.58); }
+.demo-action-dialog section { position: relative; z-index: 1; width: min(100%, 520px); border-radius: 8px; background: #fff; color: #181818; padding: 22px; box-shadow: 0 24px 70px rgba(0,0,0,.34); }
+.demo-action-dialog h2 { margin: 0; font-size: 1.4rem; }
+.demo-action-dialog p { color: #555; }
+@media (min-width: 760px) { .demo-scope-panel dl, .scope-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 900px) {
+  .demo-shell-bar { justify-content: flex-start; }
+  .demo-shell-bar p { flex: 1 1 100%; text-align: center; }
+  .demo-shell-bar button, .demo-shell-bar a { flex: 1 1 100%; min-width: 0; white-space: normal; text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; } }

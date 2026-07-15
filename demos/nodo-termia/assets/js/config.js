@@ -1,0 +1,51 @@
+window.DEMO_CONFIG = {
+  "id": "nodo-termia",
+  "slug": "nodo-termia",
+  "brandName": "NODO TERMIA Servicio Técnico",
+  "tagline": "servicio local · cobertura · proceso",
+  "industry": "Servicio técnico",
+  "category": "Servicios",
+  "packageName": "NEXO Esencial",
+  "packagePrice": "$999 MXN",
+  "packageLabel": "Concepto base",
+  "demoMode": true,
+  "businessWhatsapp": "",
+  "businessDisplayPhone": "",
+  "businessEmail": "",
+  "businessAddress": "Dato demostrativo. Se reemplaza con la dirección confirmada del negocio real.",
+  "businessZone": "Cobertura demostrativa: zona norte y poniente por confirmar.",
+  "businessSchedule": "Lun a sáb 9:00 a 18:00. Horario demostrativo.",
+  "businessInstagram": "",
+  "businessFacebook": "",
+  "businessMapUrl": "",
+  "nexoSiteUrl": "https://emis57.github.io/nexo26-digital/?utm_source=demo&utm_medium=referral&utm_campaign=nodo-termia",
+  "nexoWhatsappUrl": "https://wa.me/message/ZPTEPGUHA3O2B1",
+  "contextualMessage": "Hola, vi el concepto NODO TERMIA Servicio Técnico (Servicio técnico) y quiero una solución similar para mi negocio.",
+  "packageScope": {
+    "sections": "Una vista, hasta 5 secciones.",
+    "services": "Hasta 6 servicios.",
+    "revisions": "Una ronda consolidada.",
+    "publication": "12 meses.",
+    "delivery": "Primera versión entre 48 y 72 horas hábiles después de pago y materiales completos.",
+    "payment": "Pago completo para comenzar.",
+    "domain": "URL administrada por NEXO26. Dominio propio disponible como adicional."
+  },
+  "representedFeatures": [
+    "Vista única",
+    "Servicios principales",
+    "Horarios",
+    "Cobertura",
+    "WhatsApp como acción base",
+    "Adaptación móvil"
+  ],
+  "notIncluded": [
+    "Reservación automática",
+    "Pago",
+    "Carrito",
+    "Galería amplia",
+    "Analítica visible",
+    "Varias páginas"
+  ],
+  "demoNotice": "Nombre ficticio utilizado exclusivamente con fines demostrativos.",
+  "commercialNotice": "Concepto base desarrollado por NEXO26 Digital. El nombre, identidad y contenido son demostrativos. El proyecto final se adapta a la marca, materiales, objetivos y alcance contratado por cada negocio."
+};

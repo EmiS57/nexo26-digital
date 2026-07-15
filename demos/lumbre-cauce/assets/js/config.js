@@ -1,0 +1,52 @@
+window.DEMO_CONFIG = {
+  "id": "lumbre-cauce",
+  "slug": "lumbre-cauce",
+  "brandName": "LUMBRE CAUCE",
+  "tagline": "cocina de brasas · sobremesa · grupos",
+  "industry": "Restaurante",
+  "category": "Restaurantes",
+  "packageName": "NEXO A Medida",
+  "packagePrice": "$3,999 MXN",
+  "packageLabel": "Concepto base",
+  "demoMode": true,
+  "businessWhatsapp": "",
+  "businessDisplayPhone": "",
+  "businessEmail": "",
+  "businessAddress": "Dato demostrativo. Se reemplaza con la dirección confirmada del negocio real.",
+  "businessZone": "Zona demostrativa: corredor gastronómico por confirmar.",
+  "businessSchedule": "Mar a dom 13:00 a 23:00. Horario demostrativo.",
+  "businessInstagram": "",
+  "businessFacebook": "",
+  "businessMapUrl": "",
+  "nexoSiteUrl": "https://emis57.github.io/nexo26-digital/?utm_source=demo&utm_medium=referral&utm_campaign=lumbre-cauce",
+  "nexoWhatsappUrl": "https://wa.me/message/ZPTEPGUHA3O2B1",
+  "contextualMessage": "Hola, vi el concepto LUMBRE CAUCE (Restaurante) y quiero una solución similar para mi negocio.",
+  "packageScope": {
+    "sections": "Página larga o hasta 3 páginas, hasta 12 secciones.",
+    "services": "Hasta 15 servicios.",
+    "revisions": "Tres rondas consolidadas.",
+    "publication": "12 meses.",
+    "delivery": "Entre 5 y 7 días hábiles después del anticipo y materiales completos.",
+    "payment": "$2,400 MXN para comenzar y $1,599 MXN antes de publicar.",
+    "domain": "Dominio .com estándar por un año incluido, sujeto a disponibilidad, aprobación y política vigente."
+  },
+  "representedFeatures": [
+    "Arquitectura personalizada",
+    "Hasta 3 páginas",
+    "Menú o navegación ampliada",
+    "Galería o selección destacada",
+    "Promociones o eventos",
+    "FAQ",
+    "Analítica básica preparada"
+  ],
+  "notIncluded": [
+    "Reservación automática",
+    "Pago",
+    "Delivery",
+    "Disponibilidad real",
+    "Integraciones avanzadas sin cotización",
+    "Resultados garantizados"
+  ],
+  "demoNotice": "Nombre ficticio utilizado exclusivamente con fines demostrativos.",
+  "commercialNotice": "Concepto base desarrollado por NEXO26 Digital. El nombre, identidad y contenido son demostrativos. El proyecto final se adapta a la marca, materiales, objetivos y alcance contratado por cada negocio."
+};

@@ -249,7 +249,7 @@
     const target = $("#portfolio-grid");
     if (!target || !data.projects) return;
 
-    const availableProjects = data.projects.filter((project) => project.active !== false && project.video);
+    const availableProjects = data.projects.filter((project) => project.active !== false && (project.video || project.liveUrl));
     const projects = filter === "Todos"
       ? availableProjects
       : availableProjects.filter((project) => project.filter === filter);
@@ -266,26 +266,44 @@
 
     target.innerHTML = projects
       .map((project) => {
+        const title = project.displayTitle || project.name || project.title || "Concepto";
         const poster = project.poster ? ` poster="${escapeHTML(project.poster)}"` : "";
-        const features = project.features && project.features.length
-          ? `<ul class="portfolio-features">${project.features.map((feature) => `<li>${escapeHTML(feature)}</li>`).join("")}</ul>`
-          : "";
-        const message = project.whatsappMessage || defaultMessage(`un proyecto similar a ${project.displayTitle}`);
-        const typeClass = String(project.type || "").toLowerCase().replace(/\s+/g, "-");
-
-        return `
-          <article class="portfolio-card">
-            <video class="demo-video" controls muted playsinline preload="metadata"${poster} aria-label="Demostración de ${escapeHTML(project.displayTitle)}">
+        const media = project.video
+          ? `
+            <video class="demo-video" controls muted playsinline preload="metadata"${poster} aria-label="Demostración de ${escapeHTML(title)}">
               <source src="${escapeHTML(project.video)}" type="video/mp4" />
               Tu navegador no puede reproducir esta demostración.
             </video>
+          `
+          : `
+            <a class="portfolio-preview-link" href="${escapeHTML(project.liveUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Explorar concepto ${escapeHTML(title)}">
+              <img class="portfolio-preview" src="${escapeHTML(project.poster)}" alt="" loading="lazy" />
+            </a>
+          `;
+        const features = project.features && project.features.length
+          ? `<ul class="portfolio-features">${project.features.map((feature) => `<li>${escapeHTML(feature)}</li>`).join("")}</ul>`
+          : "";
+        const message = project.whatsappMessage || defaultMessage(`un proyecto similar a ${title}`);
+        const typeClass = String(project.type || "").toLowerCase().replace(/\s+/g, "-");
+        const liveLink = project.liveUrl
+          ? `<a class="button button-card button-outline" href="${escapeHTML(project.liveUrl)}" target="_blank" rel="noopener noreferrer">Explorar concepto</a>`
+          : "";
+        const packageLabel = project.package ? `<p class="portfolio-package">${escapeHTML(project.package)}</p>` : "";
+
+        return `
+          <article class="portfolio-card">
+            ${media}
             <div class="portfolio-content">
               <span class="card-badge project-type-${escapeHTML(typeClass)}">${escapeHTML(project.type)}</span>
-              <h3>${escapeHTML(project.displayTitle)}</h3>
+              <h3>${escapeHTML(title)}</h3>
               <p class="portfolio-category">${escapeHTML(project.category)}</p>
+              ${packageLabel}
               <p>${escapeHTML(project.description)}</p>
               ${features}
-              <a class="button button-card" href="${buildWhatsAppHref(message)}" target="_blank" rel="noreferrer">${escapeHTML(project.cta || "Quiero algo similar")}</a>
+              <div class="portfolio-actions">
+                ${liveLink}
+                <a class="button button-card" href="${buildWhatsAppHref(message)}" target="_blank" rel="noopener noreferrer">${escapeHTML(project.cta || "Quiero algo similar")}</a>
+              </div>
             </div>
           </article>
         `;
@@ -317,7 +335,7 @@
   function renderPortfolioFilters() {
     const filters = $("#portfolio-filters");
     if (!filters || !data.filters) return;
-    const availableProjects = (data.projects || []).filter((project) => project.active !== false && project.video);
+    const availableProjects = (data.projects || []).filter((project) => project.active !== false && (project.video || project.liveUrl));
     const visibleFilters = data.filters.filter((filter) => filter === "Todos" || availableProjects.some((project) => project.filter === filter));
 
     filters.innerHTML = visibleFilters

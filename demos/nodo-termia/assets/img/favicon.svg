@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title">
+  <title>NODO TERMIA Servicio Técnico</title>
+  <rect width="96" height="96" rx="18" fill="#f8f4ea"/>
+  <path d="M18 66 L48 18 L78 66 Z" fill="none" stroke="#155363" stroke-width="8" stroke-linejoin="round"/>
+  <circle cx="48" cy="55" r="15" fill="#26343a"/>
+  <text x="48" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#fff">NT</text>
+</svg>

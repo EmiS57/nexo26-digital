@@ -80,8 +80,25 @@ Cada demo debe tener:
 - Ruta de video.
 - Ruta de poster.
 - Descripción.
+- `liveUrl` si existe una ruta pública o local funcional.
+- Paquete representado.
+- Mensaje contextual para WhatsApp.
 
 No presentes un demo como cliente pagado si sólo es un concepto visual.
+
+## Conceptos por giro
+
+Los conceptos base viven en `demos/`.
+
+Antes de publicar o agregar un concepto:
+
+- Verifica el nombre con búsqueda exacta y documenta el resultado en `demos/NAME_CHECKS.md`.
+- Define el paquete representado y respeta sus límites.
+- Usa `robots: noindex, nofollow` en cada concepto hasta aprobación explícita.
+- Usa rutas relativas compatibles con GitHub Pages.
+- No inventes teléfono, dirección, reseñas, métricas, resultados ni integraciones.
+- Configura UTM hacia NEXO26 con `utm_campaign=slug`.
+- Si una acción del negocio no tiene integración real, debe abrir modal demostrativo.
 
 ## FAQs
 

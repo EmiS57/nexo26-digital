@@ -1004,6 +1004,18 @@ legend {
   object-fit: cover;
 }
 
+.portfolio-preview-link {
+  display: block;
+  border-bottom: 1px solid var(--nexo-line-light);
+  background: var(--nexo-paper);
+}
+
+.portfolio-preview {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
 .portfolio-content {
   display: grid;
   gap: 10px;
@@ -1018,6 +1030,12 @@ legend {
 .portfolio-category {
   color: var(--nexo-gold-dark);
   font-weight: 900;
+}
+
+.portfolio-package {
+  color: var(--nexo-gray);
+  font-size: 0.9rem;
+  font-weight: 850;
 }
 
 .portfolio-features {
@@ -1040,6 +1058,25 @@ legend {
   background: rgba(255, 255, 255, 0.5);
   font-size: 0.78rem;
   font-weight: 800;
+}
+
+.portfolio-actions {
+  display: grid;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.button-outline {
+  border-color: var(--nexo-line-light);
+  background: transparent;
+  color: var(--nexo-text-dark);
+}
+
+.portfolio-disclaimer {
+  max-width: 820px;
+  margin: -8px 0 22px;
+  color: var(--nexo-gray);
+  font-size: 0.95rem;
 }
 
 .portfolio-card.is-media-missing {

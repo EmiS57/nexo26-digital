@@ -1,0 +1,52 @@
+window.DEMO_CONFIG = {
+  "id": "senda-nitida",
+  "slug": "senda-nitida",
+  "brandName": "SENDA NÍTIDA Óptica",
+  "tagline": "visión · estilo · atención",
+  "industry": "Óptica",
+  "category": "Comercio",
+  "packageName": "NEXO Profesional",
+  "packagePrice": "$2,299 MXN",
+  "packageLabel": "Concepto base",
+  "demoMode": true,
+  "businessWhatsapp": "",
+  "businessDisplayPhone": "",
+  "businessEmail": "",
+  "businessAddress": "Dato demostrativo. Se reemplaza con la dirección confirmada del negocio real.",
+  "businessZone": "Zona demostrativa: sucursal por confirmar.",
+  "businessSchedule": "Lun a sáb 10:00 a 19:00. Horario demostrativo.",
+  "businessInstagram": "",
+  "businessFacebook": "",
+  "businessMapUrl": "",
+  "nexoSiteUrl": "https://emis57.github.io/nexo26-digital/?utm_source=demo&utm_medium=referral&utm_campaign=senda-nitida",
+  "nexoWhatsappUrl": "https://wa.me/message/ZPTEPGUHA3O2B1",
+  "contextualMessage": "Hola, vi el concepto SENDA NÍTIDA Óptica (Óptica) y quiero una solución similar para mi negocio.",
+  "packageScope": {
+    "sections": "Una página de una sola vista, hasta 8 secciones.",
+    "services": "Hasta 10 servicios.",
+    "revisions": "Dos rondas consolidadas.",
+    "publication": "12 meses.",
+    "delivery": "Primera versión alrededor de 72 horas hábiles después del anticipo y materiales completos.",
+    "payment": "$1,600 MXN para comenzar y $699 MXN antes de publicar.",
+    "domain": "Dominio .com estándar por un año incluido, sujeto a disponibilidad, aprobación y política vigente."
+  },
+  "representedFeatures": [
+    "Encabezado comercial",
+    "Hasta 8 secciones",
+    "Servicios organizados",
+    "FAQ breve",
+    "Mapa o ubicación de referencia",
+    "Analítica básica preparada",
+    "CTA a WhatsApp"
+  ],
+  "notIncluded": [
+    "Pago",
+    "Carrito",
+    "Reserva automática",
+    "Diagnóstico profesional",
+    "Integraciones avanzadas",
+    "Resultados garantizados"
+  ],
+  "demoNotice": "Nombre ficticio utilizado exclusivamente con fines demostrativos.",
+  "commercialNotice": "Concepto base desarrollado por NEXO26 Digital. El nombre, identidad y contenido son demostrativos. El proyecto final se adapta a la marca, materiales, objetivos y alcance contratado por cada negocio."
+};

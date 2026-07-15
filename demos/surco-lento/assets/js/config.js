@@ -1,0 +1,52 @@
+window.DEMO_CONFIG = {
+  "id": "surco-lento",
+  "slug": "surco-lento",
+  "brandName": "SURCO LENTO Objetos",
+  "tagline": "hogar · escritorio · regalos",
+  "industry": "Tienda",
+  "category": "Comercio",
+  "packageName": "NEXO Tienda Inicial",
+  "packagePrice": "Desde $6,999 MXN",
+  "packageLabel": "Concepto base",
+  "demoMode": true,
+  "businessWhatsapp": "",
+  "businessDisplayPhone": "",
+  "businessEmail": "",
+  "businessAddress": "Dato demostrativo. Se reemplaza con la dirección confirmada del negocio real.",
+  "businessZone": "Entrega demostrativa: local o recolección.",
+  "businessSchedule": "Atención por mensaje en horario comercial. Dato demostrativo.",
+  "businessInstagram": "",
+  "businessFacebook": "",
+  "businessMapUrl": "",
+  "nexoSiteUrl": "https://emis57.github.io/nexo26-digital/?utm_source=demo&utm_medium=referral&utm_campaign=surco-lento",
+  "nexoWhatsappUrl": "https://wa.me/message/ZPTEPGUHA3O2B1",
+  "contextualMessage": "Hola, vi el concepto SURCO LENTO Objetos (Tienda) y quiero una solución similar para mi negocio.",
+  "packageScope": {
+    "sections": "Catálogo inicial con hasta 3 categorías.",
+    "services": "Hasta 10 productos simples.",
+    "revisions": "Dos rondas consolidadas.",
+    "publication": "12 meses.",
+    "delivery": "Entre 10 y 15 días hábiles después del anticipo, materiales y accesos completos.",
+    "payment": "$4,200 MXN para comenzar y $2,799 MXN antes de publicar.",
+    "domain": "Dominio .com estándar por un año incluido, sujeto a disponibilidad, aprobación y política vigente."
+  },
+  "representedFeatures": [
+    "Hasta 10 productos simples",
+    "Hasta 3 categorías",
+    "Carrito",
+    "Checkout estándar representado",
+    "Una plataforma de pago representada",
+    "Una modalidad sencilla de entrega",
+    "Analítica básica preparada"
+  ],
+  "notIncluded": [
+    "Cobro real en esta demo",
+    "Datos bancarios",
+    "Inventario complejo",
+    "Múltiples precios por producto",
+    "Automatizaciones avanzadas",
+    "Varias modalidades simultáneas"
+  ],
+  "demoNotice": "Nombre ficticio utilizado exclusivamente con fines demostrativos.",
+  "commercialNotice": "Concepto base desarrollado por NEXO26 Digital. El nombre, identidad y contenido son demostrativos. El proyecto final se adapta a la marca, materiales, objetivos y alcance contratado por cada negocio."
+};

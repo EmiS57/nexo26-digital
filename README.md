@@ -30,7 +30,20 @@ assets/js/data.js
 assets/js/main.js
 assets/img/projects/posters/
 assets/videos/projects/
+demos/
 ```
+
+## Catálogo de conceptos
+
+El catálogo de conceptos vive en:
+
+```text
+demos/index.html
+```
+
+Cada concepto tiene una ruta propia bajo `demos/slug/`, configuración en `assets/js/config.js`, estilos propios y shell compartido en `demos/shared/`.
+
+Los conceptos son demostrativos: no representan clientes contratados ni resultados garantizados. Salud no diagnostica, la tienda no cobra, restaurante no confirma reservas y servicio técnico no genera cotizaciones automáticas.
 
 ## Cómo cambiar WhatsApp
 
