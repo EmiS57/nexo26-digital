@@ -64,13 +64,13 @@ window.NEXO_DATA = {
         "Hasta 6 preguntas frecuentes",
         "WhatsApp, mapa, redes y QR",
         "Analítica básica",
-        "Conexión de dominio si el cliente ya lo tiene activo y entrega acceso",
+        "Conexión de dominio propio incluida si el cliente ya lo tiene activo y entrega acceso",
         "Dos rondas de revisión",
         "Publicación durante 12 meses"
       ],
       notes: [
-        "El dominio no está incluido en el precio.",
-        "La conexión depende del proveedor y accesos disponibles."
+        "Este paquete sí contempla conexión de dominio propio.",
+        "Si el dominio todavía no existe, la compra o renovación se revisa por separado."
       ]
     },
     {
@@ -333,7 +333,7 @@ window.NEXO_DATA = {
     },
     {
       question: "¿El precio incluye dominio?",
-      answer: "Sólo se incluye conexión de dominio en los planes donde se indique y siempre que el cliente ya tenga un dominio activo y entregue accesos. La compra o renovación del dominio no está incluida."
+      answer: "NEXO Profesional, NEXO A Medida y NEXO Tienda Inicial incluyen conexión de dominio propio siempre que el cliente ya tenga un dominio activo y entregue accesos. Si el dominio todavía no existe, la compra o renovación se revisa por separado."
     },
     {
       question: "¿Puedo usar mi propio dominio?",
