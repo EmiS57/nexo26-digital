@@ -17,6 +17,25 @@ window.NEXO_DATA = {
     }
   ],
 
+  domainPolicy: {
+    essentialLabel: "URL administrada por NEXO26",
+    includedLabel: "Dominio .com estándar por 1 año incluido",
+    compareNote: "El dominio incluido corresponde a una opción .com estándar disponible con valor máximo de $400 MXN durante el primer año. Renovaciones y servicios especiales se pagan por separado.",
+    fullRule: "Si el cliente ya cuenta con un dominio activo, se incluye su conexión. Si todavía no cuenta con uno, NEXO26 gestiona el registro de un dominio .com estándar disponible, con un costo máximo incluido de $400 MXN durante el primer año.",
+    conditions: [
+      "Sujeto a disponibilidad.",
+      "El nombre debe ser aprobado por el cliente antes del registro.",
+      "Se registra después de recibir el pago o anticipo correspondiente.",
+      "Debe quedar registrado utilizando los datos y correo del cliente.",
+      "NEXO26 puede conservar acceso técnico únicamente para configurarlo.",
+      "Dominios premium no están incluidos.",
+      "Extensiones distintas a .com pueden generar diferencia de precio.",
+      "Si el costo supera $400 MXN, el cliente cubre la diferencia.",
+      "Transferencias, recuperaciones, conflictos de propiedad y cambio de dominio después del registro no están incluidos.",
+      "La renovación a partir del segundo año se paga por separado y depende del proveedor."
+    ]
+  },
+
   webPackages: [
     {
       id: "esencial",
@@ -26,6 +45,7 @@ window.NEXO_DATA = {
       payment: "Pago completo antes de iniciar.",
       delivery: "Primera versión en 48-72 horas hábiles después de pago y materiales completos.",
       summary: "Para negocios que necesitan una presencia clara, rápida y lista para compartir.",
+      domain: "URL administrada por NEXO26",
       cta: "Consultar NEXO Esencial",
       includes: [
         "Una sola vista",
@@ -36,11 +56,11 @@ window.NEXO_DATA = {
         "Horarios, ubicación, redes y WhatsApp",
         "Diseño adaptable a celular",
         "Una revisión consolidada",
-        "Dirección administrada por NEXO26",
+        "URL administrada por NEXO26",
         "Publicación durante 12 meses"
       ],
       notes: [
-        "No incluye conexión de dominio en el precio base.",
+        "Dominio propio disponible como servicio adicional.",
         "Funciones adicionales se cotizan por separado."
       ]
     },
@@ -52,6 +72,7 @@ window.NEXO_DATA = {
       payment: "$1,600 MXN para comenzar y $699 MXN antes de publicar.",
       delivery: "Aproximadamente 72 horas hábiles después de anticipo y materiales completos.",
       summary: "Para negocios que necesitan explicar mejor sus servicios y verse más completos.",
+      domain: "Dominio .com estándar por 1 año incluido",
       cta: "Consultar NEXO Profesional",
       includes: [
         "Hasta 8 secciones",
@@ -64,13 +85,13 @@ window.NEXO_DATA = {
         "Hasta 6 preguntas frecuentes",
         "WhatsApp, mapa, redes y QR",
         "Analítica básica",
-        "Conexión de dominio propio incluida si el cliente ya lo tiene activo y entrega acceso",
+        "Dominio .com estándar por 1 año incluido",
         "Dos rondas de revisión",
         "Publicación durante 12 meses"
       ],
       notes: [
-        "Este paquete sí contempla conexión de dominio propio.",
-        "Si el dominio todavía no existe, la compra o renovación se revisa por separado."
+        "Si el cliente ya cuenta con dominio activo, se incluye su conexión.",
+        "Si todavía no cuenta con uno, NEXO26 gestiona un dominio .com estándar disponible con valor máximo incluido de $400 MXN durante el primer año."
       ]
     },
     {
@@ -81,6 +102,7 @@ window.NEXO_DATA = {
       payment: "$2,400 MXN para comenzar y $1,599 MXN antes de publicar.",
       delivery: "5-7 días hábiles después de anticipo y materiales completos.",
       summary: "Para negocios que requieren más estructura, contenido y secciones específicas.",
+      domain: "Dominio .com estándar por 1 año incluido",
       cta: "Consultar NEXO A Medida",
       includes: [
         "Página larga o hasta 3 páginas",
@@ -92,13 +114,13 @@ window.NEXO_DATA = {
         "Testimonios y preguntas frecuentes",
         "Promociones",
         "QR y analítica básica",
-        "Conexión de dominio si el cliente ya lo tiene activo y entrega acceso",
+        "Dominio .com estándar por 1 año incluido",
         "Tres rondas de revisión",
         "Publicación durante 12 meses"
       ],
       notes: [
         "Funciones especiales o integraciones avanzadas se cotizan por separado.",
-        "Los materiales deben ser proporcionados o aprobados por el cliente."
+        "El dominio incluido está sujeto a disponibilidad, aprobación escrita del nombre y valor máximo de $400 MXN durante el primer año."
       ]
     }
   ],
@@ -112,6 +134,7 @@ window.NEXO_DATA = {
       payment: "$4,200 MXN para comenzar y $2,799 MXN antes de publicar. Proyectos personalizados: 60/40.",
       delivery: "10-15 días hábiles después de anticipo, accesos y materiales completos.",
       summary: "Para negocios que quieren iniciar una tienda sencilla con productos, carrito y pago estándar.",
+      domain: "Dominio .com estándar por 1 año incluido",
       cta: "Revisar mi tienda",
       includes: [
         "Hasta 10 productos simples",
@@ -123,11 +146,11 @@ window.NEXO_DATA = {
         "WhatsApp y analítica básica",
         "Dos rondas de revisión",
         "Publicación durante 12 meses",
-        "Conexión de dominio si el cliente ya lo tiene activo y entrega acceso"
+        "Dominio .com estándar por 1 año incluido"
       ],
       notes: [
         "No incluye inventarios complejos, automatizaciones avanzadas ni costos de pasarela.",
-        "Las comisiones de proveedores son responsabilidad del cliente."
+        "El dominio incluido está sujeto a disponibilidad, aprobación escrita del nombre y valor máximo de $400 MXN durante el primer año."
       ]
     },
     {
@@ -251,23 +274,13 @@ window.NEXO_DATA = {
         "Prueba básica de funcionamiento"
       ],
       notes: [
-        "Incluida en NEXO Profesional, NEXO A Medida y NEXO Tienda Inicial sólo si el dominio existe, está activo y se entregan accesos.",
-        "No incluye compra, renovación, transferencia, recuperación ni resolución de conflictos de propiedad."
+        "Disponible como servicio adicional para NEXO Esencial u otros proyectos compatibles.",
+        "Transferencias, recuperaciones y conflictos de propiedad no están incluidos."
       ]
     }
   ],
 
   projects: [
-    {
-      title: "Asador Argentino La Estancia",
-      displayTitle: "Asador Argentino",
-      category: "Restaurantes",
-      filter: "Restaurantes",
-      type: "Concepto visual",
-      video: "assets/videos/projects/asador-argentino-demo.mp4",
-      poster: "assets/img/projects/asador-argentino-poster.jpg",
-      description: "Concepto visual para restaurante con menú, reservaciones, ubicación y WhatsApp directo."
-    },
     {
       title: "Barbería Premium",
       displayTitle: "Barbería Premium",
@@ -275,8 +288,37 @@ window.NEXO_DATA = {
       filter: "Belleza y bienestar",
       type: "Demostración",
       video: "assets/videos/projects/barberia-premium-demo.mp4",
-      poster: "assets/img/projects/barberia-premium-poster.jpg",
-      description: "Landing enfocada en servicios, estilo visual, reservas y contacto rápido por WhatsApp."
+      poster: "assets/img/projects/posters/barberia-premium-poster.webp",
+      description: "Landing enfocada en servicios, estilo visual, reservas y contacto rápido por WhatsApp.",
+      features: ["Servicios", "Reservas", "WhatsApp", "Vista móvil"],
+      cta: "Quiero algo similar",
+      whatsappMessage: "Hola, tengo un negocio de belleza o cuidado personal y me interesa una página similar a la demostración de Barbería Premium. Me gustaría conocer qué opción podría adaptarse a mi negocio."
+    },
+    {
+      title: "Clínica Veterinaria 24 Horas",
+      displayTitle: "Concepto veterinario 01",
+      category: "Veterinarias y salud",
+      filter: "Veterinarias y salud",
+      type: "Concepto visual",
+      video: "assets/videos/projects/veterinaria-demo-01.mp4",
+      poster: "assets/img/projects/posters/veterinaria-01-poster.webp",
+      description: "Demostración para organizar consultas, servicios, horarios, ubicación, preguntas frecuentes y contacto por WhatsApp.",
+      features: ["Servicios veterinarios", "Horarios", "Ubicación", "Preguntas frecuentes", "WhatsApp", "Vista móvil"],
+      cta: "Quiero algo similar",
+      whatsappMessage: "Hola, tengo un negocio relacionado con servicios veterinarios y me interesa una página similar a esta demostración. Me gustaría conocer qué opción podría adaptarse a mi negocio."
+    },
+    {
+      title: "Asador Argentino La Estancia",
+      displayTitle: "Asador Argentino",
+      category: "Restaurantes",
+      filter: "Restaurantes",
+      type: "Concepto visual",
+      video: "assets/videos/projects/asador-argentino-demo.mp4",
+      poster: "assets/img/projects/posters/asador-argentino-poster.webp",
+      description: "Concepto visual para restaurante con menú, reservaciones, ubicación y WhatsApp directo.",
+      features: ["Menú", "Reservaciones", "Ubicación", "WhatsApp"],
+      cta: "Quiero algo similar",
+      whatsappMessage: "Hola, tengo un restaurante o negocio de alimentos y me interesa una página similar al concepto de Asador Argentino. Me gustaría conocer qué opción podría adaptarse a mi negocio."
     },
     {
       title: "Servicio Local Express",
@@ -285,22 +327,41 @@ window.NEXO_DATA = {
       filter: "Servicios",
       type: "Concepto visual",
       video: "assets/videos/projects/servicio-local-express-demo.mp4",
-      poster: "assets/img/projects/servicio-local-express-poster.jpg",
-      description: "Página informativa para presentar paquetes, beneficios, proceso y contacto de forma clara."
+      poster: "assets/img/projects/posters/servicio-local-express-poster.webp",
+      description: "Página informativa para presentar paquetes, beneficios, proceso y contacto de forma clara.",
+      features: ["Paquetes", "Beneficios", "Proceso", "Contacto"],
+      cta: "Quiero algo similar",
+      whatsappMessage: "Hola, tengo un negocio de servicios y me interesa una página similar a Servicio Local Express. Me gustaría conocer qué opción podría adaptarse a mi negocio."
     },
     {
       title: "VistaElite Óptica",
       displayTitle: "VistaElite Óptica",
-      category: "Salud",
-      filter: "Salud",
+      category: "Comercio",
+      filter: "Comercio",
       type: "Concepto visual",
       video: "assets/videos/projects/vistaelite-optica-demo.mp4",
-      poster: "assets/img/projects/vistaelite-optica-poster.jpg",
-      description: "Concepto para óptica con servicios, galería, ubicación, formulario visual y botón de WhatsApp."
+      poster: "assets/img/projects/posters/vistaelite-optica-poster.webp",
+      description: "Concepto para óptica con servicios, galería, ubicación, formulario visual y botón de WhatsApp.",
+      features: ["Servicios", "Galería", "Ubicación", "Formulario visual", "WhatsApp"],
+      cta: "Quiero algo similar",
+      whatsappMessage: "Hola, tengo un negocio de comercio o salud visual y me interesa una página similar a VistaElite Óptica. Me gustaría conocer qué opción podría adaptarse a mi negocio."
+    },
+    {
+      title: "Clínica Veterinaria 24 Horas",
+      displayTitle: "Concepto veterinario 02",
+      category: "Veterinarias y salud",
+      filter: "Veterinarias y salud",
+      type: "Demostración",
+      video: "assets/videos/projects/veterinaria-demo-02.mp4",
+      poster: "assets/img/projects/posters/veterinaria-02-poster.webp",
+      description: "Página adaptada a celular que reúne la información principal y facilita la consulta mediante WhatsApp.",
+      features: ["Servicios veterinarios", "Horarios", "Ubicación", "Preguntas frecuentes", "WhatsApp", "Vista móvil"],
+      cta: "Quiero algo similar",
+      whatsappMessage: "Hola, tengo un negocio relacionado con servicios veterinarios y me interesa una página similar a esta demostración. Me gustaría conocer qué opción podría adaptarse a mi negocio."
     }
   ],
 
-  filters: ["Todos", "Belleza y bienestar", "Restaurantes", "Salud", "Servicios", "Comercio"],
+  filters: ["Todos", "Belleza y bienestar", "Restaurantes", "Veterinarias y salud", "Comercio", "Servicios"],
 
   recommendations: {
     servicios: "esencial",
@@ -333,7 +394,15 @@ window.NEXO_DATA = {
     },
     {
       question: "¿El precio incluye dominio?",
-      answer: "NEXO Profesional, NEXO A Medida y NEXO Tienda Inicial incluyen conexión de dominio propio siempre que el cliente ya tenga un dominio activo y entregue accesos. Si el dominio todavía no existe, la compra o renovación se revisa por separado."
+      answer: "NEXO Profesional, NEXO A Medida y NEXO Tienda Inicial incluyen durante el primer año un dominio .com estándar disponible con valor máximo de $400 MXN. Si el cliente ya posee un dominio activo, se incluye su conexión. Dominios premium, extensiones especiales, transferencias, recuperaciones y renovaciones posteriores se pagan por separado."
+    },
+    {
+      question: "¿A nombre de quién queda registrado el dominio?",
+      answer: "El dominio se registra con los datos y correo del cliente. NEXO26 puede conservar acceso técnico para configurarlo, pero la propiedad debe permanecer con el negocio."
+    },
+    {
+      question: "¿Qué ocurre después del primer año del dominio?",
+      answer: "El cliente cubre directamente la renovación del dominio. El costo depende del proveedor y de la extensión utilizada. NEXO26 puede apoyar con la configuración o renovación técnica cuando sea necesario."
     },
     {
       question: "¿Puedo usar mi propio dominio?",

@@ -10,6 +10,7 @@ Usa esta lista antes de publicar cambios relevantes.
 - [ ] No hay promesas de ventas, clientes, citas, tráfico ni posicionamiento.
 - [ ] La zona de atención aparece como Megalópolis de México.
 - [ ] Los demos se presentan como conceptos visuales o demostraciones cuando corresponda.
+- [ ] NEXO Profesional, NEXO A Medida y NEXO Tienda Inicial muestran dominio .com estándar por 1 año incluido; NEXO Esencial mantiene URL administrada por NEXO26.
 
 ## Contacto
 
@@ -27,6 +28,7 @@ Usa esta lista antes de publicar cambios relevantes.
 - [ ] Filtros de portafolio funcionan sin recargar.
 - [ ] FAQs abren y cierran correctamente.
 - [ ] Videos cargan con controles, `preload="metadata"`, `playsinline` y `muted`.
+- [ ] Videos públicos no tienen pista de audio en el archivo MP4.
 - [ ] No hay autoplay en videos.
 
 ## Responsive

@@ -878,6 +878,22 @@ article p {
   font-size: 1.42rem;
 }
 
+.compare-domain {
+  border: 1px solid var(--nexo-line-light);
+  border-radius: var(--radius);
+  padding: 12px;
+  background: rgba(230, 216, 185, 0.26);
+}
+
+.compare-note {
+  grid-column: 1 / -1;
+  margin: 0;
+  border-top: 1px solid var(--nexo-line-light);
+  padding-top: 12px;
+  color: var(--nexo-gray);
+  font-size: 0.92rem;
+}
+
 .recommender-layout {
   display: grid;
   gap: 18px;
@@ -1002,6 +1018,32 @@ legend {
 .portfolio-category {
   color: var(--nexo-gold-dark);
   font-weight: 900;
+}
+
+.portfolio-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 2px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.portfolio-features li {
+  min-height: 30px;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--nexo-line-light);
+  border-radius: var(--radius);
+  padding: 5px 8px;
+  color: var(--nexo-gray);
+  background: rgba(255, 255, 255, 0.5);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.portfolio-card.is-media-missing {
+  display: none;
 }
 
 .empty-state {
@@ -1399,7 +1441,7 @@ legend {
   }
 
   .compare-result {
-    grid-template-columns: 1.15fr 0.8fr 1fr;
+    grid-template-columns: 1.1fr 0.75fr 0.85fr 1fr;
   }
 
   .process-list {

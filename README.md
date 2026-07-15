@@ -8,7 +8,7 @@ Opción rápida:
 
 1. Abre `index.html` en tu navegador.
 
-Opción recomendada para revisar rutas y videos:
+Opción recomendada para revisar rutas, videos y consola:
 
 ```powershell
 python -m http.server 4291 --bind 127.0.0.1
@@ -28,7 +28,7 @@ assets/css/styles.css
 assets/js/config.js
 assets/js/data.js
 assets/js/main.js
-assets/img/
+assets/img/projects/posters/
 assets/videos/projects/
 ```
 
@@ -54,33 +54,125 @@ Ahí viven:
 - FAQs.
 - Demos de portafolio.
 - Reglas del recomendador.
+- Regla comercial de dominio incluido.
 
 ## Cómo agregar videos de demos
 
-Coloca los videos dentro de:
+Coloca los videos públicos dentro de:
 
 ```text
 assets/videos/projects/
 ```
 
-Los demos actuales usan estos nombres:
+Usa nombres sin espacios ni caracteres especiales, por ejemplo:
 
 ```text
-asador-argentino-demo.mp4
-barberia-premium-demo.mp4
-servicio-local-express-demo.mp4
-vistaelite-optica-demo.mp4
+veterinaria-demo-01.mp4
+veterinaria-demo-02.mp4
 ```
 
-Si cambias el nombre de un video, actualiza su ruta en `assets/js/data.js`.
+Formato recomendado:
 
-Cada video se renderiza con:
+- MP4.
+- Video H.264.
+- Pixel format `yuv420p`.
+- `faststart`.
+- Sin pista de audio.
+- Resolución máxima razonable para web, idealmente 1280px de ancho máximo.
 
-```html
-<video class="demo-video" controls preload="metadata" playsinline muted>
+Comando recomendado con FFmpeg:
+
+```powershell
+ffmpeg -i input.mp4 -vf "scale='min(1280,iw)':-2" -c:v libx264 -preset medium -crf 23 -pix_fmt yuv420p -movflags +faststart -an output.mp4
 ```
 
-No se usa autoplay.
+## Cómo comprobar que un video no tiene audio
+
+Con FFmpeg:
+
+```powershell
+ffmpeg -hide_banner -i assets/videos/projects/video.mp4
+```
+
+El resultado no debe mostrar ninguna línea `Audio:`.
+
+## Cómo generar posters
+
+Los posters públicos se guardan en:
+
+```text
+assets/img/projects/posters/
+```
+
+Formato recomendado: WebP.
+
+Ejemplo:
+
+```powershell
+ffmpeg -ss 00:00:02 -i assets/videos/projects/video.mp4 -frames:v 1 -vf "scale='min(1280,iw)':-2" -compression_level 6 -q:v 70 assets/img/projects/posters/video-poster.webp
+```
+
+Evita fotogramas negros, controles visibles o información sensible.
+
+## Cómo añadir un proyecto al portafolio
+
+Edita `assets/js/data.js` dentro de `projects`.
+
+Ejemplo:
+
+```js
+{
+  title: "Concepto veterinario",
+  displayTitle: "Concepto veterinario 01",
+  category: "Veterinarias y salud",
+  filter: "Veterinarias y salud",
+  type: "Concepto visual",
+  video: "assets/videos/projects/veterinaria-demo-01.mp4",
+  poster: "assets/img/projects/posters/veterinaria-01-poster.webp",
+  description: "Página adaptada a celular para organizar servicios, horarios, ubicación y contacto.",
+  features: ["Servicios", "Horarios", "Ubicación", "WhatsApp"],
+  cta: "Quiero algo similar",
+  whatsappMessage: "Hola, tengo un negocio relacionado con servicios veterinarios y me interesa una página similar a esta demostración."
+}
+```
+
+Usa `type` para clasificar:
+
+- `Proyecto real`
+- `Concepto visual`
+- `Demostración`
+
+No presentes un concepto como cliente real si no está confirmado.
+
+## Cómo editar la regla del dominio
+
+La regla está centralizada en:
+
+```text
+assets/js/data.js
+```
+
+Busca `domainPolicy`.
+
+Actualmente:
+
+- NEXO Esencial conserva URL administrada por NEXO26.
+- NEXO Profesional incluye dominio `.com` estándar por 1 año.
+- NEXO A Medida incluye dominio `.com` estándar por 1 año.
+- NEXO Tienda Inicial incluye dominio `.com` estándar por 1 año.
+
+El costo máximo incluido durante el primer año vive en `domainPolicy.compareNote` y en los textos de notas/FAQ. Si cambia el monto, actualízalo en esos lugares.
+
+## Cómo comprobar rutas en GitHub Pages
+
+Después de publicar, revisa que cada asset responda con código 200:
+
+```text
+https://emis57.github.io/nexo26-digital/assets/videos/projects/nombre-del-video.mp4
+https://emis57.github.io/nexo26-digital/assets/img/projects/posters/nombre-del-poster.webp
+```
+
+No uses rutas locales, `localhost`, `127.0.0.1` ni rutas de Windows dentro de los archivos públicos.
 
 ## Cómo cambiar colores
 
@@ -111,11 +203,32 @@ Edita `assets/js/config.js`.
 7. Folder: `/root`.
 8. Guarda los cambios.
 
-El sitio está preparado para publicarse en:
+Comandos:
+
+```powershell
+git add .
+git commit -m "Actualizar sitio NEXO26 Digital"
+git push origin main
+```
+
+## Cómo verificar la URL pública
+
+Abre:
 
 ```text
 https://emis57.github.io/nexo26-digital/
 ```
+
+Confirma:
+
+- CSS y JavaScript cargan.
+- No hay errores de consola.
+- Los videos reproducen.
+- Ningún video tiene audio.
+- Los posters cargan.
+- Los filtros del portafolio funcionan.
+- El formulario abre WhatsApp.
+- No hay scroll horizontal en móvil.
 
 ## Datos pendientes de confirmar
 

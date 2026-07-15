@@ -225,6 +225,7 @@
     const target = $("#package-compare");
     const pack = (data.webPackages || []).find((item) => item.id === packageId);
     if (!target || !pack) return;
+    const policyNote = data.domainPolicy && data.domainPolicy.compareNote ? data.domainPolicy.compareNote : "";
 
     target.innerHTML = `
       <div>
@@ -235,7 +236,12 @@
         <strong>${escapeHTML(pack.price)}</strong>
         <span>${escapeHTML(pack.delivery)}</span>
       </div>
-      ${featureList(pack.includes.slice(0, 6))}
+      <div class="compare-domain">
+        <span>Dominio</span>
+        <strong>${escapeHTML(pack.domain || "Por definir")}</strong>
+      </div>
+      ${featureList(pack.includes.slice(0, 5))}
+      ${policyNote ? `<p class="compare-note">${escapeHTML(policyNote)}</p>` : ""}
     `;
   }
 
@@ -243,9 +249,10 @@
     const target = $("#portfolio-grid");
     if (!target || !data.projects) return;
 
+    const availableProjects = data.projects.filter((project) => project.active !== false && project.video);
     const projects = filter === "Todos"
-      ? data.projects
-      : data.projects.filter((project) => project.filter === filter);
+      ? availableProjects
+      : availableProjects.filter((project) => project.filter === filter);
 
     if (!projects.length) {
       target.innerHTML = `
@@ -258,29 +265,62 @@
     }
 
     target.innerHTML = projects
-      .map((project) => `
-        <article class="portfolio-card">
-          <video class="demo-video" controls preload="metadata" playsinline muted poster="${escapeHTML(project.poster)}">
-            <source src="${escapeHTML(project.video)}" type="video/mp4" />
-            Tu navegador no soporta video HTML5.
-          </video>
-          <div class="portfolio-content">
-            <span class="card-badge">${escapeHTML(project.type)}</span>
-            <h3>${escapeHTML(project.displayTitle)}</h3>
-            <p class="portfolio-category">${escapeHTML(project.category)}</p>
-            <p>${escapeHTML(project.description)}</p>
-            <a class="button button-card" href="${buildWhatsAppHref(defaultMessage(`un proyecto similar a ${project.displayTitle}`))}" target="_blank" rel="noreferrer">Solicitar algo similar</a>
-          </div>
-        </article>
-      `)
+      .map((project) => {
+        const poster = project.poster ? ` poster="${escapeHTML(project.poster)}"` : "";
+        const features = project.features && project.features.length
+          ? `<ul class="portfolio-features">${project.features.map((feature) => `<li>${escapeHTML(feature)}</li>`).join("")}</ul>`
+          : "";
+        const message = project.whatsappMessage || defaultMessage(`un proyecto similar a ${project.displayTitle}`);
+        const typeClass = String(project.type || "").toLowerCase().replace(/\s+/g, "-");
+
+        return `
+          <article class="portfolio-card">
+            <video class="demo-video" controls muted playsinline preload="metadata"${poster} aria-label="Demostración de ${escapeHTML(project.displayTitle)}">
+              <source src="${escapeHTML(project.video)}" type="video/mp4" />
+              Tu navegador no puede reproducir esta demostración.
+            </video>
+            <div class="portfolio-content">
+              <span class="card-badge project-type-${escapeHTML(typeClass)}">${escapeHTML(project.type)}</span>
+              <h3>${escapeHTML(project.displayTitle)}</h3>
+              <p class="portfolio-category">${escapeHTML(project.category)}</p>
+              <p>${escapeHTML(project.description)}</p>
+              ${features}
+              <a class="button button-card" href="${buildWhatsAppHref(message)}" target="_blank" rel="noreferrer">${escapeHTML(project.cta || "Quiero algo similar")}</a>
+            </div>
+          </article>
+        `;
+      })
       .join("");
+
+    enhancePortfolioVideos(target);
+  }
+
+  function enhancePortfolioVideos(scope = document) {
+    const videos = $$("video.demo-video", scope);
+    videos.forEach((video) => {
+      video.defaultMuted = true;
+      video.muted = true;
+      video.addEventListener("play", () => {
+        videos.forEach((otherVideo) => {
+          if (otherVideo !== video && !otherVideo.paused) {
+            otherVideo.pause();
+          }
+        });
+      });
+      video.addEventListener("error", () => {
+        const card = video.closest(".portfolio-card");
+        if (card) card.classList.add("is-media-missing");
+      });
+    });
   }
 
   function renderPortfolioFilters() {
     const filters = $("#portfolio-filters");
     if (!filters || !data.filters) return;
+    const availableProjects = (data.projects || []).filter((project) => project.active !== false && project.video);
+    const visibleFilters = data.filters.filter((filter) => filter === "Todos" || availableProjects.some((project) => project.filter === filter));
 
-    filters.innerHTML = data.filters
+    filters.innerHTML = visibleFilters
       .map((filter, index) => `
         <button class="filter-button" type="button" aria-pressed="${index === 0 ? "true" : "false"}" data-filter="${escapeHTML(filter)}">
           ${escapeHTML(filter)}
