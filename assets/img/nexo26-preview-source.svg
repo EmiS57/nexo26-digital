@@ -1,35 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
   <title id="title">NEXO26 Digital</title>
-  <desc id="desc">Preview social para páginas web express para negocios locales.</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#050505"/>
-      <stop offset="0.58" stop-color="#101010"/>
-      <stop offset="1" stop-color="#050505"/>
-    </linearGradient>
-    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#F3D777"/>
-      <stop offset="1" stop-color="#D4AF37"/>
-    </linearGradient>
-  </defs>
-  <rect width="1200" height="630" fill="url(#bg)"/>
-  <circle cx="1030" cy="120" r="250" fill="#D4AF37" opacity="0.10"/>
-  <circle cx="105" cy="520" r="220" fill="#D4AF37" opacity="0.08"/>
-  <rect x="72" y="72" width="1056" height="486" rx="34" fill="#101010" opacity="0.86" stroke="rgba(255,255,255,0.14)"/>
-  <rect x="104" y="104" width="132" height="78" rx="20" fill="url(#gold)"/>
-  <text x="170" y="153" text-anchor="middle" fill="#151006" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="900">NX26</text>
-  <text x="104" y="268" fill="#F5F5F5" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="82" font-weight="900" letter-spacing="0">NEXO26 Digital</text>
-  <text x="108" y="328" fill="#D7D7DC" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="34" font-weight="600">Páginas web express para negocios locales</text>
-  <rect x="108" y="382" width="236" height="54" rx="27" fill="rgba(212,175,55,0.16)" stroke="rgba(212,175,55,0.44)"/>
-  <text x="226" y="417" text-anchor="middle" fill="#F3D777" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="900">Desde $699 MXN</text>
-  <text x="108" y="492" fill="#A1A1AA" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="27" font-weight="600">WhatsApp: +52 55 1797 3390</text>
-  <text x="108" y="532" fill="#A1A1AA" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="500">CDMX / Estado de México · Entrega 48–72 horas</text>
-  <g opacity="0.92">
-    <rect x="795" y="174" width="240" height="330" rx="34" fill="#070707" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
-    <rect x="819" y="212" width="192" height="36" rx="18" fill="rgba(245,245,245,0.18)"/>
-    <rect x="819" y="272" width="150" height="18" rx="9" fill="rgba(245,245,245,0.14)"/>
-    <rect x="819" y="306" width="172" height="18" rx="9" fill="rgba(245,245,245,0.10)"/>
-    <rect x="819" y="362" width="150" height="48" rx="24" fill="#2BD576"/>
-    <text x="894" y="393" text-anchor="middle" fill="#06160F" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="19" font-weight="900">WhatsApp</text>
-  </g>
+  <desc id="desc">Vista previa social para páginas web y soluciones digitales.</desc>
+  <rect width="1200" height="630" fill="#0A0A0A"/>
+  <path d="M-80 650 470 0M40 650 590 0M160 650 710 0M280 650 830 0M400 650 950 0M520 650 1070 0M640 650 1190 0" stroke="#141414" stroke-width="2"/>
+  <rect x="72" y="70" width="1056" height="490" rx="28" fill="#171717" stroke="#2B2B2B" stroke-width="2"/>
+  <rect x="122" y="122" width="264" height="56" rx="18" fill="#241F16" stroke="#B99752" stroke-width="2"/>
+  <text x="150" y="158" fill="#E6D8B9" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="800">NEXO26 DIGITAL</text>
+  <text x="122" y="270" fill="#FCFBF8" font-family="Segoe UI, Arial, sans-serif" font-size="64" font-weight="800">Tu negocio, más claro.</text>
+  <text x="122" y="346" fill="#FCFBF8" font-family="Segoe UI, Arial, sans-serif" font-size="64" font-weight="800">Tu atención, más profesional.</text>
+  <text x="126" y="418" fill="#A8A29A" font-family="Segoe UI, Arial, sans-serif" font-size="29">Páginas web y soluciones digitales para negocios de</text>
+  <text x="126" y="456" fill="#A8A29A" font-family="Segoe UI, Arial, sans-serif" font-size="29">la Megalópolis de México.</text>
+  <rect x="770" y="198" width="288" height="222" rx="20" fill="#0F0F0F" stroke="#34312A" stroke-width="2"/>
+  <text x="808" y="262" fill="#B99752" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800">Soluciones</text>
+  <circle cx="813" cy="309" r="7" fill="#B99752"/>
+  <text x="836" y="318" fill="#F7F5F0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Páginas web</text>
+  <circle cx="813" cy="351" r="7" fill="#B99752"/>
+  <text x="836" y="360" fill="#F7F5F0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Ventas digitales</text>
+  <circle cx="813" cy="393" r="7" fill="#B99752"/>
+  <text x="836" y="402" fill="#F7F5F0" font-family="Segoe UI, Arial, sans-serif" font-size="24">Presencia local</text>
+  <rect x="122" y="492" width="304" height="40" rx="16" fill="#2A261D" stroke="#3C3426"/>
+  <text x="150" y="519" fill="#E6D8B9" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="800">Soluciones desde $999 MXN</text>
 </svg>

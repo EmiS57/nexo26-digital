@@ -1,98 +1,127 @@
 # NEXO26 Digital
 
-Sitio estático oficial de NEXO26 Digital: páginas web express para negocios locales.
+Sitio estático oficial de NEXO26 Digital: páginas web y soluciones digitales para negocios de la Megalópolis de México.
 
-## Descripción
+## Cómo abrir el proyecto localmente
 
-NEXO26 Digital ofrece páginas informativas profesionales para negocios locales que necesitan mejorar su presentación, mostrar sus servicios y facilitar el contacto por WhatsApp.
+Opción rápida:
 
-Servicio principal:
+1. Abre `index.html` en tu navegador.
 
-- Página Express Preventa
-- Desde $699 MXN
-- Entrega estimada: 48–72 horas
-- Zona: CDMX / Estado de México
+Opción recomendada para revisar rutas y videos:
 
-## Archivos del sitio
+```powershell
+python -m http.server 4291 --bind 127.0.0.1
+```
 
-```txt
+Después entra a:
+
+```text
+http://127.0.0.1:4291/
+```
+
+## Estructura principal
+
+```text
 index.html
-styles.css
-script.js
-README.md
-PUBLICAR_GITHUB.md
-CHECKLIST_OPERACION.md
-.nojekyll
-assets/
-  videos/
-  img/
+assets/css/styles.css
+assets/js/config.js
+assets/js/data.js
+assets/js/main.js
+assets/img/
+assets/videos/projects/
 ```
 
-## Cómo abrir localmente
+## Cómo cambiar WhatsApp
 
-Puedes abrir `index.html` directamente en el navegador.
+Edita `assets/js/config.js`.
 
-Para probarlo con un servidor local:
+- `whatsappPublicLink`: enlace público principal de WhatsApp.
+- `whatsappNumber`: número en formato internacional sin espacios si quieres mensajes prellenados por `wa.me`.
+- `displayPhone`: número visible en el sitio. Si queda vacío, no se muestra.
 
-```bash
-python -m http.server 8000
+Si `whatsappNumber` está vacío, el sitio usa `whatsappPublicLink`.
+
+## Cómo cambiar precios, textos y servicios
+
+Edita `assets/js/data.js`.
+
+Ahí viven:
+
+- Paquetes de páginas web.
+- Servicios de ventas y reservaciones.
+- Servicios de presencia y soporte.
+- FAQs.
+- Demos de portafolio.
+- Reglas del recomendador.
+
+## Cómo agregar videos de demos
+
+Coloca los videos dentro de:
+
+```text
+assets/videos/projects/
 ```
 
-Después abre:
+Los demos actuales usan estos nombres:
 
-```txt
-http://localhost:8000
+```text
+asador-argentino-demo.mp4
+barberia-premium-demo.mp4
+servicio-local-express-demo.mp4
+vistaelite-optica-demo.mp4
 ```
 
-## WhatsApp
+Si cambias el nombre de un video, actualiza su ruta en `assets/js/data.js`.
 
-Los botones principales usan:
+Cada video se renderiza con:
 
-```txt
-https://wa.link/398qm4
+```html
+<video class="demo-video" controls preload="metadata" playsinline muted>
 ```
 
-El formulario usa el número directo en `script.js`:
+No se usa autoplay.
 
-```js
-const WHATSAPP_NUMBER = "525517973390";
+## Cómo cambiar colores
+
+Edita las variables CSS al inicio de:
+
+```text
+assets/css/styles.css
 ```
 
-## Videos de demos
+Los colores principales están definidos como `--nexo-black`, `--nexo-paper`, `--nexo-gold` y variables relacionadas.
 
-Los videos deben estar en:
+## Cómo ocultar o mostrar redes sociales
 
-```txt
-assets/videos/
+Edita `assets/js/config.js`.
+
+- Instagram se muestra con `instagram`.
+- Facebook está preparado como dato de configuración, pero si queda vacío no debe mostrarse.
+- Teléfono y correo sólo aparecen si `displayPhone` o `email` tienen valor.
+
+## Cómo publicar en GitHub Pages
+
+1. Confirma que `index.html` esté en la raíz del repositorio.
+2. Haz commit de los cambios.
+3. Sube a la rama `main`.
+4. En GitHub, entra a Settings > Pages.
+5. Selecciona Deploy from a branch.
+6. Branch: `main`.
+7. Folder: `/root`.
+8. Guarda los cambios.
+
+El sitio está preparado para publicarse en:
+
+```text
+https://emis57.github.io/nexo26-digital/
 ```
 
-Nombres esperados:
+## Datos pendientes de confirmar
 
-- `asador-argentino-demo.mp4`
-- `barberia-premium-demo.mp4`
-- `servicio-local-express-demo.mp4`
-- `vistaelite-optica-demo.mp4`
+Antes de usar el sitio como versión definitiva, confirma en `assets/js/config.js`:
 
-Si cambias el nombre de un video, actualiza la ruta en `index.html`.
-
-## Imágenes para preview
-
-La vista previa para WhatsApp/Facebook usa:
-
-```txt
-assets/img/nexo26-preview.jpg
-```
-
-El favicon usa:
-
-```txt
-assets/img/favicon.png
-```
-
-También se incluyen SVG fuente editables en `assets/img/`.
-
-## Publicación
-
-Este sitio está preparado para GitHub Pages. `index.html` debe estar en la raíz del repositorio.
-
-Consulta `PUBLICAR_GITHUB.md` para los pasos completos de publicación.
+- Número de WhatsApp si se quiere mensaje prellenado.
+- Teléfono visible, si debe mostrarse.
+- Correo visible, si debe mostrarse.
+- ID de analítica, si se va a instalar.
