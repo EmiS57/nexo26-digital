@@ -80,7 +80,9 @@
       "WhatsApp",
       "FAQ"
     ],
-    "status": "Publicado",
+    "status": "published",
+    "published": true,
+    "featured": false,
     "preview": "../kalma-spa-demo/assets/img/social-preview.webp",
     "liveUrl": "../kalma-spa-demo/",
     "cta": "Quiero una página similar para mi spa"
@@ -100,7 +102,9 @@
       "Seguimiento",
       "Contacto directo"
     ],
-    "status": "Publicado",
+    "status": "draft",
+    "published": false,
+    "featured": false,
     "preview": "nubo-veterinaria/assets/img/social-preview.svg",
     "liveUrl": "nubo-veterinaria/",
     "cta": "Quiero una página similar para mi veterinaria"
@@ -120,7 +124,9 @@
       "Ortodoncia",
       "Ubicación"
     ],
-    "status": "Publicado",
+    "status": "draft",
+    "published": false,
+    "featured": false,
     "preview": "claria-dental/assets/img/social-preview.svg",
     "liveUrl": "claria-dental/",
     "cta": "Quiero una página similar para mi consultorio"
@@ -140,7 +146,9 @@
       "Grupos",
       "Eventos"
     ],
-    "status": "Publicado",
+    "status": "draft",
+    "published": false,
+    "featured": false,
     "preview": "lumbre-cauce/assets/img/social-preview.svg",
     "liveUrl": "lumbre-cauce/",
     "cta": "Quiero una página similar para mi restaurante"
@@ -160,7 +168,9 @@
       "Instalaciones",
       "Primera visita"
     ],
-    "status": "Publicado",
+    "status": "draft",
+    "published": false,
+    "featured": false,
     "preview": "eje-norte/assets/img/social-preview.svg",
     "liveUrl": "eje-norte/",
     "cta": "Quiero una página similar para mi gimnasio"
@@ -180,7 +190,9 @@
       "Ajustes",
       "Estilo"
     ],
-    "status": "Publicado",
+    "status": "draft",
+    "published": false,
+    "featured": false,
     "preview": "senda-nitida/assets/img/social-preview.svg",
     "liveUrl": "senda-nitida/",
     "cta": "Quiero una página similar para mi óptica"
@@ -200,7 +212,9 @@
       "Carrito",
       "Checkout simulado"
     ],
-    "status": "Publicado",
+    "status": "draft",
+    "published": false,
+    "featured": false,
     "preview": "surco-lento/assets/img/social-preview.svg",
     "liveUrl": "surco-lento/",
     "cta": "Quiero una tienda similar"
@@ -220,19 +234,25 @@
       "Proceso",
       "WhatsApp"
     ],
-    "status": "Publicado",
+    "status": "draft",
+    "published": false,
+    "featured": false,
     "preview": "nodo-termia/assets/img/social-preview.svg",
     "liveUrl": "nodo-termia/",
     "cta": "Quiero una página sencilla para mi servicio"
   }
 ];
-      const filters = ["Todos","Esencial","Profesional","A Medida","Tienda","Salud","Restaurantes","Bienestar","Fitness","Comercio","Servicios"].filter((filter) => filter === "Todos" || concepts.some((item) => item.package.includes(filter) || item.packageType === filter || item.category === filter || item.industry === filter));
+      const publishedConcepts = concepts.filter((item) => item.status === "published" && item.published !== false);
+      const filters = ["Todos","Esencial","Profesional","A Medida","Tienda","Salud","Restaurantes","Bienestar","Fitness","Comercio","Servicios"].filter((filter) => filter === "Todos" || publishedConcepts.some((item) => item.package.includes(filter) || item.packageType === filter || item.category === filter || item.industry === filter));
       const grid = document.getElementById("catalog-grid");
       const filterBar = document.getElementById("filters");
       const nexo = "https://wa.me/message/ZPTEPGUHA3O2B1";
+      const statusLabels = {
+        published: "Publicado"
+      };
       function render(filter = "Todos") {
-        const visible = filter === "Todos" ? concepts : concepts.filter((item) => item.package.includes(filter) || item.packageType === filter || item.category === filter || item.industry === filter);
-        grid.innerHTML = visible.map((item) => '<article class="card"><img src="' + item.preview + '" alt="" loading="lazy" /><div class="card-body"><div class="meta"><span>' + item.industry + '</span><span>' + item.package + '</span><span>' + item.type + '</span><span>' + item.status + '</span></div><h2>' + item.name + '</h2><p>' + item.description + '</p><div class="features">' + item.functions.map((feature) => '<span>' + feature + '</span>').join("") + '</div><div class="actions"><a class="button primary" href="' + item.liveUrl + '">Enlace en vivo</a><a class="button ghost" href="' + nexo + '" target="_blank" rel="noopener noreferrer">CTA NEXO26</a></div></div></article>').join("");
+        const visible = filter === "Todos" ? publishedConcepts : publishedConcepts.filter((item) => item.package.includes(filter) || item.packageType === filter || item.category === filter || item.industry === filter);
+        grid.innerHTML = visible.map((item) => '<article class="card"><img src="' + item.preview + '" alt="" loading="lazy" /><div class="card-body"><div class="meta"><span>' + item.industry + '</span><span>' + item.package + '</span><span>' + item.type + '</span><span>' + (statusLabels[item.status] || item.status) + '</span></div><h2>' + item.name + '</h2><p>' + item.description + '</p><div class="features">' + item.functions.map((feature) => '<span>' + feature + '</span>').join("") + '</div><div class="actions"><a class="button primary" href="' + item.liveUrl + '">Enlace en vivo</a><a class="button ghost" href="' + nexo + '" target="_blank" rel="noopener noreferrer">CTA NEXO26</a></div></div></article>').join("");
       }
       filterBar.innerHTML = filters.map((filter, index) => '<button type="button" aria-pressed="' + (index === 0) + '" data-filter="' + filter + '">' + filter + '</button>').join("");
       filterBar.addEventListener("click", (event) => {

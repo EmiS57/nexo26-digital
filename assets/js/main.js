@@ -249,7 +249,7 @@
     const target = $("#portfolio-grid");
     if (!target || !data.projects) return;
 
-    const availableProjects = data.projects.filter((project) => project.active !== false && (project.video || project.liveUrl));
+    const availableProjects = data.projects.filter((project) => project.active !== false && project.status === "published" && project.published !== false && (project.video || project.liveUrl));
     const projects = filter === "Todos"
       ? availableProjects
       : availableProjects.filter((project) => project.filter === filter);
@@ -335,7 +335,7 @@
   function renderPortfolioFilters() {
     const filters = $("#portfolio-filters");
     if (!filters || !data.filters) return;
-    const availableProjects = (data.projects || []).filter((project) => project.active !== false && (project.video || project.liveUrl));
+    const availableProjects = (data.projects || []).filter((project) => project.active !== false && project.status === "published" && project.published !== false && (project.video || project.liveUrl));
     const visibleFilters = data.filters.filter((filter) => filter === "Todos" || availableProjects.some((project) => project.filter === filter));
 
     filters.innerHTML = visibleFilters

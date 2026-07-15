@@ -318,8 +318,9 @@ window.NEXO_DATA = {
       features: ["Atención", "Prevención", "Orientador", "FAQ", "Contacto"],
       cta: "Quiero algo similar",
       whatsappMessage: "Hola, tengo una veterinaria o servicio de salud animal y me interesa una página similar al concepto NUBO Centro Veterinario.",
-      status: "published",
-      featured: true
+      status: "draft",
+      published: false,
+      featured: false
     },
     {
       id: "claria-dental",
@@ -338,8 +339,9 @@ window.NEXO_DATA = {
       features: ["Tratamientos", "Primera consulta", "Orientador", "Ubicación", "FAQ"],
       cta: "Quiero algo similar",
       whatsappMessage: "Hola, tengo un consultorio dental y me interesa una página similar al concepto CLARIA Estudio Dental.",
-      status: "published",
-      featured: true
+      status: "draft",
+      published: false,
+      featured: false
     },
     {
       id: "lumbre-cauce",
@@ -358,8 +360,9 @@ window.NEXO_DATA = {
       features: ["Inicio", "Menú", "Experiencia", "Eventos", "Consulta"],
       cta: "Quiero algo similar",
       whatsappMessage: "Hola, tengo un restaurante y me interesa una página similar al concepto LUMBRE CAUCE.",
-      status: "published",
-      featured: true
+      status: "draft",
+      published: false,
+      featured: false
     },
     {
       id: "eje-norte",
@@ -378,8 +381,9 @@ window.NEXO_DATA = {
       features: ["Modalidades", "Instalaciones", "Horarios", "Orientador", "FAQ"],
       cta: "Quiero algo similar",
       whatsappMessage: "Hola, tengo un gimnasio o estudio de entrenamiento y me interesa una página similar al concepto EJE NORTE.",
-      status: "published",
-      featured: true
+      status: "draft",
+      published: false,
+      featured: false
     },
     {
       id: "senda-nitida",
@@ -398,8 +402,9 @@ window.NEXO_DATA = {
       features: ["Estilos", "Servicios", "Examen visual", "Ajustes", "FAQ"],
       cta: "Quiero algo similar",
       whatsappMessage: "Hola, tengo una óptica y me interesa una página similar al concepto SENDA NÍTIDA.",
-      status: "published",
-      featured: true
+      status: "draft",
+      published: false,
+      featured: false
     },
     {
       id: "surco-lento",
@@ -418,8 +423,9 @@ window.NEXO_DATA = {
       features: ["Catálogo", "Carrito", "Checkout simulado", "localStorage", "Entrega"],
       cta: "Quiero una tienda similar",
       whatsappMessage: "Hola, quiero una tienda inicial similar al concepto SURCO LENTO Objetos.",
-      status: "published",
-      featured: true
+      status: "draft",
+      published: false,
+      featured: false
     },
     {
       id: "nodo-termia",
@@ -438,8 +444,9 @@ window.NEXO_DATA = {
       features: ["Servicios", "Cobertura", "Proceso", "WhatsApp", "Alcance esencial"],
       cta: "Quiero una página sencilla",
       whatsappMessage: "Hola, tengo un negocio de servicio técnico y me interesa una página sencilla similar al concepto NODO TERMIA.",
-      status: "published",
-      featured: true
+      status: "draft",
+      published: false,
+      featured: false
     },
     {
       id: "veterinaria-demo-01",

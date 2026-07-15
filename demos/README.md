@@ -2,6 +2,8 @@
 
 Catálogo de conceptos base por giro. Cada demo usa identidad ficticia, rutas relativas compatibles con GitHub Pages y un shell compartido para explicar alcance.
 
+Los conceptos en estado draft permanecen ocultos del catálogo público hasta recibir aprobación visual, comercial y técnica.
+
 ## Agregar un nuevo concepto
 
 1. Verifica el nombre con búsqueda exacta y documenta el resultado en `NAME_CHECKS.md`.
