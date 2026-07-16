@@ -1,0 +1,52 @@
+window.DEMO_CONFIG = {
+  "id": "casa-brasa-restaurante",
+  "slug": "casa-brasa-restaurante",
+  "brandName": "Casa Brasa Cocina",
+  "descriptor": "Cocina",
+  "tagline": "Mesa, fuego y decisión rápida.",
+  "industry": "Restaurante",
+  "category": "Restaurantes",
+  "conceptType": "Concepto base",
+  "packageName": "NEXO A Medida",
+  "packagePrice": "$3,999 MXN",
+  "demoMode": true,
+  "status": "draft",
+  "published": false,
+  "featured": false,
+  "businessWhatsapp": "",
+  "businessDisplayPhone": "",
+  "businessEmail": "",
+  "businessAddress": "",
+  "businessZone": "",
+  "businessSchedule": "",
+  "businessInstagram": "",
+  "businessFacebook": "",
+  "businessMapUrl": "",
+  "nexoSiteUrl": "../../?utm_source=demo&utm_medium=referral&utm_campaign=casa-brasa-restaurante",
+  "nexoWhatsappUrl": "https://wa.me/message/ZPTEPGUHA3O2B1",
+  "contextualMessage": "Hola, quiero una solución similar al concepto Casa Brasa para un negocio de Restaurante.",
+  "packageScope": {
+    "sections": "Página larga o hasta 3 páginas.",
+    "services": "Hasta 15 servicios o contenidos.",
+    "revisions": "Tres rondas consolidadas.",
+    "publication": "12 meses",
+    "delivery": "Entrega entre 5 y 7 días hábiles después de anticipo y materiales completos.",
+    "payment": "$2,400 para comenzar y $1,599 antes de publicar.",
+    "domain": "Dominio .com estándar por un año incluido, sujeto a disponibilidad y política vigente."
+  },
+  "representedFeatures": [
+    "Inicio",
+    "Menú",
+    "Experiencia",
+    "Filtros",
+    "CTA NEXO26"
+  ],
+  "notIncluded": [
+    "Reservación automática",
+    "Pago en línea",
+    "Inventario",
+    "Sistema de lealtad",
+    "Integraciones a terceros"
+  ],
+  "commercialNotice": "Nombre, identidad, contenidos y datos utilizados exclusivamente con fines demostrativos. El alcance final depende de materiales, aprobación y configuración real del negocio."
+};

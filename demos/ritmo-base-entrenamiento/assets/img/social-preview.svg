@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title>Ritmo Base Entrenamiento</title>
+  <desc>Vista previa social demostrativa de Ritmo Base.</desc>
+  <rect width="1200" height="630" fill="#F2F4EE"/>
+  <rect x="64" y="64" width="1072" height="502" rx="24" fill="#FFFFFF" stroke="#233D31" stroke-width="4"/>
+  <text x="104" y="155" fill="#233D31" font-size="36" font-family="Arial, sans-serif" font-weight="700">Concepto base · NEXO Profesional</text>
+  <text x="104" y="275" fill="#17201B" font-size="86" font-family="Arial, sans-serif" font-weight="800">Ritmo Base</text>
+  <text x="104" y="350" fill="#59665F" font-size="44" font-family="Arial, sans-serif">Entrenamiento</text>
+  <text x="104" y="460" fill="#17201B" font-size="34" font-family="Arial, sans-serif">Entrena con estructura, no con promesas.</text>
+  <circle cx="980" cy="320" r="104" fill="#DCE5D6"/>
+  <path d="M900 330c40-82 122-82 162 0" fill="none" stroke="#233D31" stroke-width="18" stroke-linecap="round"/>
+  <path d="M925 280h112M950 236h62" stroke="#8EA65D" stroke-width="14" stroke-linecap="round"/>
+</svg>

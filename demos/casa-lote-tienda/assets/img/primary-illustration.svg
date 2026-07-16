@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title">
+  <title>Casa Lote illustration</title>
+  <rect width="160" height="160" rx="18" fill="#FFFDF8"/>
+  <rect x="34" y="42" width="36" height="36" rx="8" fill="#D9C9B3" stroke="#8C5543" stroke-width="3"/><rect x="88" y="42" width="36" height="36" rx="8" fill="#FFFDF8" stroke="#899078" stroke-width="3"/><rect x="34" y="96" width="36" height="36" rx="8" fill="#FFFDF8" stroke="#899078" stroke-width="3"/><rect x="88" y="96" width="36" height="36" rx="8" fill="#D9C9B3" stroke="#8C5543" stroke-width="3"/><path d="M52 60h54M52 114h54" stroke="#B86E50" stroke-width="5" stroke-linecap="round"/>
+</svg>

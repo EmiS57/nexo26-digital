@@ -48,3 +48,18 @@ https://emis57.github.io/nexo26-digital/
 ```
 
 Si el navegador conserva una versión anterior, prueba con recarga forzada.
+
+## URL corta sin usuario de GitHub
+
+GitHub Pages publica este repositorio como proyecto, por eso la URL tecnica conserva el usuario:
+
+```text
+https://emis57.github.io/nexo26-digital/
+```
+
+Para retirar `emis57` del enlace visible se necesita una de estas opciones:
+
+- Configurar un dominio propio, por ejemplo `https://nexo26digital.com/`.
+- Publicar desde una cuenta u organizacion cuyo usuario sea `nexo26digital`.
+
+No crear ni subir archivo `CNAME` hasta confirmar propiedad del dominio y DNS. Mientras tanto, usar enlaces relativos dentro del sitio para que los CTAs internos no repitan el usuario de GitHub.

@@ -2,6 +2,8 @@
 
 Catálogo de conceptos base por giro. Cada demo usa identidad ficticia, rutas relativas compatibles con GitHub Pages y un shell compartido para explicar alcance.
 
+Kalma Spa se conserva en el repositorio solo como ruta directa no indexable; no debe presentarse como demo pública de NEXO26 sin permiso del propietario.
+
 Los conceptos en estado draft permanecen ocultos del catálogo público hasta recibir aprobación visual, comercial y técnica.
 
 ## Agregar un nuevo concepto
@@ -17,7 +19,6 @@ Los conceptos en estado draft permanecen ocultos del catálogo público hasta re
 
 | Concepto | Slug | Paquete | Giro |
 | --- | --- | --- | --- |
-| Kalma Spa | ../kalma-spa-demo/ | NEXO Profesional | Belleza y bienestar |
 | NUBO Centro Veterinario | nubo-veterinaria | NEXO Profesional | Veterinaria |
 | CLARIA Estudio Dental | claria-dental | NEXO Profesional | Dental |
 | LUMBRE CAUCE | lumbre-cauce | NEXO A Medida | Restaurante |
@@ -25,6 +26,13 @@ Los conceptos en estado draft permanecen ocultos del catálogo público hasta re
 | SENDA NÍTIDA Óptica | senda-nitida | NEXO Profesional | Óptica |
 | SURCO LENTO Objetos | surco-lento | NEXO Tienda Inicial | Tienda |
 | NODO TERMIA Servicio Técnico | nodo-termia | NEXO Esencial | Servicio técnico |
+| Huella Clara Centro Veterinario | huella-clara-veterinaria | NEXO Profesional | Veterinaria |
+| Arco Claro Clínica Dental | arco-claro-dental | NEXO Profesional | Dental |
+| Casa Brasa Cocina | casa-brasa-restaurante | NEXO A Medida | Restaurante |
+| Ritmo Base Entrenamiento | ritmo-base-entrenamiento | NEXO Profesional | Gimnasio |
+| Foco Vivo Óptica | foco-vivo-optica | NEXO Profesional | Óptica |
+| Casa Lote Objetos y Regalos | casa-lote-tienda | NEXO Tienda Inicial | Tienda |
+| Clima Claro Servicio Técnico | clima-claro-servicio | NEXO Esencial | Servicio técnico |
 
 ## Shell compartido
 

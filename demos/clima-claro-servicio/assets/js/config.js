@@ -1,0 +1,53 @@
+window.DEMO_CONFIG = {
+  "id": "clima-claro-servicio",
+  "slug": "clima-claro-servicio",
+  "brandName": "Clima Claro Instalación y Mantenimiento",
+  "descriptor": "Instalación y Mantenimiento",
+  "tagline": "Información clara antes de solicitar servicio.",
+  "industry": "Servicio técnico",
+  "category": "Servicios",
+  "conceptType": "Concepto base",
+  "packageName": "NEXO Esencial",
+  "packagePrice": "$999 MXN",
+  "demoMode": true,
+  "status": "draft",
+  "published": false,
+  "featured": false,
+  "businessWhatsapp": "",
+  "businessDisplayPhone": "",
+  "businessEmail": "",
+  "businessAddress": "",
+  "businessZone": "",
+  "businessSchedule": "",
+  "businessInstagram": "",
+  "businessFacebook": "",
+  "businessMapUrl": "",
+  "nexoSiteUrl": "../../?utm_source=demo&utm_medium=referral&utm_campaign=clima-claro-servicio",
+  "nexoWhatsappUrl": "https://wa.me/message/ZPTEPGUHA3O2B1",
+  "contextualMessage": "Hola, quiero una solución similar al concepto Clima Claro para un negocio de Servicio técnico.",
+  "packageScope": {
+    "sections": "Una vista, hasta 5 secciones.",
+    "services": "Hasta 6 servicios.",
+    "revisions": "Una ronda consolidada.",
+    "publication": "12 meses",
+    "delivery": "Primera versión entre 48 y 72 horas hábiles después de pago y materiales completos.",
+    "payment": "Pago completo.",
+    "domain": "URL administrada por NEXO26. Dominio propio disponible como adicional."
+  },
+  "representedFeatures": [
+    "5 secciones",
+    "6 servicios",
+    "Cobertura",
+    "Constructor",
+    "Contacto"
+  ],
+  "notIncluded": [
+    "Dominio propio incluido",
+    "Varias páginas",
+    "Pago en línea",
+    "Reservación",
+    "Mapa complejo",
+    "Cotización automática"
+  ],
+  "commercialNotice": "Nombre, identidad, contenidos y datos utilizados exclusivamente con fines demostrativos. El alcance final depende de materiales, aprobación y configuración real del negocio."
+};

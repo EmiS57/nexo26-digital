@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title">
+  <title>Ritmo Base illustration</title>
+  <rect width="160" height="160" rx="18" fill="#FFFFFF"/>
+  <path d="M42 106h76M42 82h76M42 58h76" stroke="#233D31" stroke-width="9" stroke-linecap="round"/><path d="M56 44v78M80 44v78M104 44v78" stroke="#8EA65D" stroke-width="5" stroke-linecap="round"/><circle cx="80" cy="82" r="15" fill="#D6B24A"/>
+</svg>

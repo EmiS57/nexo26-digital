@@ -187,6 +187,12 @@ https://emis57.github.io/nexo26-digital/assets/img/projects/posters/nombre-del-p
 
 No uses rutas locales, `localhost`, `127.0.0.1` ni rutas de Windows dentro de los archivos públicos.
 
+## URL corta de NEXO26
+
+Los enlaces internos de las demos nuevas hacia NEXO26 deben mantenerse relativos para no repetir el usuario de GitHub en CTAs visibles.
+
+La URL de GitHub Pages para este repositorio conserva el formato `https://emis57.github.io/nexo26-digital/`. Para que el enlace publico quede corto, por ejemplo `https://nexo26digital.com/`, se requiere configurar un dominio propio con DNS y GitHub Pages. No agregues `CNAME` hasta confirmar que el dominio pertenece a NEXO26 y que los registros DNS ya apuntan a GitHub Pages.
+
 ## Cómo cambiar colores
 
 Edita las variables CSS al inicio de:

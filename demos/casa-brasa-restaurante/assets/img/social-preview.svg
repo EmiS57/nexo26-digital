@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title>Casa Brasa Cocina</title>
+  <desc>Vista previa social demostrativa de Casa Brasa.</desc>
+  <rect width="1200" height="630" fill="#F7F1E7"/>
+  <rect x="64" y="64" width="1072" height="502" rx="24" fill="#FFFDFC" stroke="#7E2F24" stroke-width="4"/>
+  <text x="104" y="155" fill="#7E2F24" font-size="36" font-family="Arial, sans-serif" font-weight="700">Concepto base · NEXO A Medida</text>
+  <text x="104" y="275" fill="#2B211C" font-size="86" font-family="Arial, sans-serif" font-weight="800">Casa Brasa</text>
+  <text x="104" y="350" fill="#6B5C52" font-size="44" font-family="Arial, sans-serif">Cocina</text>
+  <text x="104" y="460" fill="#2B211C" font-size="34" font-family="Arial, sans-serif">Mesa, fuego y decisión rápida.</text>
+  <circle cx="980" cy="320" r="104" fill="#E8D3B7"/>
+  <path d="M900 330c40-82 122-82 162 0" fill="none" stroke="#7E2F24" stroke-width="18" stroke-linecap="round"/>
+  <path d="M925 280h112M950 236h62" stroke="#C58A4B" stroke-width="14" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,52 @@
+window.DEMO_CONFIG = {
+  "id": "foco-vivo-optica",
+  "slug": "foco-vivo-optica",
+  "brandName": "Foco Vivo Óptica",
+  "descriptor": "Óptica",
+  "tagline": "Elige armazón con información, no con presión.",
+  "industry": "Óptica",
+  "category": "Comercio",
+  "conceptType": "Concepto base",
+  "packageName": "NEXO Profesional",
+  "packagePrice": "$2,299 MXN",
+  "demoMode": true,
+  "status": "draft",
+  "published": false,
+  "featured": false,
+  "businessWhatsapp": "",
+  "businessDisplayPhone": "",
+  "businessEmail": "",
+  "businessAddress": "",
+  "businessZone": "",
+  "businessSchedule": "",
+  "businessInstagram": "",
+  "businessFacebook": "",
+  "businessMapUrl": "",
+  "nexoSiteUrl": "../../?utm_source=demo&utm_medium=referral&utm_campaign=foco-vivo-optica",
+  "nexoWhatsappUrl": "https://wa.me/message/ZPTEPGUHA3O2B1",
+  "contextualMessage": "Hola, quiero una solución similar al concepto Foco Vivo para un negocio de Óptica.",
+  "packageScope": {
+    "sections": "Una página, hasta 8 secciones.",
+    "services": "Hasta 10 servicios.",
+    "revisions": "Dos rondas consolidadas.",
+    "publication": "12 meses",
+    "delivery": "Primera versión alrededor de 72 horas hábiles después de anticipo y materiales completos.",
+    "payment": "$1,600 para comenzar y $699 antes de publicar.",
+    "domain": "Dominio .com estándar por un año incluido, sujeto a disponibilidad y política vigente."
+  },
+  "representedFeatures": [
+    "Servicios",
+    "Explorador",
+    "Proceso",
+    "FAQ",
+    "Contacto"
+  ],
+  "notIncluded": [
+    "Pago en línea",
+    "Reservación avanzada",
+    "Historia clínica",
+    "Diagnóstico automático",
+    "Integraciones complejas"
+  ],
+  "commercialNotice": "Nombre, identidad, contenidos y datos utilizados exclusivamente con fines demostrativos. El alcance final depende de materiales, aprobación y configuración real del negocio."
+};

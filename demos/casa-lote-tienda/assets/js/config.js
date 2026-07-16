@@ -1,0 +1,52 @@
+window.DEMO_CONFIG = {
+  "id": "casa-lote-tienda",
+  "slug": "casa-lote-tienda",
+  "brandName": "Casa Lote Objetos y Regalos",
+  "descriptor": "Objetos y Regalos",
+  "tagline": "Una tienda pequeña también merece una compra clara.",
+  "industry": "Tienda",
+  "category": "Comercio",
+  "conceptType": "Concepto base",
+  "packageName": "NEXO Tienda Inicial",
+  "packagePrice": "Desde $6,999 MXN",
+  "demoMode": true,
+  "status": "draft",
+  "published": false,
+  "featured": false,
+  "businessWhatsapp": "",
+  "businessDisplayPhone": "",
+  "businessEmail": "",
+  "businessAddress": "",
+  "businessZone": "",
+  "businessSchedule": "",
+  "businessInstagram": "",
+  "businessFacebook": "",
+  "businessMapUrl": "",
+  "nexoSiteUrl": "../../?utm_source=demo&utm_medium=referral&utm_campaign=casa-lote-tienda",
+  "nexoWhatsappUrl": "https://wa.me/message/ZPTEPGUHA3O2B1",
+  "contextualMessage": "Hola, quiero una solución similar al concepto Casa Lote para un negocio de Tienda.",
+  "packageScope": {
+    "sections": "Tienda inicial con catálogo, carrito y checkout estándar.",
+    "services": "Hasta 10 productos simples y hasta 3 categorías.",
+    "revisions": "Dos rondas consolidadas.",
+    "publication": "12 meses",
+    "delivery": "Entrega entre 10 y 15 días hábiles después de anticipo, materiales y accesos.",
+    "payment": "$4,200 para comenzar y $2,799 antes de publicar.",
+    "domain": "Dominio .com estándar por un año incluido, sujeto a disponibilidad y política vigente."
+  },
+  "representedFeatures": [
+    "10 productos",
+    "3 categorías",
+    "Carrito",
+    "localStorage",
+    "Checkout simulado"
+  ],
+  "notIncluded": [
+    "Inventario avanzado",
+    "Múltiples variantes",
+    "Tarifas reales",
+    "Pago real en esta demo",
+    "Automatizaciones complejas"
+  ],
+  "commercialNotice": "Nombre, identidad, contenidos y datos utilizados exclusivamente con fines demostrativos. El alcance final depende de materiales, aprobación y configuración real del negocio."
+};

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title>Arco Claro Clínica Dental</title>
+  <desc>Vista previa social demostrativa de Arco Claro.</desc>
+  <rect width="1200" height="630" fill="#F3F8F8"/>
+  <rect x="64" y="64" width="1072" height="502" rx="24" fill="#FFFFFF" stroke="#206A73" stroke-width="4"/>
+  <text x="104" y="155" fill="#206A73" font-size="36" font-family="Arial, sans-serif" font-weight="700">Concepto base · NEXO Profesional</text>
+  <text x="104" y="275" fill="#203033" font-size="86" font-family="Arial, sans-serif" font-weight="800">Arco Claro</text>
+  <text x="104" y="350" fill="#5D6F73" font-size="44" font-family="Arial, sans-serif">Clínica Dental</text>
+  <text x="104" y="460" fill="#203033" font-size="34" font-family="Arial, sans-serif">Atención dental explicada sin presión.</text>
+  <circle cx="980" cy="320" r="104" fill="#E2EFEF"/>
+  <path d="M900 330c40-82 122-82 162 0" fill="none" stroke="#206A73" stroke-width="18" stroke-linecap="round"/>
+  <path d="M925 280h112M950 236h62" stroke="#A6C9C7" stroke-width="14" stroke-linecap="round"/>
+</svg>
