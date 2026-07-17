@@ -29,7 +29,7 @@
     />
     <meta name="twitter:image" content="https://emis57.github.io/nexo26-digital/assets/img/previews/nexo26-preview.jpg" />
     <title>NEXO26 Digital | Páginas web y soluciones digitales para negocios</title>
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260715-new-drafts" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260716-final" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -47,6 +47,7 @@
   </head>
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <div class="reading-progress" data-reading-progress aria-hidden="true"></div>
 
     <header class="site-header" data-header>
       <div class="header-shell">
@@ -91,8 +92,12 @@
               <a class="button button-primary" href="#" data-whatsapp-link data-whatsapp-intent="general">Hablar por WhatsApp</a>
               <a class="button button-secondary" href="#recomendador">Recibir una recomendación</a>
             </div>
+            <div class="hero-proof" aria-label="Datos rápidos de NEXO26 Digital">
+              <span>Desde $999 MXN</span>
+              <span>48-72 h en plan inicial</span>
+              <span>Enfoque en WhatsApp</span>
+            </div>
             <p class="hero-note">Atención para negocios de la Megalópolis de México.</p>
-            <p class="price-note">Soluciones desde $999 MXN.</p>
           </div>
 
           <div class="hero-visual reveal" aria-label="Ejemplo visual de una página organizada para negocio local">
@@ -104,6 +109,10 @@
                 <p>nexo26.digital/negocio</p>
               </div>
               <div class="browser-body">
+                <div class="browser-status">
+                  <span>Vista pública lista</span>
+                  <strong>Información centralizada</strong>
+                </div>
                 <div class="browser-hero">
                   <p class="mini-label">Negocio local</p>
                   <h2>Servicios claros, horarios y contacto.</h2>
@@ -127,6 +136,11 @@
                   <p>Galería</p>
                   <p>Preguntas frecuentes</p>
                   <p>Compra, reserva o mensaje</p>
+                </div>
+                <div class="browser-flow" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
                 </div>
               </div>
             </div>
@@ -154,7 +168,7 @@
               También desarrollamos tienda inicial, integraciones de pagos, reservaciones, presencia local,
               actualizaciones, renovación técnica y conexión de dominio.
             </p>
-            <a href="https://wa.me/5215517973390?text=Hola%2C%20estuve%20revisando%20la%20p%C3%A1gina%20de%20NEXO26%20Digital%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n.">Contactar por WhatsApp</a>
+            <a href="https://wa.me/message/ZPTEPGUHA3O2B1?text=Hola%2C%20estuve%20revisando%20la%20p%C3%A1gina%20de%20NEXO26%20Digital%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n.">Contactar por WhatsApp</a>
           </div>
         </section>
       </noscript>
@@ -294,6 +308,10 @@
 
           <div class="recommender-layout reveal">
             <form class="recommender-form" id="recommender-form">
+              <div class="recommender-progress" aria-live="polite">
+                <span data-recommender-step>Pregunta 1 de 3</span>
+                <div class="progress-track"><span data-recommender-progress></span></div>
+              </div>
               <fieldset>
                 <legend>¿Qué buscas hacer?</legend>
                 <div class="option-grid">
@@ -328,6 +346,10 @@
                   <label><input type="checkbox" name="current" value="Nada organizado" /> Nada organizado</label>
                 </div>
               </fieldset>
+              <div class="recommender-controls">
+                <button class="button button-text" type="button" data-recommender-prev>Anterior</button>
+                <button class="button button-primary" type="button" data-recommender-next>Siguiente</button>
+              </div>
             </form>
             <aside class="recommendation-card" id="recommendation-result" aria-live="polite"></aside>
           </div>

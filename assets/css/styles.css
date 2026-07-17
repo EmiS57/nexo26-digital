@@ -11,9 +11,14 @@
   --nexo-gold: #b99752;
   --nexo-gold-dark: #8d713d;
   --nexo-gold-soft: #e6d8b9;
+  --nexo-olive: #6f705e;
+  --nexo-petrol: #315b60;
   --nexo-line-dark: rgba(247, 245, 240, 0.14);
   --nexo-line-light: rgba(29, 29, 27, 0.12);
   --nexo-whatsapp: #25d366;
+  --surface-card-light: rgba(255, 255, 255, 0.64);
+  --transition-fast: 160ms ease;
+  --transition-base: 240ms ease;
   --max-width: 1180px;
   --section-space: 88px;
   --radius: 8px;
@@ -35,7 +40,10 @@ body {
   min-width: 320px;
   overflow-x: hidden;
   color: var(--nexo-text-dark);
-  background: var(--nexo-paper);
+  background:
+    linear-gradient(135deg, rgba(111, 112, 94, 0.06), transparent 38%),
+    linear-gradient(315deg, rgba(49, 91, 96, 0.05), transparent 42%),
+    linear-gradient(180deg, var(--nexo-paper), #f6f2eb 52%, var(--nexo-paper));
   font-family: var(--font);
   line-height: 1.6;
   text-rendering: optimizeLegibility;
@@ -77,6 +85,16 @@ button {
   outline-offset: 3px;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .skip-link {
   position: fixed;
   left: 16px;
@@ -93,6 +111,18 @@ button {
 
 .skip-link:focus {
   transform: translateY(0);
+}
+
+.reading-progress {
+  position: fixed;
+  inset: 0 auto auto 0;
+  z-index: 200;
+  width: 100%;
+  height: 3px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  background: linear-gradient(90deg, var(--nexo-gold), var(--nexo-petrol));
+  transition: transform 120ms linear;
 }
 
 .section-shell {
@@ -415,6 +445,26 @@ button {
   margin-top: 30px;
 }
 
+.hero-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.hero-proof span {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(247, 245, 240, 0.12);
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: rgba(247, 245, 240, 0.74);
+  background: rgba(247, 245, 240, 0.05);
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
 .hero-note,
 .price-note {
   margin: 16px 0 0;
@@ -468,6 +518,31 @@ button {
   display: grid;
   gap: 16px;
   padding: 18px;
+}
+
+.browser-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid rgba(247, 245, 240, 0.1);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  background: rgba(49, 91, 96, 0.16);
+}
+
+.browser-status span {
+  color: rgba(247, 245, 240, 0.56);
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.browser-status strong {
+  color: var(--nexo-gold-soft);
+  font-size: 0.86rem;
+  text-align: right;
 }
 
 .browser-hero {
@@ -546,6 +621,18 @@ button {
 
 .browser-list p {
   color: rgba(247, 245, 240, 0.7);
+}
+
+.browser-flow {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1fr;
+  gap: 8px;
+}
+
+.browser-flow span {
+  height: 7px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(185, 151, 82, 0.7), rgba(49, 91, 96, 0.72));
 }
 
 .signal-strip {
@@ -904,6 +991,43 @@ article p {
   gap: 18px;
 }
 
+.recommender-progress {
+  display: grid;
+  gap: 10px;
+  border: 1px solid rgba(247, 245, 240, 0.12);
+  border-radius: var(--radius);
+  padding: 14px;
+  background: rgba(247, 245, 240, 0.045);
+}
+
+.recommender-progress > span {
+  color: var(--nexo-gold-soft);
+  font-size: 0.78rem;
+  font-weight: 1000;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.progress-track {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(247, 245, 240, 0.1);
+}
+
+.progress-track span {
+  display: block;
+  width: 33.33%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--nexo-gold), var(--nexo-petrol));
+  transition: width var(--transition-base);
+}
+
+.js .recommender-form fieldset:not(.is-active) {
+  display: none;
+}
+
 fieldset {
   min-width: 0;
   margin: 0;
@@ -936,6 +1060,18 @@ legend {
   color: rgba(247, 245, 240, 0.78);
   background: rgba(247, 245, 240, 0.04);
   font-weight: 750;
+  transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+}
+
+.option-grid label:hover {
+  border-color: rgba(230, 216, 185, 0.32);
+  background: rgba(247, 245, 240, 0.07);
+}
+
+.option-grid label:has(input:checked) {
+  border-color: rgba(185, 151, 82, 0.72);
+  color: var(--nexo-text-light);
+  background: rgba(185, 151, 82, 0.16);
 }
 
 .option-grid input {
@@ -950,6 +1086,14 @@ legend {
   display: grid;
   gap: 16px;
   padding: 22px;
+  transform: translateY(6px);
+  opacity: 0.94;
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.recommendation-card.is-ready {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .recommendation-card h4 {
@@ -960,6 +1104,33 @@ legend {
 .recommendation-meta {
   display: grid;
   gap: 10px;
+}
+
+.recommendation-summary {
+  display: grid;
+  gap: 10px;
+  border: 1px solid rgba(247, 245, 240, 0.12);
+  border-radius: var(--radius);
+  padding: 12px;
+  background: rgba(49, 91, 96, 0.16);
+}
+
+.recommendation-summary div {
+  display: grid;
+  gap: 4px;
+}
+
+.recommendation-summary span {
+  color: rgba(247, 245, 240, 0.56);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.recommendation-summary strong {
+  color: var(--nexo-text-light);
+  line-height: 1.35;
 }
 
 .recommendation-meta div {
@@ -981,6 +1152,34 @@ legend {
   color: var(--nexo-text-light);
 }
 
+.recommendation-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.recommendation-actions .button {
+  min-height: 42px;
+  padding: 10px 12px;
+  font-size: 0.88rem;
+}
+
+.recommender-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.recommender-controls .button {
+  min-width: 126px;
+}
+
+.button-text {
+  border-color: rgba(247, 245, 240, 0.16);
+  background: rgba(247, 245, 240, 0.04);
+  color: var(--nexo-text-light);
+}
+
 .filter-bar {
   display: flex;
   flex-wrap: wrap;
@@ -989,8 +1188,17 @@ legend {
 }
 
 .portfolio-card {
+  position: relative;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.58);
+}
+
+.portfolio-media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-bottom: 1px solid var(--nexo-line-light);
+  background: var(--nexo-black);
 }
 
 .demo-video {
@@ -998,22 +1206,55 @@ legend {
   aspect-ratio: 16 / 10;
   max-height: 420px;
   border: 0;
-  border-bottom: 1px solid var(--nexo-line-light);
   border-radius: var(--radius) var(--radius) 0 0;
   background: var(--nexo-black);
   object-fit: cover;
 }
 
 .portfolio-preview-link {
-  display: block;
-  border-bottom: 1px solid var(--nexo-line-light);
-  background: var(--nexo-paper);
+  color: inherit;
 }
 
 .portfolio-preview {
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
+}
+
+.portfolio-overlay {
+  position: absolute;
+  inset: auto 12px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border: 1px solid rgba(247, 245, 240, 0.18);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  color: var(--nexo-text-light);
+  background: rgba(10, 10, 10, 0.68);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.portfolio-card:hover .portfolio-overlay,
+.portfolio-card:focus-within .portfolio-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portfolio-overlay span {
+  color: var(--nexo-gold-soft);
+  font-size: 0.72rem;
+  font-weight: 1000;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.portfolio-overlay strong {
+  font-size: 0.86rem;
 }
 
 .portfolio-content {
@@ -1025,6 +1266,20 @@ legend {
 .portfolio-content h3,
 .portfolio-content p {
   margin: 0;
+}
+
+.portfolio-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.portfolio-meta > span:last-child {
+  color: var(--nexo-gold-dark);
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-align: right;
 }
 
 .portfolio-category {
@@ -1209,6 +1464,31 @@ legend {
   margin-top: 28px;
 }
 
+.contact-intents {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.contact-intents a {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--nexo-line-light);
+  border-radius: var(--radius);
+  padding: 9px 12px;
+  background: rgba(255, 255, 255, 0.48);
+  color: var(--nexo-text-dark);
+  font-size: 0.9rem;
+  font-weight: 850;
+}
+
+.contact-intents a:hover {
+  border-color: rgba(185, 151, 82, 0.64);
+  background: rgba(255, 255, 255, 0.72);
+}
+
 .contact-row {
   display: grid;
   gap: 2px;
@@ -1323,6 +1603,12 @@ legend {
   transition: transform 180ms ease;
 }
 
+.floating-whatsapp .whatsapp-icon {
+  width: 25px;
+  height: 25px;
+  fill: currentColor;
+}
+
 .floating-whatsapp:hover {
   transform: translateY(-3px);
 }
@@ -1413,7 +1699,8 @@ legend {
   .signal-strip ul,
   .browser-list,
   .option-grid.compact,
-  .recommendation-meta {
+  .recommendation-meta,
+  .recommendation-summary {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1588,5 +1875,39 @@ legend {
     bottom: 14px;
     width: 52px;
     height: 52px;
+  }
+}
+
+@media (max-width: 759px) {
+  .hero {
+    min-height: auto;
+    padding-block: 88px 64px;
+  }
+
+  .browser-status,
+  .portfolio-meta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .portfolio-overlay {
+    opacity: 1;
+    transform: none;
+  }
+
+  .recommender-controls {
+    position: sticky;
+    bottom: 10px;
+    z-index: 4;
+    border: 1px solid rgba(247, 245, 240, 0.12);
+    border-radius: var(--radius);
+    padding: 8px;
+    background: rgba(10, 10, 10, 0.88);
+    backdrop-filter: blur(14px);
+  }
+
+  .recommender-controls .button {
+    flex: 1;
+    min-width: 0;
   }
 }

@@ -6,6 +6,7 @@
   const root = document.documentElement;
   const body = document.body;
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let portfolioVideoObserver = null;
 
   root.classList.add("js");
 
@@ -320,16 +321,26 @@
       .map((project) => {
         const title = project.displayTitle || project.name || project.title || "Concepto";
         const poster = project.poster ? ` poster="${escapeHTML(project.poster)}"` : "";
+        const overlay = `
+          <div class="portfolio-overlay" aria-hidden="true">
+            <span>${escapeHTML(project.type)}</span>
+            <strong>Vista previa</strong>
+          </div>
+        `;
         const media = project.video
           ? `
-            <video class="demo-video" controls muted playsinline preload="metadata"${poster} aria-label="Demostración de ${escapeHTML(title)}">
-              <source src="${escapeHTML(project.video)}" type="video/mp4" />
-              Tu navegador no puede reproducir esta demostración.
-            </video>
+            <div class="portfolio-media">
+              <video class="demo-video" controls muted playsinline preload="metadata"${poster} aria-label="Demostración de ${escapeHTML(title)}">
+                <source src="${escapeHTML(project.video)}" type="video/mp4" />
+                Tu navegador no puede reproducir esta demostración.
+              </video>
+              ${overlay}
+            </div>
           `
           : `
-            <a class="portfolio-preview-link" href="${escapeHTML(project.liveUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Explorar concepto ${escapeHTML(title)}">
+            <a class="portfolio-media portfolio-preview-link" href="${escapeHTML(project.liveUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Explorar concepto ${escapeHTML(title)}">
               <img class="portfolio-preview" src="${escapeHTML(project.poster)}" alt="" loading="lazy" />
+              ${overlay}
             </a>
           `;
         const features = project.features && project.features.length
@@ -346,9 +357,11 @@
           <article class="portfolio-card">
             ${media}
             <div class="portfolio-content">
-              <span class="card-badge project-type-${escapeHTML(typeClass)}">${escapeHTML(project.type)}</span>
+              <div class="portfolio-meta">
+                <span class="card-badge project-type-${escapeHTML(typeClass)}">${escapeHTML(project.type)}</span>
+                <span>${escapeHTML(project.category)}</span>
+              </div>
               <h3>${escapeHTML(title)}</h3>
-              <p class="portfolio-category">${escapeHTML(project.category)}</p>
               ${packageLabel}
               <p>${escapeHTML(project.description)}</p>
               ${features}
@@ -367,6 +380,16 @@
 
   function enhancePortfolioVideos(scope = document) {
     const videos = $$("video.demo-video", scope);
+    const isInViewport = (video) => {
+      const rect = video.getBoundingClientRect();
+      return rect.bottom > 0 && rect.top < window.innerHeight && rect.right > 0 && rect.left < window.innerWidth;
+    };
+    const pauseIfOffscreen = (video) => {
+      if (!isInViewport(video) && !video.paused) {
+        video.pause();
+      }
+    };
+
     videos.forEach((video) => {
       video.defaultMuted = true;
       video.muted = true;
@@ -376,12 +399,26 @@
             otherVideo.pause();
           }
         });
+        pauseIfOffscreen(video);
       });
       video.addEventListener("error", () => {
         const card = video.closest(".portfolio-card");
         if (card) card.classList.add("is-media-missing");
       });
     });
+
+    if ("IntersectionObserver" in window) {
+      if (portfolioVideoObserver) portfolioVideoObserver.disconnect();
+      portfolioVideoObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target;
+          if (!entry.isIntersecting && !video.paused) {
+            video.pause();
+          }
+        });
+      }, { threshold: 0.18 });
+      videos.forEach((video) => portfolioVideoObserver.observe(video));
+    }
   }
 
   function renderPortfolioFilters() {
@@ -530,6 +567,14 @@
     ].join("\n");
   }
 
+  function recommendationSummary(result) {
+    return [
+      { label: "Objetivo", value: result.goalLabel },
+      { label: "Información", value: result.volumeLabel },
+      { label: "Actualmente tienes", value: result.currentLabels.length ? result.currentLabels.join(", ") : "Sin definir" }
+    ].filter((item) => item.value);
+  }
+
   function recommendService(form) {
     const goal = getCheckedValue(form, "goal");
     const volume = getCheckedValue(form, "volume");
@@ -575,6 +620,14 @@
       current: result.currentLabels,
       recommendation: service.name
     });
+    const summaryItems = recommendationSummary(result)
+      .map((item) => `
+        <div>
+          <span>${escapeHTML(item.label)}</span>
+          <strong>${escapeHTML(item.value)}</strong>
+        </div>
+      `)
+      .join("");
     const alternatives = (data.webPackages || [])
       .filter((pack) => pack.id !== service.id)
       .map((pack) => `
@@ -588,6 +641,9 @@
       <span class="card-badge">Recomendación inicial</span>
       <h3>${escapeHTML(service.name)}</h3>
       <p>${escapeHTML(reason)}</p>
+      <div class="recommendation-summary" aria-label="Resumen de respuestas">
+        ${summaryItems}
+      </div>
       <div class="recommendation-meta">
         <div><span>Precio inicial</span><strong>${escapeHTML(service.price)}</strong></div>
         <div><span>Pago</span><strong>${escapeHTML(service.payment)}</strong></div>
@@ -598,12 +654,54 @@
       <a class="button button-primary" href="${escapeHTML(buildWhatsAppHref(message))}" target="_blank" rel="noopener noreferrer">Enviar recomendación por WhatsApp</a>
       ${alternatives ? `<div class="recommendation-actions" aria-label="Consultar otro paquete">${alternatives}</div>` : ""}
     `;
+    target.classList.remove("is-ready");
+    requestAnimationFrame(() => target.classList.add("is-ready"));
   }
 
   function initRecommender() {
     const form = $("#recommender-form");
     if (!form) return;
+    const fieldsets = $$("fieldset", form);
+    const prevButton = $("[data-recommender-prev]", form);
+    const nextButton = $("[data-recommender-next]", form);
+    const stepText = $("[data-recommender-step]", form);
+    const progress = $("[data-recommender-progress]", form);
+    let currentStep = 0;
+
+    function updateStep() {
+      fieldsets.forEach((fieldset, index) => {
+        const isActive = index === currentStep;
+        fieldset.classList.toggle("is-active", isActive);
+        fieldset.setAttribute("aria-hidden", String(!isActive));
+      });
+
+      if (stepText) stepText.textContent = `Pregunta ${currentStep + 1} de ${fieldsets.length}`;
+      if (progress) progress.style.width = `${((currentStep + 1) / fieldsets.length) * 100}%`;
+      if (prevButton) prevButton.disabled = currentStep === 0;
+      if (nextButton) nextButton.textContent = currentStep === fieldsets.length - 1 ? "Ver recomendación" : "Siguiente";
+    }
+
+    if (prevButton) {
+      prevButton.addEventListener("click", () => {
+        currentStep = Math.max(0, currentStep - 1);
+        updateStep();
+      });
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener("click", () => {
+        if (currentStep < fieldsets.length - 1) {
+          currentStep += 1;
+          updateStep();
+          return;
+        }
+        const result = $("#recommendation-result");
+        if (result) result.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth", block: "nearest" });
+      });
+    }
+
     form.addEventListener("change", renderRecommendation);
+    updateStep();
     renderRecommendation();
   }
 
@@ -747,28 +845,47 @@
 
   function initActiveNav() {
     const navLinks = $$(".site-nav a[href^='#']");
+    const header = $(selectors.header);
     const sections = navLinks
-      .map((link) => document.getElementById(link.getAttribute("href").slice(1)))
+      .map((link) => {
+        const id = link.getAttribute("href").slice(1);
+        const section = document.getElementById(id);
+        return section ? { id, link, section } : null;
+      })
       .filter(Boolean);
 
-    if (!sections.length || !("IntersectionObserver" in window)) return;
+    if (!sections.length) return;
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const id = entry.target.id;
-        navLinks.forEach((link) => {
-          const isCurrent = link.getAttribute("href") === `#${id}`;
-          if (isCurrent) {
-            link.setAttribute("aria-current", "true");
-          } else {
-            link.removeAttribute("aria-current");
-          }
-        });
+    function setActive(id) {
+      navLinks.forEach((link) => {
+        if (link.getAttribute("href") === `#${id}`) {
+          link.setAttribute("aria-current", "true");
+        } else {
+          link.removeAttribute("aria-current");
+        }
       });
-    }, { rootMargin: "-42% 0px -48% 0px", threshold: 0.01 });
+    }
 
-    sections.forEach((section) => observer.observe(section));
+    function updateActiveNav() {
+      const headerOffset = header ? header.getBoundingClientRect().height : 0;
+      const marker = window.scrollY + headerOffset + Math.max(window.innerHeight * 0.24, 120);
+      let current = null;
+
+      sections
+        .slice()
+        .sort((a, b) => a.section.offsetTop - b.section.offsetTop)
+        .forEach((item) => {
+        if (item.section.offsetTop <= marker) {
+          current = item;
+        }
+      });
+
+      if (current) setActive(current.id);
+    }
+
+    updateActiveNav();
+    window.addEventListener("scroll", updateActiveNav, { passive: true });
+    window.addEventListener("resize", updateActiveNav);
   }
 
   function initSmoothScroll() {
@@ -804,6 +921,21 @@
     elements.forEach((element) => observer.observe(element));
   }
 
+  function initReadingProgress() {
+    const progress = $("[data-reading-progress]");
+    if (!progress) return;
+
+    function updateProgress() {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = scrollable > 0 ? Math.min(window.scrollY / scrollable, 1) : 0;
+      progress.style.transform = `scaleX(${ratio})`;
+    }
+
+    updateProgress();
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+  }
+
   function setYear() {
     const year = $("#current-year");
     if (year) year.textContent = String(new Date().getFullYear());
@@ -823,6 +955,7 @@
     initMenu();
     initHeaderState();
     initActiveNav();
+    initReadingProgress();
     initSmoothScroll();
     initReveal();
   }
