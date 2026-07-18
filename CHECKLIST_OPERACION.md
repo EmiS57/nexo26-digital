@@ -10,7 +10,7 @@ Usa esta lista antes de publicar cambios relevantes.
 - [ ] No hay promesas de ventas, clientes, citas, tráfico ni posicionamiento.
 - [ ] La zona de atención aparece como Megalópolis de México.
 - [ ] Los demos se presentan como conceptos visuales o demostraciones cuando corresponda.
-- [ ] NEXO Profesional, NEXO A Medida y NEXO Tienda Inicial muestran dominio .com estándar por 1 año incluido; NEXO Esencial mantiene URL administrada por NEXO26.
+- [ ] NEXO Esencial no incluye dominio; NEXO Profesional solo contempla conexión si el dominio ya existe; NEXO A Medida y NEXO Tienda Inicial cotizan dominio por separado.
 
 ## Contacto
 

@@ -32,7 +32,7 @@ window.DEMO_CONFIG = {
     "publication": "12 meses",
     "delivery": "Primera versión alrededor de 72 horas hábiles después de anticipo y materiales completos.",
     "payment": "$1,600 para comenzar y $699 antes de publicar.",
-    "domain": "Dominio .com estándar por un año incluido, sujeto a disponibilidad y política vigente."
+    "domain": "Conexión de dominio solo si ya existe y se entregan accesos suficientes."
   },
   "representedFeatures": [
     "Servicios ordenados",

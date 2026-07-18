@@ -1159,8 +1159,8 @@ legend {
 }
 
 .recommendation-actions .button {
-  min-height: 42px;
-  padding: 10px 12px;
+  min-height: 44px;
+  padding: 11px 12px;
   font-size: 0.88rem;
 }
 
@@ -1472,7 +1472,7 @@ legend {
 }
 
 .contact-intents a {
-  min-height: 42px;
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
   border: 1px solid var(--nexo-line-light);
@@ -1637,7 +1637,12 @@ legend {
   letter-spacing: 0.08em;
 }
 
-.site-footer a,
+.site-footer a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+
 .site-footer p {
   display: block;
   margin: 8px 0 0;

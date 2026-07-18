@@ -29,12 +29,12 @@ const packageScopes = {
   esencial: {
     packageName: "NEXO Esencial",
     packagePrice: "$999 MXN",
-    payment: "Pago completo.",
+    payment: "Pago completo para comenzar.",
     sections: "Una vista, hasta 5 secciones.",
-    services: "Hasta 6 servicios.",
-    revisions: "Una ronda consolidada.",
-    delivery: "Primera versión entre 48 y 72 horas hábiles después de pago y materiales completos.",
-    domain: "URL administrada por NEXO26. Dominio propio disponible como adicional.",
+    services: "Hasta 6 servicios o categorías.",
+    revisions: "Una ronda de cambios.",
+    delivery: "48 a 72 horas después de pago y materiales completos.",
+    domain: "Sin dominio incluido. Dominio desde $350 MXN más costo del dominio.",
     notIncluded: ["Dominio propio incluido", "Varias páginas", "Pago en línea", "Reservación", "Mapa complejo", "Cotización automática"]
   },
   profesional: {
@@ -42,21 +42,21 @@ const packageScopes = {
     packagePrice: "$2,299 MXN",
     payment: "$1,600 para comenzar y $699 antes de publicar.",
     sections: "Una página, hasta 8 secciones.",
-    services: "Hasta 10 servicios.",
-    revisions: "Dos rondas consolidadas.",
-    delivery: "Primera versión alrededor de 72 horas hábiles después de anticipo y materiales completos.",
-    domain: "Dominio .com estándar por un año incluido, sujeto a disponibilidad y política vigente.",
+    services: "Hasta 10 servicios o categorías.",
+    revisions: "Dos rondas de cambios.",
+    delivery: "Aproximadamente 72 horas después de anticipo y materiales completos.",
+    domain: "Conexión de dominio solo si ya existe y se entregan accesos suficientes.",
     notIncluded: ["Pago en línea", "Reservación avanzada", "Historia clínica", "Diagnóstico automático", "Integraciones complejas"]
   },
   medida: {
     packageName: "NEXO A Medida",
     packagePrice: "$3,999 MXN",
     payment: "$2,400 para comenzar y $1,599 antes de publicar.",
-    sections: "Página larga o hasta 3 páginas.",
-    services: "Hasta 15 servicios o contenidos.",
-    revisions: "Tres rondas consolidadas.",
-    delivery: "Entrega entre 5 y 7 días hábiles después de anticipo y materiales completos.",
-    domain: "Dominio .com estándar por un año incluido, sujeto a disponibilidad y política vigente.",
+    sections: "Hasta 3 páginas.",
+    services: "Hasta 15 servicios o categorías.",
+    revisions: "Tres rondas de cambios.",
+    delivery: "5 a 7 días después de anticipo y materiales completos.",
+    domain: "Dominio desde $350 MXN más costo del dominio.",
     notIncluded: ["Reservación automática", "Pago en línea", "Inventario", "Sistema de lealtad", "Integraciones a terceros"]
   },
   tienda: {
@@ -67,7 +67,7 @@ const packageScopes = {
     services: "Hasta 10 productos simples y hasta 3 categorías.",
     revisions: "Dos rondas consolidadas.",
     delivery: "Entrega entre 10 y 15 días hábiles después de anticipo, materiales y accesos.",
-    domain: "Dominio .com estándar por un año incluido, sujeto a disponibilidad y política vigente.",
+    domain: "Dominio desde $350 MXN más costo del dominio.",
     notIncluded: ["Inventario avanzado", "Múltiples variantes", "Tarifas reales", "Pago real en esta demo", "Automatizaciones complejas"]
   }
 };

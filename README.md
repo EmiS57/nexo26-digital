@@ -11,14 +11,10 @@ Opción rápida:
 Opción recomendada para revisar rutas, videos y consola:
 
 ```powershell
-python -m http.server 4291 --bind 127.0.0.1
+python -m http.server <puerto> --bind <loopback-local>
 ```
 
-Después entra a:
-
-```text
-http://127.0.0.1:4291/
-```
+Después entra a la URL local que muestre tu servidor en terminal.
 
 ## Estructura principal
 
@@ -67,7 +63,7 @@ Ahí viven:
 - FAQs.
 - Demos de portafolio.
 - Reglas del recomendador.
-- Regla comercial de dominio incluido.
+- Regla comercial de dominio y conexión.
 
 ## Cómo agregar videos de demos
 
@@ -170,11 +166,11 @@ Busca `domainPolicy`.
 Actualmente:
 
 - NEXO Esencial conserva URL administrada por NEXO26.
-- NEXO Profesional incluye dominio `.com` estándar por 1 año.
-- NEXO A Medida incluye dominio `.com` estándar por 1 año.
-- NEXO Tienda Inicial incluye dominio `.com` estándar por 1 año.
+- NEXO Profesional contempla conexión de dominio solo si ya existe y se entregan accesos suficientes.
+- NEXO A Medida no incluye dominio dentro del precio base.
+- NEXO Tienda Inicial no incluye dominio dentro del precio base.
 
-El costo máximo incluido durante el primer año vive en `domainPolicy.compareNote` y en los textos de notas/FAQ. Si cambia el monto, actualízalo en esos lugares.
+El dominio nuevo, transferencia, recuperación o cambio de propiedad se cotiza como servicio adicional desde $350 MXN más costo del dominio. Si cambia el monto, actualízalo en `domainPolicy.compareNote`, notas, FAQ y servicios de soporte.
 
 ## Cómo comprobar rutas en GitHub Pages
 
@@ -185,7 +181,7 @@ https://emis57.github.io/nexo26-digital/assets/videos/projects/nombre-del-video.
 https://emis57.github.io/nexo26-digital/assets/img/projects/posters/nombre-del-poster.webp
 ```
 
-No uses rutas locales, `localhost`, `127.0.0.1` ni rutas de Windows dentro de los archivos públicos.
+No uses rutas de entorno local ni rutas de Windows dentro de los archivos públicos.
 
 ## URL corta de NEXO26
 

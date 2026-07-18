@@ -2,7 +2,7 @@
 
 - [ ] Revisar rutas locales desde `/demos/`.
 - [ ] Confirmar que cada demo carga CSS, JS, favicon y social preview.
-- [ ] Confirmar que no existen rutas de Windows, localhost o 127.0.0.1.
+- [ ] Confirmar que no existen rutas de Windows ni rutas de entorno local.
 - [ ] Confirmar que los conceptos tienen `robots: noindex, nofollow`.
 - [ ] Confirmar que el catálogo no muestra tarjetas incompletas.
 - [ ] Probar `Ver alcance` con teclado, Escape y clic fuera.

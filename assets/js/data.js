@@ -19,20 +19,16 @@ window.NEXO_DATA = {
 
   domainPolicy: {
     essentialLabel: "URL administrada por NEXO26",
-    includedLabel: "Dominio .com estándar por 1 año incluido",
-    compareNote: "El dominio incluido corresponde a una opción .com estándar disponible con valor máximo de $400 MXN durante el primer año. Renovaciones y servicios especiales se pagan por separado.",
-    fullRule: "Si el cliente ya cuenta con un dominio activo, se incluye su conexión. Si todavía no cuenta con uno, NEXO26 gestiona el registro de un dominio .com estándar disponible, con un costo máximo incluido de $400 MXN durante el primer año.",
+    includedLabel: "Conexión de dominio solo si ya existe",
+    compareNote: "El dominio propio no forma parte del precio base. Si ya existe y es compatible, puede conectarse en los alcances indicados. El registro o compra de dominio se cotiza como extra desde $350 MXN más costo del dominio.",
+    fullRule: "NEXO Esencial no incluye dominio. NEXO Profesional contempla conexión de dominio solo si ya existe y se entregan accesos suficientes. Los dominios nuevos, transferencias, recuperaciones o cambios de propiedad se cotizan por separado.",
     conditions: [
-      "Sujeto a disponibilidad.",
-      "El nombre debe ser aprobado por el cliente antes del registro.",
-      "Se registra después de recibir el pago o anticipo correspondiente.",
-      "Debe quedar registrado utilizando los datos y correo del cliente.",
-      "NEXO26 puede conservar acceso técnico únicamente para configurarlo.",
-      "Dominios premium no están incluidos.",
-      "Extensiones distintas a .com pueden generar diferencia de precio.",
-      "Si el costo supera $400 MXN, el cliente cubre la diferencia.",
-      "Transferencias, recuperaciones, conflictos de propiedad y cambio de dominio después del registro no están incluidos.",
-      "La renovación a partir del segundo año se paga por separado y depende del proveedor."
+      "La conexión requiere dominio activo, compatible y con accesos suficientes.",
+      "El registro de un dominio nuevo se cotiza como servicio adicional.",
+      "El costo del dominio lo cubre el cliente según proveedor, extensión y disponibilidad.",
+      "Transferencias, recuperaciones, conflictos de propiedad y cambios de dominio no están incluidos.",
+      "NEXO26 puede conservar acceso técnico únicamente para configurarlo cuando el cliente lo autorice.",
+      "Renovaciones posteriores del dominio dependen del proveedor y se pagan por separado."
     ]
   },
 
@@ -42,25 +38,22 @@ window.NEXO_DATA = {
       name: "NEXO Esencial",
       price: "$999 MXN",
       badge: "Pago completo",
-      payment: "Pago completo antes de iniciar.",
-      delivery: "Primera versión en 48-72 horas hábiles después de pago y materiales completos.",
+      payment: "Pago completo para comenzar",
+      delivery: "48 a 72 horas después de pago y materiales completos",
       summary: "Para negocios que necesitan una presencia clara, rápida y lista para compartir.",
-      domain: "URL administrada por NEXO26",
+      domain: "Sin dominio incluido",
       cta: "Consultar NEXO Esencial",
       includes: [
-        "Una sola vista",
+        "Una vista",
         "Hasta 5 secciones",
-        "Hasta 6 servicios",
-        "Adaptación de logo y fotos entregadas",
-        "Hasta dos colores base",
-        "Horarios, ubicación, redes y WhatsApp",
-        "Diseño adaptable a celular",
-        "Una revisión consolidada",
-        "URL administrada por NEXO26",
-        "Publicación durante 12 meses"
+        "Hasta 6 servicios o categorías",
+        "Botón directo a WhatsApp",
+        "Una ronda de cambios",
+        "12 meses de publicación",
+        "Sin dominio incluido"
       ],
       notes: [
-        "Dominio propio disponible como servicio adicional.",
+        "Dominio desde $350 MXN más costo del dominio.",
         "Funciones adicionales se cotizan por separado."
       ]
     },
@@ -70,28 +63,28 @@ window.NEXO_DATA = {
       price: "$2,299 MXN",
       badge: "RECOMENDADO",
       payment: "$1,600 MXN para comenzar y $699 MXN antes de publicar.",
-      delivery: "Aproximadamente 72 horas hábiles después de anticipo y materiales completos.",
+      delivery: "Aproximadamente 72 horas después de anticipo y materiales completos",
       summary: "Para negocios que necesitan explicar mejor sus servicios y verse más completos.",
-      domain: "Dominio .com estándar por 1 año incluido",
+      domain: "Conexión de dominio solo si ya existe",
       cta: "Consultar NEXO Profesional",
       includes: [
+        "Una vista",
         "Hasta 8 secciones",
-        "Hasta 10 servicios",
+        "Hasta 10 servicios o categorías",
         "Encabezado comercial",
-        "Adaptación visual",
-        "Mejora ligera de textos",
         "Galería",
-        "Hasta 5 testimonios entregados por el cliente",
-        "Hasta 6 preguntas frecuentes",
-        "WhatsApp, mapa, redes y QR",
+        "Hasta 5 testimonios",
+        "Hasta 6 FAQ",
+        "Mapa",
+        "Código QR",
         "Analítica básica",
-        "Dominio .com estándar por 1 año incluido",
-        "Dos rondas de revisión",
-        "Publicación durante 12 meses"
+        "Conexión de dominio solo si ya existe",
+        "Dos rondas de cambios",
+        "12 meses de publicación"
       ],
       notes: [
-        "Si el cliente ya cuenta con dominio activo, se incluye su conexión.",
-        "Si todavía no cuenta con uno, NEXO26 gestiona un dominio .com estándar disponible con valor máximo incluido de $400 MXN durante el primer año."
+        "La conexión aplica si el dominio está activo, es compatible y se entregan accesos suficientes.",
+        "Dominio desde $350 MXN más costo del dominio."
       ]
     },
     {
@@ -100,27 +93,23 @@ window.NEXO_DATA = {
       price: "$3,999 MXN",
       badge: "Proyecto ampliado",
       payment: "$2,400 MXN para comenzar y $1,599 MXN antes de publicar.",
-      delivery: "5-7 días hábiles después de anticipo y materiales completos.",
+      delivery: "5 a 7 días después de anticipo y materiales completos",
       summary: "Para negocios que requieren más estructura, contenido y secciones específicas.",
-      domain: "Dominio .com estándar por 1 año incluido",
+      domain: "Dominio cotizable como extra",
       cta: "Consultar NEXO A Medida",
       includes: [
-        "Página larga o hasta 3 páginas",
+        "Hasta 3 páginas",
         "Hasta 12 secciones",
-        "Hasta 15 servicios",
-        "Estructura personalizada",
-        "Sección de equipo",
-        "Portafolio o galería de hasta 20 fotos",
-        "Testimonios y preguntas frecuentes",
-        "Promociones",
-        "QR y analítica básica",
-        "Dominio .com estándar por 1 año incluido",
-        "Tres rondas de revisión",
-        "Publicación durante 12 meses"
+        "Hasta 15 servicios o categorías",
+        "Equipo",
+        "Portafolio",
+        "Mayor personalización",
+        "Tres rondas de cambios",
+        "12 meses de publicación"
       ],
       notes: [
         "Funciones especiales o integraciones avanzadas se cotizan por separado.",
-        "El dominio incluido está sujeto a disponibilidad, aprobación escrita del nombre y valor máximo de $400 MXN durante el primer año."
+        "Dominio desde $350 MXN más costo del dominio."
       ]
     }
   ],
@@ -134,7 +123,7 @@ window.NEXO_DATA = {
       payment: "$4,200 MXN para comenzar y $2,799 MXN antes de publicar. Proyectos personalizados: 60/40.",
       delivery: "10-15 días hábiles después de anticipo, accesos y materiales completos.",
       summary: "Para negocios que quieren iniciar una tienda sencilla con productos, carrito y pago estándar.",
-      domain: "Dominio .com estándar por 1 año incluido",
+      domain: "Dominio cotizable como extra",
       cta: "Revisar mi tienda",
       includes: [
         "Hasta 10 productos simples",
@@ -145,12 +134,11 @@ window.NEXO_DATA = {
         "Diseño adaptable a celular",
         "WhatsApp y analítica básica",
         "Dos rondas de revisión",
-        "Publicación durante 12 meses",
-        "Dominio .com estándar por 1 año incluido"
+        "Publicación durante 12 meses"
       ],
       notes: [
         "No incluye inventarios complejos, automatizaciones avanzadas ni costos de pasarela.",
-        "El dominio incluido está sujeto a disponibilidad, aprobación escrita del nombre y valor máximo de $400 MXN durante el primer año."
+        "Dominio desde $350 MXN más costo del dominio."
       ]
     },
     {
@@ -243,7 +231,7 @@ window.NEXO_DATA = {
     {
       id: "renovacion",
       name: "Renovación técnica anual",
-      price: "Desde $399 MXN al año",
+      price: "$399 MXN",
       badge: "Continuidad",
       payment: "Pago anual.",
       delivery: "Revisión y continuidad según infraestructura vigente.",
@@ -750,15 +738,15 @@ window.NEXO_DATA = {
     },
     {
       question: "¿El precio incluye dominio?",
-      answer: "NEXO Profesional, NEXO A Medida y NEXO Tienda Inicial incluyen durante el primer año un dominio .com estándar disponible con valor máximo de $400 MXN. Si el cliente ya posee un dominio activo, se incluye su conexión. Dominios premium, extensiones especiales, transferencias, recuperaciones y renovaciones posteriores se pagan por separado."
+      answer: "NEXO Esencial no incluye dominio. NEXO Profesional contempla conexión de dominio solo si ya existe y se entregan accesos suficientes. En otros alcances, el dominio puede cotizarse como servicio adicional desde $350 MXN más costo del dominio."
     },
     {
       question: "¿A nombre de quién queda registrado el dominio?",
-      answer: "El dominio se registra con los datos y correo del cliente. NEXO26 puede conservar acceso técnico para configurarlo, pero la propiedad debe permanecer con el negocio."
+      answer: "Si se cotiza y registra un dominio nuevo, debe quedar con los datos y correo del cliente. NEXO26 puede conservar acceso técnico para configurarlo cuando el cliente lo autorice, pero la propiedad debe permanecer con el negocio."
     },
     {
       question: "¿Qué ocurre después del primer año del dominio?",
-      answer: "El cliente cubre directamente la renovación del dominio. El costo depende del proveedor y de la extensión utilizada. NEXO26 puede apoyar con la configuración o renovación técnica cuando sea necesario."
+      answer: "El cliente cubre directamente cualquier renovación de dominio. El costo depende del proveedor y de la extensión utilizada. NEXO26 puede apoyar con configuración o renovación técnica cuando sea necesario."
     },
     {
       question: "¿Puedo usar mi propio dominio?",

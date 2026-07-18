@@ -137,6 +137,8 @@
       }
       row.hidden = false;
       row.href = buildWhatsAppHref(defaultMessage("contacto"));
+      row.target = "_blank";
+      row.rel = "noopener noreferrer";
       const text = $("[data-phone-text]", row);
       if (text) text.textContent = phone;
     });
