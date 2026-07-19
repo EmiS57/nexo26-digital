@@ -28,7 +28,7 @@ window.DEMO_CONFIG = {
     "publication": "12 meses.",
     "delivery": "Entre 5 y 7 días hábiles después del anticipo y materiales completos.",
     "payment": "$2,400 MXN para comenzar y $1,599 MXN antes de publicar.",
-    "domain": "Dominio .com estándar por un año incluido, sujeto a disponibilidad, aprobación y política vigente."
+    "domain": "Dominio desde $350 MXN más costo del dominio."
   },
   "representedFeatures": [
     "Arquitectura personalizada",

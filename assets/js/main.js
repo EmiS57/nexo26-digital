@@ -6,6 +6,7 @@
   const root = document.documentElement;
   const body = document.body;
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let portfolioVideoObserver = null;
 
   root.classList.add("js");
 
@@ -43,41 +44,84 @@
     return String(value || "").replace(/\D/g, "");
   }
 
+  const NEXO_WHATSAPP_NUMBER = normalizePhone(config.whatsappNumber);
+  const NEXO_WHATSAPP_PUBLIC_LINK = config.whatsappPublicLink || "";
+
+  const whatsappMessages = {
+    general: "Hola, estuve revisando la página de NEXO26 Digital y me gustaría recibir orientación para crear una página para mi negocio.",
+    footerWhatsapp: "Hola, estuve revisando la página de NEXO26 Digital y me gustaría recibir más información.",
+    solicitarInformacion: "Hola, estuve revisando la página de NEXO26 Digital y me gustaría recibir información sobre sus páginas para negocios.",
+    cotizarProyecto: "Hola, me gustaría cotizar una página para mi negocio. ¿Qué información necesitan para orientarme?",
+    hablarNegocio: "Hola, tengo un negocio y me gustaría explicarles lo que necesito para que me recomienden una opción adecuada.",
+    actualizarPagina: "Hola, ya cuento con una página y me interesa saber si pueden ayudarme a actualizarla o mejorarla.",
+    dominio: "Hola, me interesa recibir información sobre la conexión o gestión de un dominio para mi página."
+  };
+
+  const packageMessages = {
+    esencial: "Hola, vi el paquete NEXO Esencial en su página y me gustaría recibir más información para aplicarlo a mi negocio.",
+    profesional: "Hola, vi el paquete NEXO Profesional en su página y me gustaría saber cómo podría aplicarse a mi negocio.",
+    medida: "Hola, vi la opción NEXO A Medida y me gustaría platicarles lo que necesito para recibir una propuesta."
+  };
+
+  const serviceMessages = {
+    "tienda-inicial": "Hola, me interesa revisar una tienda inicial para mi negocio y quisiera saber qué información necesitan para orientarme.",
+    pagos: "Hola, me interesa agregar pagos a mi página o sitio. ¿Qué información necesitan para revisar si es compatible?",
+    reservaciones: "Hola, me interesa facilitar reservaciones o solicitudes de cita desde mi página. ¿Qué opciones podrían recomendarme?",
+    "presencia-local": "Hola, me interesa mejorar la presencia local de mi negocio y revisar mi perfil de Google.",
+    actualizacion: whatsappMessages.actualizarPagina,
+    renovacion: "Hola, me interesa recibir información sobre renovación técnica o continuidad de publicación para una página.",
+    dominio: whatsappMessages.dominio
+  };
+
   function defaultMessage(topic) {
-    return `Hola, quiero recibir información de ${config.brandName || "NEXO26 Digital"}${topic ? ` sobre ${topic}` : ""}.`;
+    return topic
+      ? `Hola, estuve revisando la página de ${config.brandName || "NEXO26 Digital"} y me gustaría recibir orientación sobre ${topic}.`
+      : whatsappMessages.general;
+  }
+
+  function messageByIntent(intent, fallback = whatsappMessages.general) {
+    const key = String(intent || "").replace(/-([a-z])/g, (_, char) => char.toUpperCase());
+    return whatsappMessages[key] || fallback;
   }
 
   function buildWhatsAppHref(message) {
-    const phone = normalizePhone(config.whatsappNumber);
-    const text = encodeURIComponent(message || defaultMessage(""));
+    const cleanMessage = String(message || whatsappMessages.general).trim();
+    const text = encodeURIComponent(cleanMessage);
 
-    if (phone) {
-      return `https://wa.me/${phone}?text=${text}`;
+    if (NEXO_WHATSAPP_NUMBER) {
+      return `https://wa.me/${NEXO_WHATSAPP_NUMBER}?text=${text}`;
     }
 
-    const publicLink = config.whatsappPublicLink || "";
-    if (!publicLink) {
+    if (!NEXO_WHATSAPP_PUBLIC_LINK) {
       return "#contacto";
     }
 
     try {
-      const url = new URL(publicLink);
-      const isDirectMessageLink = url.pathname.includes("/message/");
-      if (!isDirectMessageLink && message) {
-        url.searchParams.set("text", message);
+      const url = new URL(NEXO_WHATSAPP_PUBLIC_LINK);
+      if (cleanMessage) {
+        url.searchParams.set("text", cleanMessage);
       }
       return url.toString();
     } catch (error) {
-      return publicLink;
+      return NEXO_WHATSAPP_PUBLIC_LINK;
     }
   }
 
+  function openNexoWhatsApp(message) {
+    window.open(buildWhatsAppHref(message), "_blank", "noopener,noreferrer");
+  }
+
+  window.openNexoWhatsApp = openNexoWhatsApp;
+
   function setWhatsAppLinks() {
     $$(selectors.whatsappLink).forEach((link) => {
+      const explicitMessage = link.dataset.whatsappMessage || "";
+      const intent = link.dataset.whatsappIntent || "";
       const topic = link.dataset.topic || "";
-      link.href = buildWhatsAppHref(defaultMessage(topic));
+      const message = explicitMessage || messageByIntent(intent, topic ? defaultMessage(topic) : whatsappMessages.general);
+      link.href = buildWhatsAppHref(message);
       link.target = "_blank";
-      link.rel = "noreferrer";
+      link.rel = "noopener noreferrer";
     });
   }
 
@@ -93,6 +137,8 @@
       }
       row.hidden = false;
       row.href = buildWhatsAppHref(defaultMessage("contacto"));
+      row.target = "_blank";
+      row.rel = "noopener noreferrer";
       const text = $("[data-phone-text]", row);
       if (text) text.textContent = phone;
     });
@@ -108,10 +154,19 @@
       if (text) text.textContent = config.email;
     });
 
-    const instagramLink = $("[data-instagram-link]");
-    if (instagramLink && config.instagram) {
-      instagramLink.href = config.instagram;
-    }
+    $$("[data-instagram-link]").forEach((link) => {
+      if (!config.instagram) return;
+      link.href = config.instagram;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+    });
+
+    $$("[data-facebook-link]").forEach((link) => {
+      if (!config.facebook) return;
+      link.href = config.facebook;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+    });
   }
 
   function renderCollections() {
@@ -156,7 +211,7 @@
         <p class="delivery-text">${escapeHTML(pack.delivery)}</p>
         ${featureList(pack.includes)}
         ${notes}
-        <a class="button button-card" href="${buildWhatsAppHref(defaultMessage(pack.name))}" target="_blank" rel="noreferrer">${escapeHTML(pack.cta)}</a>
+        <a class="button button-card" href="${escapeHTML(buildWhatsAppHref(packageMessages[pack.id] || defaultMessage(pack.name)))}" target="_blank" rel="noopener noreferrer">${escapeHTML(pack.cta)}</a>
       </article>
     `;
   }
@@ -178,7 +233,7 @@
         <p class="delivery-text">${escapeHTML(service.delivery)}</p>
         ${featureList(service.includes)}
         ${notes}
-        <a class="button button-card" href="${buildWhatsAppHref(defaultMessage(service.name))}" target="_blank" rel="noreferrer">${escapeHTML(service.cta)}</a>
+        <a class="button button-card" href="${escapeHTML(buildWhatsAppHref(serviceMessages[service.id] || defaultMessage(service.name)))}" target="_blank" rel="noopener noreferrer">${escapeHTML(service.cta)}</a>
       </article>
     `;
   }
@@ -268,16 +323,26 @@
       .map((project) => {
         const title = project.displayTitle || project.name || project.title || "Concepto";
         const poster = project.poster ? ` poster="${escapeHTML(project.poster)}"` : "";
+        const overlay = `
+          <div class="portfolio-overlay" aria-hidden="true">
+            <span>${escapeHTML(project.type)}</span>
+            <strong>Vista previa</strong>
+          </div>
+        `;
         const media = project.video
           ? `
-            <video class="demo-video" controls muted playsinline preload="metadata"${poster} aria-label="Demostración de ${escapeHTML(title)}">
-              <source src="${escapeHTML(project.video)}" type="video/mp4" />
-              Tu navegador no puede reproducir esta demostración.
-            </video>
+            <div class="portfolio-media">
+              <video class="demo-video" controls muted playsinline preload="metadata"${poster} aria-label="Demostración de ${escapeHTML(title)}">
+                <source src="${escapeHTML(project.video)}" type="video/mp4" />
+                Tu navegador no puede reproducir esta demostración.
+              </video>
+              ${overlay}
+            </div>
           `
           : `
-            <a class="portfolio-preview-link" href="${escapeHTML(project.liveUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Explorar concepto ${escapeHTML(title)}">
+            <a class="portfolio-media portfolio-preview-link" href="${escapeHTML(project.liveUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Explorar concepto ${escapeHTML(title)}">
               <img class="portfolio-preview" src="${escapeHTML(project.poster)}" alt="" loading="lazy" />
+              ${overlay}
             </a>
           `;
         const features = project.features && project.features.length
@@ -294,15 +359,17 @@
           <article class="portfolio-card">
             ${media}
             <div class="portfolio-content">
-              <span class="card-badge project-type-${escapeHTML(typeClass)}">${escapeHTML(project.type)}</span>
+              <div class="portfolio-meta">
+                <span class="card-badge project-type-${escapeHTML(typeClass)}">${escapeHTML(project.type)}</span>
+                <span>${escapeHTML(project.category)}</span>
+              </div>
               <h3>${escapeHTML(title)}</h3>
-              <p class="portfolio-category">${escapeHTML(project.category)}</p>
               ${packageLabel}
               <p>${escapeHTML(project.description)}</p>
               ${features}
               <div class="portfolio-actions">
                 ${liveLink}
-                <a class="button button-card" href="${buildWhatsAppHref(message)}" target="_blank" rel="noopener noreferrer">${escapeHTML(project.cta || "Quiero algo similar")}</a>
+                <a class="button button-card" href="${escapeHTML(buildWhatsAppHref(message))}" target="_blank" rel="noopener noreferrer">${escapeHTML(project.cta || "Quiero algo similar")}</a>
               </div>
             </div>
           </article>
@@ -315,6 +382,16 @@
 
   function enhancePortfolioVideos(scope = document) {
     const videos = $$("video.demo-video", scope);
+    const isInViewport = (video) => {
+      const rect = video.getBoundingClientRect();
+      return rect.bottom > 0 && rect.top < window.innerHeight && rect.right > 0 && rect.left < window.innerWidth;
+    };
+    const pauseIfOffscreen = (video) => {
+      if (!isInViewport(video) && !video.paused) {
+        video.pause();
+      }
+    };
+
     videos.forEach((video) => {
       video.defaultMuted = true;
       video.muted = true;
@@ -324,12 +401,26 @@
             otherVideo.pause();
           }
         });
+        pauseIfOffscreen(video);
       });
       video.addEventListener("error", () => {
         const card = video.closest(".portfolio-card");
         if (card) card.classList.add("is-media-missing");
       });
     });
+
+    if ("IntersectionObserver" in window) {
+      if (portfolioVideoObserver) portfolioVideoObserver.disconnect();
+      portfolioVideoObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target;
+          if (!entry.isIntersecting && !video.paused) {
+            video.pause();
+          }
+        });
+      }, { threshold: 0.18 });
+      videos.forEach((video) => portfolioVideoObserver.observe(video));
+    }
   }
 
   function renderPortfolioFilters() {
@@ -401,6 +492,29 @@
     return $$(`input[name="${name}"]:checked`, form).map((input) => input.value);
   }
 
+  function inputLabel(input, fallback = "Sin definir") {
+    if (!input) return fallback;
+    const label = input.closest("label");
+    const text = label ? label.textContent.replace(/\s+/g, " ").trim() : "";
+    return text || input.value || fallback;
+  }
+
+  function getCheckedLabel(form, name, fallback = "Sin definir") {
+    return inputLabel($(`input[name="${name}"]:checked`, form), fallback);
+  }
+
+  function getCheckedLabels(form, name) {
+    return $$(`input[name="${name}"]:checked`, form)
+      .map((input) => inputLabel(input, ""))
+      .filter(Boolean);
+  }
+
+  function safeMessageValue(value, fallback = "Sin definir") {
+    const text = String(value || "").replace(/\s+/g, " ").trim();
+    const invalidValues = ["undefined", "null", "[object Object]", "true", "false"];
+    return text && !invalidValues.includes(text) ? text : fallback;
+  }
+
   function recommendationReason(serviceId, goal, volume, current) {
     const currentText = current.length ? current.join(", ") : "información todavía sin organizar";
     const base = {
@@ -431,10 +545,45 @@
     return [...(specific[serviceId] || []), ...shared];
   }
 
+  function buildRecommendationMessage(details) {
+    const current = details.current.length ? details.current.join(", ") : "Sin definir";
+    return [
+      "Hola, utilicé el recomendador de NEXO26 Digital.",
+      "",
+      `Mi objetivo principal es: ${safeMessageValue(details.goal)}.`,
+      `Cantidad aproximada de información: ${safeMessageValue(details.volume)}.`,
+      `Actualmente tengo: ${safeMessageValue(current)}.`,
+      `La recomendación que recibí fue: ${safeMessageValue(details.recommendation)}.`,
+      "",
+      "Me gustaría recibir más información para aplicarlo a mi negocio."
+    ].join("\n");
+  }
+
+  function buildAlternativePackageMessage(pack) {
+    const selectedPackage = safeMessageValue(pack && pack.name, "NEXO26");
+    const packageId = pack && pack.id ? pack.id : "";
+    return [
+      packageMessages[packageId] || defaultMessage(selectedPackage),
+      "",
+      `Seleccioné ${selectedPackage} como alternativa desde el recomendador de NEXO26 Digital.`
+    ].join("\n");
+  }
+
+  function recommendationSummary(result) {
+    return [
+      { label: "Objetivo", value: result.goalLabel },
+      { label: "Información", value: result.volumeLabel },
+      { label: "Actualmente tienes", value: result.currentLabels.length ? result.currentLabels.join(", ") : "Sin definir" }
+    ].filter((item) => item.value);
+  }
+
   function recommendService(form) {
     const goal = getCheckedValue(form, "goal");
     const volume = getCheckedValue(form, "volume");
     const current = getCheckedValues(form, "current");
+    const goalLabel = getCheckedLabel(form, "goal");
+    const volumeLabel = getCheckedLabel(form, "volume");
+    const currentLabels = getCheckedLabels(form, "current");
     let serviceId = (data.recommendations || {})[goal] || "esencial";
 
     if (goal === "servicios" && (volume === "intermedia" || current.includes("Página existente"))) {
@@ -451,7 +600,10 @@
       service: serviceById[serviceId] || serviceById.esencial,
       goal,
       volume,
-      current
+      current,
+      goalLabel,
+      volumeLabel,
+      currentLabels
     };
   }
 
@@ -463,13 +615,37 @@
     const result = recommendService(form);
     const service = result.service;
     const confirmItems = confirmationList(service.id).map((item) => `<li>${escapeHTML(item)}</li>`).join("");
-    const reason = recommendationReason(service.id, result.goal, result.volume, result.current);
-    const message = `Hola, quiero recibir una recomendación de ${config.brandName || "NEXO26 Digital"}. Me interesa ${service.name}. Busco ${result.goal}. Volumen: ${result.volume}. Actualmente tengo: ${result.current.join(", ") || "sin definir"}.`;
+    const reason = recommendationReason(service.id, result.goal, result.volumeLabel, result.currentLabels);
+    const message = buildRecommendationMessage({
+      goal: result.goalLabel,
+      volume: result.volumeLabel,
+      current: result.currentLabels,
+      recommendation: service.name
+    });
+    const summaryItems = recommendationSummary(result)
+      .map((item) => `
+        <div>
+          <span>${escapeHTML(item.label)}</span>
+          <strong>${escapeHTML(item.value)}</strong>
+        </div>
+      `)
+      .join("");
+    const alternatives = (data.webPackages || [])
+      .filter((pack) => pack.id !== service.id)
+      .map((pack) => `
+        <a class="button button-outline recommendation-alt" href="${escapeHTML(buildWhatsAppHref(buildAlternativePackageMessage(pack)))}" target="_blank" rel="noopener noreferrer">
+          Consultar ${escapeHTML(pack.name)}
+        </a>
+      `)
+      .join("");
 
     target.innerHTML = `
       <span class="card-badge">Recomendación inicial</span>
       <h3>${escapeHTML(service.name)}</h3>
       <p>${escapeHTML(reason)}</p>
+      <div class="recommendation-summary" aria-label="Resumen de respuestas">
+        ${summaryItems}
+      </div>
       <div class="recommendation-meta">
         <div><span>Precio inicial</span><strong>${escapeHTML(service.price)}</strong></div>
         <div><span>Pago</span><strong>${escapeHTML(service.payment)}</strong></div>
@@ -477,14 +653,57 @@
       </div>
       <h4>Qué confirmamos antes de cotizar</h4>
       <ul>${confirmItems}</ul>
-      <a class="button button-primary" href="${buildWhatsAppHref(message)}" target="_blank" rel="noreferrer">Enviar recomendación por WhatsApp</a>
+      <a class="button button-primary" href="${escapeHTML(buildWhatsAppHref(message))}" target="_blank" rel="noopener noreferrer">Enviar recomendación por WhatsApp</a>
+      ${alternatives ? `<div class="recommendation-actions" aria-label="Consultar otro paquete">${alternatives}</div>` : ""}
     `;
+    target.classList.remove("is-ready");
+    requestAnimationFrame(() => target.classList.add("is-ready"));
   }
 
   function initRecommender() {
     const form = $("#recommender-form");
     if (!form) return;
+    const fieldsets = $$("fieldset", form);
+    const prevButton = $("[data-recommender-prev]", form);
+    const nextButton = $("[data-recommender-next]", form);
+    const stepText = $("[data-recommender-step]", form);
+    const progress = $("[data-recommender-progress]", form);
+    let currentStep = 0;
+
+    function updateStep() {
+      fieldsets.forEach((fieldset, index) => {
+        const isActive = index === currentStep;
+        fieldset.classList.toggle("is-active", isActive);
+        fieldset.setAttribute("aria-hidden", String(!isActive));
+      });
+
+      if (stepText) stepText.textContent = `Pregunta ${currentStep + 1} de ${fieldsets.length}`;
+      if (progress) progress.style.width = `${((currentStep + 1) / fieldsets.length) * 100}%`;
+      if (prevButton) prevButton.disabled = currentStep === 0;
+      if (nextButton) nextButton.textContent = currentStep === fieldsets.length - 1 ? "Ver recomendación" : "Siguiente";
+    }
+
+    if (prevButton) {
+      prevButton.addEventListener("click", () => {
+        currentStep = Math.max(0, currentStep - 1);
+        updateStep();
+      });
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener("click", () => {
+        if (currentStep < fieldsets.length - 1) {
+          currentStep += 1;
+          updateStep();
+          return;
+        }
+        const result = $("#recommendation-result");
+        if (result) result.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth", block: "nearest" });
+      });
+    }
+
     form.addEventListener("change", renderRecommendation);
+    updateStep();
     renderRecommendation();
   }
 
@@ -628,28 +847,47 @@
 
   function initActiveNav() {
     const navLinks = $$(".site-nav a[href^='#']");
+    const header = $(selectors.header);
     const sections = navLinks
-      .map((link) => document.getElementById(link.getAttribute("href").slice(1)))
+      .map((link) => {
+        const id = link.getAttribute("href").slice(1);
+        const section = document.getElementById(id);
+        return section ? { id, link, section } : null;
+      })
       .filter(Boolean);
 
-    if (!sections.length || !("IntersectionObserver" in window)) return;
+    if (!sections.length) return;
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const id = entry.target.id;
-        navLinks.forEach((link) => {
-          const isCurrent = link.getAttribute("href") === `#${id}`;
-          if (isCurrent) {
-            link.setAttribute("aria-current", "true");
-          } else {
-            link.removeAttribute("aria-current");
-          }
-        });
+    function setActive(id) {
+      navLinks.forEach((link) => {
+        if (link.getAttribute("href") === `#${id}`) {
+          link.setAttribute("aria-current", "true");
+        } else {
+          link.removeAttribute("aria-current");
+        }
       });
-    }, { rootMargin: "-42% 0px -48% 0px", threshold: 0.01 });
+    }
 
-    sections.forEach((section) => observer.observe(section));
+    function updateActiveNav() {
+      const headerOffset = header ? header.getBoundingClientRect().height : 0;
+      const marker = window.scrollY + headerOffset + Math.max(window.innerHeight * 0.24, 120);
+      let current = null;
+
+      sections
+        .slice()
+        .sort((a, b) => a.section.offsetTop - b.section.offsetTop)
+        .forEach((item) => {
+        if (item.section.offsetTop <= marker) {
+          current = item;
+        }
+      });
+
+      if (current) setActive(current.id);
+    }
+
+    updateActiveNav();
+    window.addEventListener("scroll", updateActiveNav, { passive: true });
+    window.addEventListener("resize", updateActiveNav);
   }
 
   function initSmoothScroll() {
@@ -685,6 +923,21 @@
     elements.forEach((element) => observer.observe(element));
   }
 
+  function initReadingProgress() {
+    const progress = $("[data-reading-progress]");
+    if (!progress) return;
+
+    function updateProgress() {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = scrollable > 0 ? Math.min(window.scrollY / scrollable, 1) : 0;
+      progress.style.transform = `scaleX(${ratio})`;
+    }
+
+    updateProgress();
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+  }
+
   function setYear() {
     const year = $("#current-year");
     if (year) year.textContent = String(new Date().getFullYear());
@@ -704,6 +957,7 @@
     initMenu();
     initHeaderState();
     initActiveNav();
+    initReadingProgress();
     initSmoothScroll();
     initReveal();
   }
