@@ -751,6 +751,32 @@ window.NEXO_DATA = {
       whatsappMessage: "Hola, tengo un negocio relacionado con servicios veterinarios y me interesa una página similar a esta demostración. Me gustaría conocer qué opción podría adaptarse a mi negocio.",
       status: "published",
       featured: false
+    },
+    {
+      id: "marea-wellness-studio",
+      slug: "marea-wellness-studio",
+      name: "Marea Wellness Studio",
+      title: "Marea Wellness Studio",
+      displayTitle: "Marea Wellness Studio",
+      industry: "Belleza y bienestar",
+      category: "Belleza y bienestar",
+      filter: "Belleza y bienestar",
+      ecosystem: "Belleza y bienestar",
+      type: "Concepto visual",
+      label: "Concepto visual",
+      package: "NEXO Profesional",
+      video: "",
+      poster: "demos/marea-wellness-studio/assets/img/social-preview.svg",
+      liveUrl: "demos/marea-wellness-studio/",
+      description: "Concepto visual desarrollado por NEXO26. El nombre, contenido y datos son ficticios.",
+      disclaimer: "Concepto visual desarrollado por NEXO26. El nombre, contenido y datos son ficticios.",
+      features: ["Servicios demostrativos", "Asistente conceptual", "WhatsApp NEXO26", "Ubicación demostrativa", "FAQ"],
+      cta: "Adaptar este ecosistema a mi negocio",
+      whatsappMessage: "Hola, estuve revisando el concepto Marea Wellness Studio de NEXO26 y me gustaría conocer cómo podría adaptarse una experiencia similar a mi negocio.",
+      status: "published",
+      published: true,
+      featured: false,
+      active: false
     }
   ],
 

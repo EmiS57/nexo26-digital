@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Marea Wellness Studio</title>
+  <desc id="desc">Concepto visual ficticio de bienestar creado por NEXO26.</desc>
+  <rect width="1200" height="675" fill="#F6EFE4"/>
+  <path d="M0 480c145-54 240-39 360 4s221 45 342-12 253-84 498-9v212H0z" fill="#D8C4A5"/>
+  <path d="M0 522c154-48 263-32 393 10 148 48 263 33 381-30 113-61 241-61 426-4v177H0z" fill="#9EAE96"/>
+  <path d="M773 0h427v675H816c-74-112-80-237-44-375C805 176 790 79 773 0z" fill="#2C302C"/>
+  <circle cx="825" cy="194" r="82" fill="#C7795B" opacity=".78"/>
+  <circle cx="910" cy="326" r="150" fill="none" stroke="#F6EFE4" stroke-width="2" opacity=".42"/>
+  <circle cx="1015" cy="178" r="214" fill="none" stroke="#D8C4A5" stroke-width="1.5" opacity=".35"/>
+  <g fill="#2C302C">
+    <text x="86" y="155" font-family="Georgia, 'Times New Roman', serif" font-size="78" letter-spacing="-1">Marea</text>
+    <text x="90" y="220" font-family="Arial, sans-serif" font-size="28" letter-spacing="5">WELLNESS STUDIO</text>
+    <text x="90" y="292" font-family="Arial, sans-serif" font-size="26">Concepto visual · Bienestar</text>
+  </g>
+  <g transform="translate(92 402)" fill="#2C302C" font-family="Arial, sans-serif">
+    <rect width="420" height="88" rx="22" fill="#fffaf0" opacity=".72"/>
+    <text x="28" y="38" font-size="20" font-weight="700">Demostración de experiencia digital</text>
+    <text x="28" y="66" font-size="18">Atencion por WhatsApp y asistente conceptual</text>
+  </g>
+</svg>
