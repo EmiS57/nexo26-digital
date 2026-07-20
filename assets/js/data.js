@@ -268,6 +268,69 @@ window.NEXO_DATA = {
     }
   ],
 
+  ecosystems: [
+    {
+      id: "salud-confianza",
+      name: "Salud y confianza",
+      audience: "Consultorios, clinicas, opticas, veterinarias y servicios de cuidado responsable.",
+      problem: "La gente necesita entender servicios, horarios, ubicacion y limites antes de escribir.",
+      route: "NEXO Profesional como base; NEXO A Medida si hay varias sedes, equipo o especialidades.",
+      sections: ["Encabezado de confianza", "Servicios", "Proceso de atencion", "Ubicacion", "Preguntas frecuentes", "WhatsApp"],
+      functions: ["FAQ responsable", "Mapa o zona", "Galeria real", "Mensaje con contexto"],
+      style: "Limpio, claro y profesional; blanco, negro suave y acentos discretos.",
+      cta: "Orientar mi negocio de salud",
+      whatsappMessage: "Hola, tengo un negocio de salud o cuidado responsable y me interesa revisar un ecosistema NEXO para explicar servicios, ubicacion y contacto por WhatsApp."
+    },
+    {
+      id: "belleza-bienestar",
+      name: "Belleza y bienestar",
+      audience: "Barberias, salones, estudios de cuidado personal, terapeutas y experiencias de bienestar.",
+      problem: "El cliente quiere ver estilo, servicios, disponibilidad de contacto y confianza antes de pedir informacion.",
+      route: "NEXO Profesional para servicios, galeria y FAQ; A Medida si necesita experiencias, agenda externa o mas contenido.",
+      sections: ["Encabezado visual", "Servicios", "Galeria", "Experiencias", "Preguntas frecuentes", "WhatsApp"],
+      functions: ["Galeria editorial", "Servicios destacados", "Preguntas comunes", "CTA por WhatsApp"],
+      style: "Editorial, sobrio y sensorial sin lujo falso ni imagenes irreales.",
+      cta: "Revisar belleza y bienestar",
+      whatsappMessage: "Hola, tengo un negocio de belleza o bienestar y me interesa revisar un ecosistema NEXO con servicios, galeria, FAQ y WhatsApp."
+    },
+    {
+      id: "fitness-movimiento",
+      name: "Fitness y movimiento",
+      audience: "Gimnasios, estudios, entrenadores, academias y espacios de movimiento.",
+      problem: "Programas, horarios, sedes y primera visita suelen quedar dispersos en redes o mensajes repetidos.",
+      route: "NEXO Profesional para una sede; A Medida para varias sedes, programas amplios o paginas por modalidad.",
+      sections: ["Programas", "Horarios", "Primera visita", "Instalaciones", "FAQ", "WhatsApp"],
+      functions: ["Comparacion de programas", "Horarios claros", "Solicitud inicial", "Mapa o zonas"],
+      style: "Activo y directo con contraste alto; energia visual sin promesas fisicas.",
+      cta: "Ordenar mi oferta fitness",
+      whatsappMessage: "Hola, tengo un negocio de fitness o movimiento y me interesa revisar un ecosistema NEXO para ordenar programas, horarios y contacto."
+    },
+    {
+      id: "gastronomia-experiencias",
+      name: "Gastronomia y experiencias",
+      audience: "Restaurantes, cafeterias, barras, experiencias privadas y marcas de alimentos.",
+      problem: "Menu, ubicacion, horarios, reservaciones y eventos necesitan estar claros antes de la visita.",
+      route: "NEXO Profesional para presencia clara; A Medida si hay menu amplio, eventos, experiencias o varias paginas.",
+      sections: ["Especialidad", "Menu", "Ubicacion", "Reservaciones", "Eventos", "WhatsApp"],
+      functions: ["Menu navegable", "Consulta para grupos", "Galeria real", "CTA de reserva externa"],
+      style: "Editorial y apetecible con fotos reales; sin claims genericos de agencia.",
+      cta: "Diseñar ruta gastronomica",
+      whatsappMessage: "Hola, tengo un negocio gastronomico y me interesa revisar un ecosistema NEXO para menu, ubicacion, reservaciones y WhatsApp."
+    },
+    {
+      id: "servicios-comercio",
+      name: "Servicios y comercio",
+      audience: "Servicios locales, tecnicos, tiendas, oficios, comercios y negocios con catalogo inicial.",
+      problem: "El visitante necesita saber que se ofrece, cuanto alcance tiene el servicio y como pedir una cotizacion.",
+      route: "NEXO Esencial para informacion directa; NEXO Profesional o Tienda Inicial si hay catalogo, pagos o mas categorias.",
+      sections: ["Servicios o categorias", "Cobertura", "Proceso", "Productos", "FAQ", "WhatsApp"],
+      functions: ["Cotizacion guiada", "Catalogo inicial", "Cobertura", "Mensaje preparado"],
+      style: "Practico, creible y escaneable; negro, blanco y acento de marca.",
+      cta: "Ordenar servicios o comercio",
+      whatsappMessage: "Hola, tengo un negocio de servicios o comercio y me interesa revisar un ecosistema NEXO para ordenar informacion, catalogo o cotizaciones por WhatsApp."
+    }
+  ],
+
   projects: [
     {
       id: "barberia-premium",
