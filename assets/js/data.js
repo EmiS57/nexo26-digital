@@ -682,26 +682,6 @@ window.NEXO_DATA = {
       whatsappMessage: "Hola, tengo un negocio relacionado con servicios veterinarios y me interesa una página similar a esta demostración. Me gustaría conocer qué opción podría adaptarse a mi negocio.",
       status: "published",
       featured: false
-    },
-    {
-      id: "kalma-spa",
-      name: "Kalma Spa",
-      title: "Kalma Spa",
-      displayTitle: "Kalma Spa",
-      industry: "Belleza y bienestar",
-      category: "Bienestar",
-      filter: "Belleza y bienestar",
-      type: "Concepto visual",
-      package: "NEXO Profesional",
-      video: "",
-      poster: "kalma-spa-demo/assets/img/social-preview.webp",
-      liveUrl: "kalma-spa-demo/",
-      description: "Concepto visual existente para spa/bienestar, integrado sin reconstruir el micrositio original.",
-      features: ["Bienestar", "Servicios", "WhatsApp", "FAQ", "Demo mode"],
-      whatsappMessage: "Hola, tengo un negocio de belleza o bienestar y quiero una página similar a un concepto de spa.",
-      status: "draft",
-      published: false,
-      featured: false
     }
   ],
 

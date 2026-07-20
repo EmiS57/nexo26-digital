@@ -4,7 +4,6 @@
 
 - Los siete conceptos nuevos están publicados únicamente como rutas directas en estado draft.
 - No aparecen en catálogo público ni portafolio principal.
-- Kalma Spa no se usa como demo pública de NEXO26 por falta de permiso.
 - Las demos draft usan `noindex, nofollow`.
 
 ## Para aprobar un concepto
