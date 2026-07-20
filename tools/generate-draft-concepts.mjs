@@ -1365,9 +1365,9 @@ Las demos evitan automatizar promesas. Priorizan WhatsApp, horarios, zona, alcan
 
 write("demos/DESIGN_MATRIX_2026.md", `# Design matrix 2026
 
-| Concepto | Giro | Paquete | Hero | Tipografía | Paleta | Arquitectura | Interacción principal | Navegación | Sistema visual | Densidad | CTA | Diferencia respecto a Kalma | Diferencia interna |
+| Concepto | Giro | Paquete | Hero | Tipografía | Paleta | Arquitectura | Interacción principal | Navegación | Sistema visual | Densidad | CTA | Diferencia respecto a estilos previos | Diferencia interna |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-${concepts.map((c) => `| ${c.name} | ${c.industry} | ${c.package.packageName} | ${c.hero.title} | ${c.font.replaceAll("|", "/")} | ${Object.values(c.palette).slice(0, 4).join(", ")} | ${c.products ? "Catálogo transaccional" : c.layout} | ${c.products ? "Carrito" : c.advisorTitle} | ${c.nav.join(" / ")} | ${c.layout} | ${c.products ? "Alta" : "Media"} | ${c.ctaTitle} | No usa spa, bienestar sensorial ni estética Kalma. | Hero, paleta, interacción y composición propios. |`).join("\n")}
+${concepts.map((c) => `| ${c.name} | ${c.industry} | ${c.package.packageName} | ${c.hero.title} | ${c.font.replaceAll("|", "/")} | ${Object.values(c.palette).slice(0, 4).join(", ")} | ${c.products ? "Catálogo transaccional" : c.layout} | ${c.products ? "Carrito" : c.advisorTitle} | ${c.nav.join(" / ")} | ${c.layout} | ${c.products ? "Alta" : "Media"} | ${c.ctaTitle} | No usa estética de spa ni bienestar sensorial. | Hero, paleta, interacción y composición propios. |`).join("\n")}
 `);
 
 write("demos/VISUAL_AUDIT_2026.md", `# Visual audit 2026
@@ -1386,7 +1386,6 @@ write("demos/PUBLISHING_CHECKLIST_2026.md", `# Publishing checklist 2026
 
 - Los siete conceptos nuevos están publicados únicamente como rutas directas en estado draft.
 - No aparecen en catálogo público ni portafolio principal.
-- Kalma Spa no se usa como demo pública de NEXO26 por falta de permiso.
 - Las demos draft usan \`noindex, nofollow\`.
 
 ## Para aprobar un concepto
@@ -1407,7 +1406,7 @@ write("demos/CONTENT_RULES_2026.md", `# Content rules 2026
 
 - No presentar demos como clientes reales.
 - No inventar teléfonos, correos, direcciones, reseñas, métricas o resultados.
-- No mostrar Kalma Spa como demo pública de NEXO26 sin permiso.
+- No conservar prospectos privados dentro del árbol público desplegable.
 - Mantener conceptos draft ocultos del catálogo público.
 - Usar \`noindex, nofollow\` mientras no exista aprobación.
 - En salud, dental, fitness y servicio técnico no emitir diagnósticos, promesas ni recomendaciones personalizadas.

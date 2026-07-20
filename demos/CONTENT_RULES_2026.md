@@ -2,7 +2,7 @@
 
 - No presentar demos como clientes reales.
 - No inventar teléfonos, correos, direcciones, reseñas, métricas o resultados.
-- No mostrar Kalma Spa como demo pública de NEXO26 sin permiso.
+- No conservar prospectos privados dentro del árbol público desplegable.
 - Mantener conceptos draft ocultos del catálogo público.
 - Usar `noindex, nofollow` mientras no exista aprobación.
 - En salud, dental, fitness y servicio técnico no emitir diagnósticos, promesas ni recomendaciones personalizadas.

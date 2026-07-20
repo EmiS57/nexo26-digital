@@ -2,8 +2,6 @@
 
 Catálogo de conceptos base por giro. Cada demo usa identidad ficticia, rutas relativas compatibles con GitHub Pages y un shell compartido para explicar alcance.
 
-Kalma Spa se conserva en el repositorio solo como ruta directa no indexable; no debe presentarse como demo pública de NEXO26 sin permiso del propietario.
-
 Los conceptos en estado draft permanecen ocultos del catálogo público hasta recibir aprobación visual, comercial y técnica.
 
 ## Agregar un nuevo concepto
