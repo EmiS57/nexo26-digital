@@ -166,9 +166,8 @@ El motor no usa:
 - `localStorage`
 - `fetch`
 - `XMLHttpRequest`
-- claves API
-- tokens
-- secretos
+- credenciales sensibles
+- informacion reservada
 
 No abre URLs automaticamente, no envia mensajes, no guarda conversaciones, no registra datos personales en consola y trata HTML del usuario como texto.
 
@@ -264,7 +263,7 @@ git diff --check
 - Fase 2 comprometida localmente.
 - 28 o mas pruebas pasando.
 - 0 errores de sintaxis.
-- 0 secretos.
+- 0 informacion reservada.
 - Landing publica sin cambios.
 - Referencias privadas ausentes del arbol publico.
 - Drafts intactos.

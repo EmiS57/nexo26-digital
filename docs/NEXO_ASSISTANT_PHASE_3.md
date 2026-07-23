@@ -149,7 +149,7 @@ En los archivos productivos del asistente no se usa:
 - `localStorage`
 - `fetch`
 - `XMLHttpRequest`
-- claves o tokens
+- credenciales sensibles
 - `console.log`
 - apertura automatica de WhatsApp
 

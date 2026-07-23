@@ -506,6 +506,28 @@ window.NEXO_DATA = {
       featured: false
     },
     {
+      id: "bruma-local-consultoria",
+      name: "Bruma Local Consultoria",
+      title: "Bruma Local Consultoria",
+      displayTitle: "Bruma Local",
+      industry: "Servicios profesionales",
+      category: "Servicios",
+      filter: "Servicios",
+      type: "Concepto reservado",
+      package: "NEXO Esencial",
+      video: "",
+      poster: "",
+      liveUrl: "",
+      description: "Registro ficticio reservado para mantener un borrador oculto de servicios locales sin ruta publica ni assets publicados.",
+      features: ["Servicios", "Proceso", "FAQ", "WhatsApp"],
+      cta: "Quiero algo similar",
+      whatsappMessage: "Hola, tengo un negocio de servicios profesionales y me interesa una pagina clara para presentar mi informacion.",
+      status: "draft",
+      published: false,
+      active: false,
+      featured: false
+    },
+    {
       id: "arco-claro-dental",
       name: "Arco Claro Clínica Dental",
       title: "Arco Claro Clínica Dental",
