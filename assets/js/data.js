@@ -62,6 +62,7 @@ window.NEXO_DATA = {
       name: "NEXO Profesional",
       price: "$2,299 MXN",
       badge: "RECOMENDADO",
+      recommended: true,
       payment: "$1,600 MXN para comenzar y $699 MXN antes de publicar.",
       delivery: "Aproximadamente 72 horas después de anticipo y materiales completos",
       summary: "Para negocios que necesitan explicar mejor sus servicios y verse más completos.",
