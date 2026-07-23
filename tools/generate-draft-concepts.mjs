@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const today = "2026-07-15";
 const publicRoot = process.env.NEXO_PUBLIC_ROOT || "https://emis57.github.io/nexo26-digital";
-const nexoWhatsapp = "https://wa.me/message/ZPTEPGUHA3O2B1";
+const nexoWhatsapp = "https://wa.me/5215517973390";
 
 function write(relPath, content) {
   const target = join(root, relPath);
@@ -73,75 +73,6 @@ const packageScopes = {
 };
 
 const concepts = [
-  {
-    id: "huella-clara-veterinaria",
-    slug: "huella-clara-veterinaria",
-    name: "Huella Clara",
-    descriptor: "Centro Veterinario",
-    industry: "Veterinaria",
-    category: "Salud",
-    packageKey: "profesional",
-    type: "Concepto base",
-    tagline: "Cuidado informado. Atención cercana.",
-    layout: "clinical-editorial",
-    palette: {
-      paper: "#F6F2E9",
-      surface: "#FFFFFF",
-      ink: "#202726",
-      muted: "#5F6C67",
-      accent: "#18333D",
-      support: "#8FA99C",
-      warm: "#D97868",
-      wash: "#DCE8E7"
-    },
-    font: '"Segoe UI", "Aptos", system-ui, sans-serif',
-    nav: ["Atención", "Etapas", "Orientador", "Contacto"],
-    hero: {
-      eyebrow: "CONSULTA · PREVENCIÓN · SEGUIMIENTO",
-      title: "Información clara para cuidar mejor cada etapa.",
-      text: "Consulta áreas de atención, prepara tu visita y encuentra una forma directa de comunicarte con el equipo veterinario.",
-      primary: "Conocer atención",
-      secondary: "Orientarme antes de escribir",
-      note: "Concepto demostrativo para atención de perros y gatos."
-    },
-    quick: ["Perros y gatos", "Consulta general", "Prevención", "Seguimiento"],
-    serviceIntro: "El sitio organiza la información antes del contacto para reducir dudas frecuentes sin reemplazar una valoración veterinaria.",
-    services: [
-      "Consulta general",
-      "Medicina preventiva",
-      "Vacunación",
-      "Desparasitación",
-      "Seguimiento clínico",
-      "Estudios básicos",
-      "Orientación nutricional",
-      "Procedimientos ambulatorios sujetos a valoración"
-    ],
-    stages: [
-      ["Primeros meses", "Registro de antecedentes, esquema preventivo y preparación de visita inicial."],
-      ["Etapa adulta", "Controles, prevención y seguimiento de cambios reportados por el tutor."],
-      ["Etapa senior", "Revisiones periódicas y conversación responsable sobre hábitos y bienestar."]
-    ],
-    advisorTitle: "Orientador de consulta",
-    advisorIntro: "Selecciona el motivo principal. La respuesta solo ordena la información que conviene compartir; no emite diagnóstico.",
-    advisorOptions: [
-      ["Primera consulta", "Comparte edad aproximada, especie, motivo de visita y si existe información previa relevante."],
-      ["Prevención o vacunación", "Ten a la mano antecedentes, cartilla si existe y dudas sobre tiempos o requisitos."],
-      ["Seguimiento", "Describe qué cambió desde la última visita y qué indicaciones previas recibió el paciente."],
-      ["Revisión de rutina", "Indica especie, edad aproximada, hábitos generales y el horario en que podrías acudir."],
-      ["Tengo una duda", "Resume la duda con contexto. El equipo confirmaría si requiere consulta presencial."],
-      ["No sé por dónde empezar", "Cuenta qué observaste, desde cuándo y si el animal come, bebe o descansa distinto."]
-    ],
-    processTitle: "Primera visita",
-    process: ["Describe el motivo sin autodiagnóstico.", "Comparte antecedentes si los tienes.", "Confirma horario y condiciones de atención.", "Acude con transportadora o correa según corresponda."],
-    faq: [
-      ["¿El sitio atiende urgencias?", "No se promete urgencia. En un proyecto real se mostraría el protocolo confirmado por el negocio."],
-      ["¿Puedo recibir diagnóstico desde la web?", "No. La página solo ordena información previa al contacto."],
-      ["¿Se muestran precios?", "Solo si el negocio los aprueba y mantiene actualizados."]
-    ],
-    ctaTitle: "Una página veterinaria que reduce dudas antes del primer mensaje.",
-    representedFeatures: ["Servicios ordenados", "Cuidado por etapas", "Orientador responsable", "FAQ", "CTA NEXO26"],
-    scores: [9.1, 8.8, 8.9, 8.8, 8.7, 8.8, 9.2, 9.0, 8.9, 8.8]
-  },
   {
     id: "arco-claro-dental",
     slug: "arco-claro-dental",
@@ -1312,7 +1243,6 @@ for (const concept of concepts) {
 
 const avg = (scores) => (scores.reduce((sum, value) => sum + value, 0) / scores.length).toFixed(2);
 const nameRows = [
-  ["Huella Clara", "Sin coincidencia exacta comercial relevante en búsqueda rápida; existen múltiples negocios con 'Huella' en veterinaria.", "Se conserva", "Huella Clara Centro Veterinario"],
   ["Arco Claro", "Sin coincidencia exacta relevante; existe Arco Dental/ClaroNav Dental como cercanos no idénticos.", "Se conserva", "Arco Claro Clínica Dental"],
   ["Casa Brasa", "Sin coincidencia exacta fuerte en México para el giro durante búsqueda rápida.", "Se conserva", "Casa Brasa Cocina"],
   ["Base Uno", "Coincidencias comerciales claras con gimnasio/base uno.", "Descartado", "Ritmo Base Entrenamiento"],

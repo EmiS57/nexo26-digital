@@ -23,7 +23,7 @@ window.DEMO_CONFIG = {
   "businessFacebook": "",
   "businessMapUrl": "",
   "nexoSiteUrl": "../../?utm_source=demo&utm_medium=referral&utm_campaign=clima-claro-servicio",
-  "nexoWhatsappUrl": "https://wa.me/message/ZPTEPGUHA3O2B1",
+  "nexoWhatsappUrl": "https://wa.me/5215517973390",
   "contextualMessage": "Hola, quiero una solución similar al concepto Clima Claro para un negocio de Servicio técnico.",
   "packageScope": {
     "sections": "Una vista, hasta 5 secciones.",

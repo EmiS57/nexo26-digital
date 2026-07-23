@@ -11,8 +11,8 @@
   --nexo-gold: #b99752;
   --nexo-gold-dark: #8d713d;
   --nexo-gold-soft: #e6d8b9;
-  --nexo-olive: #6f705e;
-  --nexo-petrol: #315b60;
+  --nexo-olive: #8d713d;
+  --nexo-petrol: #8d713d;
   --nexo-line-dark: rgba(247, 245, 240, 0.14);
   --nexo-line-light: rgba(29, 29, 27, 0.12);
   --nexo-whatsapp: #25d366;
@@ -37,12 +37,12 @@ html {
 
 body {
   margin: 0;
-  min-width: 320px;
+  min-width: 0;
   overflow-x: hidden;
   color: var(--nexo-text-dark);
   background:
-    linear-gradient(135deg, rgba(111, 112, 94, 0.06), transparent 38%),
-    linear-gradient(315deg, rgba(49, 91, 96, 0.05), transparent 42%),
+    linear-gradient(135deg, rgba(185, 151, 82, 0.06), transparent 38%),
+    linear-gradient(315deg, rgba(10, 10, 10, 0.035), transparent 42%),
     linear-gradient(180deg, var(--nexo-paper), #f6f2eb 52%, var(--nexo-paper));
   font-family: var(--font);
   line-height: 1.6;
@@ -528,7 +528,7 @@ button {
   border: 1px solid rgba(247, 245, 240, 0.1);
   border-radius: var(--radius);
   padding: 10px 12px;
-  background: rgba(49, 91, 96, 0.16);
+  background: rgba(185, 151, 82, 0.12);
 }
 
 .browser-status span {
@@ -632,7 +632,7 @@ button {
 .browser-flow span {
   height: 7px;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(185, 151, 82, 0.7), rgba(49, 91, 96, 0.72));
+  background: linear-gradient(90deg, rgba(185, 151, 82, 0.7), rgba(141, 113, 61, 0.72));
 }
 
 .signal-strip {
@@ -697,6 +697,7 @@ button {
 .condition-grid,
 .why-grid,
 .collection-grid,
+.ecosystem-grid,
 .service-grid,
 .pricing-grid,
 .portfolio-grid {
@@ -708,6 +709,7 @@ button {
 .condition-grid article,
 .why-grid article,
 .collection-card,
+.ecosystem-card,
 .service-card,
 .pricing-card,
 .faq-item,
@@ -726,6 +728,7 @@ button {
 .condition-grid article,
 .why-grid article,
 .collection-card,
+.ecosystem-card,
 .service-card,
 .pricing-card {
   padding: 22px;
@@ -735,12 +738,93 @@ button {
 .condition-grid article:hover,
 .why-grid article:hover,
 .collection-card:hover,
+.ecosystem-card:hover,
 .service-card:hover,
 .pricing-card:hover,
 .portfolio-card:hover {
   transform: translateY(-3px);
   border-color: rgba(185, 151, 82, 0.5);
   box-shadow: var(--shadow);
+}
+
+.ecosystem-section {
+  border-top: 1px solid var(--nexo-line-light);
+}
+
+.ecosystem-grid {
+  gap: 18px;
+}
+
+.ecosystem-card {
+  display: grid;
+  gap: 18px;
+  border-color: rgba(29, 29, 27, 0.14);
+}
+
+.ecosystem-card-main {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
+.ecosystem-card-main .eyebrow {
+  margin-bottom: 0;
+}
+
+.ecosystem-card-main h3 {
+  max-width: 620px;
+  margin: 0;
+  font-size: 1.45rem;
+  line-height: 1.12;
+}
+
+.ecosystem-card-main p,
+.ecosystem-card-details p {
+  margin: 0;
+}
+
+.ecosystem-card-main span,
+.ecosystem-card-details span {
+  color: var(--nexo-gold-dark);
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ecosystem-card-details {
+  display: grid;
+  gap: 12px;
+}
+
+.ecosystem-card-details > div {
+  display: grid;
+  gap: 7px;
+  border-top: 1px solid var(--nexo-line-light);
+  padding-top: 12px;
+}
+
+.ecosystem-card-details ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ecosystem-card-details li {
+  border: 1px solid var(--nexo-line-light);
+  border-radius: var(--radius);
+  padding: 6px 8px;
+  color: var(--nexo-text-dark);
+  background: rgba(247, 245, 240, 0.66);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.ecosystem-card .button {
+  width: fit-content;
 }
 
 .section-dark .why-grid article,
@@ -1112,7 +1196,7 @@ legend {
   border: 1px solid rgba(247, 245, 240, 0.12);
   border-radius: var(--radius);
   padding: 12px;
-  background: rgba(49, 91, 96, 0.16);
+  background: rgba(185, 151, 82, 0.12);
 }
 
 .recommendation-summary div {
@@ -1763,6 +1847,18 @@ legend {
 
   .issue-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ecosystem-card {
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  }
+
+  .ecosystem-card-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ecosystem-card .button {
+    align-self: end;
   }
 
   .compare-controls {

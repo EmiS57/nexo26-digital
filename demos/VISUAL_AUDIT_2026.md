@@ -4,7 +4,6 @@ Escala 1 a 10. Autoevaluación operativa; no sustituye aprobación visual, comer
 
 | Concepto | Identidad | Realismo | Arquitectura | Jerarquía | Móvil | CTA | Diferenciación | Giro | Paquete | Portafolio | Promedio |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Huella Clara | 9.1 | 8.8 | 8.9 | 8.8 | 8.7 | 8.8 | 9.2 | 9.0 | 8.9 | 8.8 | 8.90 |
 | Arco Claro | 9.0 | 8.8 | 8.9 | 8.7 | 8.7 | 8.8 | 9.0 | 9.1 | 8.9 | 8.8 | 8.87 |
 | Casa Brasa | 9.2 | 8.9 | 9.0 | 8.9 | 8.8 | 8.9 | 9.3 | 9.1 | 9.0 | 8.9 | 9.00 |
 | Ritmo Base | 9.0 | 8.8 | 8.8 | 8.7 | 8.8 | 8.7 | 9.1 | 8.9 | 8.9 | 8.8 | 8.85 |

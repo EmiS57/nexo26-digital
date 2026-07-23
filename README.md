@@ -181,7 +181,7 @@ https://emis57.github.io/nexo26-digital/assets/videos/projects/nombre-del-video.
 https://emis57.github.io/nexo26-digital/assets/img/projects/posters/nombre-del-poster.webp
 ```
 
-No uses rutas de entorno local ni rutas de Windows dentro de los archivos públicos.
+No uses rutas de entorno local ni rutas privadas dentro de los archivos públicos.
 
 ## URL corta de NEXO26
 

@@ -3,7 +3,7 @@ window.NEXO_CONFIG = {
   serviceArea: "Megalópolis de México",
   // CONFIRMAR ANTES DE PUBLICAR
   whatsappNumber: "5215517973390",
-  whatsappPublicLink: "https://wa.me/message/ZPTEPGUHA3O2B1",
+  whatsappPublicLink: "https://wa.me/5215517973390",
   displayPhone: "",
   email: "",
   instagram: "https://www.instagram.com/nexo_26digital/",

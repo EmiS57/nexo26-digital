@@ -254,6 +254,60 @@
     }
   }
 
+  function renderEcosystems() {
+    const target = $("#ecosystems-grid");
+    if (!target || !Array.isArray(data.ecosystems)) return;
+
+    const ecosystems = data.ecosystems.filter((item) => item && item.name && item.problem && item.objective && item.route);
+    if (!ecosystems.length) {
+      target.hidden = true;
+      return;
+    }
+
+    target.innerHTML = ecosystems
+      .map((item) => {
+        const sections = (item.sections || []).map((section) => `<li>${escapeHTML(section)}</li>`).join("");
+        const functions = (item.functions || []).map((feature) => `<li>${escapeHTML(feature)}</li>`).join("");
+        const cta = item.cta || "Revisar este ecosistema";
+        const message = item.whatsappMessage || defaultMessage(`un ecosistema NEXO para ${item.name}`);
+
+        return `
+          <article class="ecosystem-card">
+            <div class="ecosystem-card-main">
+              <p class="eyebrow">${escapeHTML(item.name)}</p>
+              <h3>${escapeHTML(item.audience || item.name)}</h3>
+              <span>Problema habitual</span>
+              <p>${escapeHTML(item.problem)}</p>
+            </div>
+            <div class="ecosystem-card-details">
+              <div>
+                <span>Objetivo de la pagina</span>
+                <p>${escapeHTML(item.objective)}</p>
+              </div>
+              <div>
+                <span>Ruta recomendada</span>
+                <p>${escapeHTML(item.route)}</p>
+              </div>
+              <div>
+                <span>Secciones relevantes</span>
+                <ul>${sections}</ul>
+              </div>
+              <div>
+                <span>Funciones clave</span>
+                <ul>${functions}</ul>
+              </div>
+              <div>
+                <span>Estilo visual</span>
+                <p>${escapeHTML(item.style)}</p>
+              </div>
+              <a class="button button-card" href="${escapeHTML(buildWhatsAppHref(message))}" target="_blank" rel="noopener noreferrer">${escapeHTML(cta)}</a>
+            </div>
+          </article>
+        `;
+      })
+      .join("");
+  }
+
   function renderPackageTabs() {
     const tabs = $("#package-tabs");
     if (!tabs || !data.webPackages) return;
@@ -949,6 +1003,7 @@
     setWhatsAppLinks();
     renderCollections();
     renderServices();
+    renderEcosystems();
     renderPackageTabs();
     renderPortfolioFilters();
     renderFaqs();

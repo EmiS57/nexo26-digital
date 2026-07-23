@@ -6,7 +6,6 @@ Esta revisión es una búsqueda operativa para reducir riesgos evidentes de coin
 
 | Nombre revisado | Coincidencias encontradas | Decisión | Nombre final seleccionado |
 |---|---|---|---|
-| Huella Clara | Sin coincidencia exacta comercial relevante en búsqueda rápida; existen múltiples negocios con 'Huella' en veterinaria. | Se conserva | Huella Clara Centro Veterinario |
 | Arco Claro | Sin coincidencia exacta relevante; existe Arco Dental/ClaroNav Dental como cercanos no idénticos. | Se conserva | Arco Claro Clínica Dental |
 | Casa Brasa | Sin coincidencia exacta fuerte en México para el giro durante búsqueda rápida. | Se conserva | Casa Brasa Cocina |
 | Base Uno | Coincidencias comerciales claras con gimnasio/base uno. | Descartado | Ritmo Base Entrenamiento |

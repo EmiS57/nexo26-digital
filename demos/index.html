@@ -11,7 +11,7 @@
     <style>
       :root { --ink:#171717; --paper:#f7f4ee; --line:rgba(0,0,0,.12); --accent:#b99752; --radius:8px; --max:1180px; font-family:"Segoe UI",system-ui,sans-serif; }
       * { box-sizing:border-box; }
-      body { margin:0; min-width:320px; color:var(--ink); background:var(--paper); line-height:1.55; }
+      body { margin:0; min-width:0; color:var(--ink); background:var(--paper); line-height:1.55; }
       a { color:inherit; text-decoration:none; }
       :focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
       .skip-link { position:fixed; top:12px; left:12px; z-index:10; transform:translateY(-140%); background:#fff; padding:10px 12px; border-radius:var(--radius); }
@@ -67,6 +67,29 @@
     </footer>
     <script>
       const concepts = [
+  {
+    "name": "Marea Wellness Studio",
+    "slug": "marea-wellness-studio",
+    "industry": "Belleza y bienestar",
+    "category": "Bienestar",
+    "package": "NEXO Profesional",
+    "packageType": "Profesional",
+    "type": "Concepto visual",
+    "description": "Concepto visual desarrollado por NEXO26. El nombre, contenido y datos son ficticios.",
+    "functions": [
+      "Servicios demostrativos",
+      "Asistente conceptual",
+      "WhatsApp NEXO26",
+      "Ubicación demostrativa"
+    ],
+    "status": "published",
+    "published": true,
+    "featured": false,
+    "preview": "marea-wellness-studio/assets/img/social-preview.svg",
+    "liveUrl": "marea-wellness-studio/",
+    "cta": "Adaptar este ecosistema a mi negocio",
+    "whatsappMessage": "Hola, estuve revisando el concepto Marea Wellness Studio de NEXO26 y me gustaría conocer cómo podría adaptarse una experiencia similar a mi negocio."
+  },
   {
     "name": "NUBO Centro Veterinario",
     "slug": "nubo-veterinaria",
@@ -222,21 +245,22 @@
     "cta": "Quiero una página sencilla para mi servicio"
   },
   {
-    "name": "Huella Clara Centro Veterinario",
-    "slug": "huella-clara-veterinaria",
-    "industry": "Veterinaria",
-    "category": "Salud",
-    "package": "NEXO Profesional",
-    "packageType": "Profesional",
-    "type": "Concepto base",
-    "description": "Concepto veterinario con servicios, cuidado por etapas, orientador responsable y contacto demostrativo.",
-    "functions": ["Atención","Etapas","Orientador","FAQ"],
+    "name": "Bruma Local Consultoria",
+    "slug": "bruma-local-consultoria",
+    "industry": "Servicios profesionales",
+    "category": "Servicios",
+    "package": "NEXO Esencial",
+    "packageType": "Esencial",
+    "type": "Concepto reservado",
+    "description": "Registro ficticio reservado para mantener un borrador oculto de servicios locales sin ruta publica ni assets publicados.",
+    "functions": ["Servicios","Proceso","FAQ","WhatsApp"],
     "status": "draft",
     "published": false,
+    "active": false,
     "featured": false,
-    "preview": "huella-clara-veterinaria/assets/img/social-preview.svg",
-    "liveUrl": "huella-clara-veterinaria/",
-    "cta": "Quiero una página similar para mi veterinaria"
+    "preview": "",
+    "liveUrl": "",
+    "cta": "Quiero algo similar"
   },
   {
     "name": "Arco Claro Clínica Dental",
@@ -345,12 +369,16 @@
       const filters = ["Todos","Esencial","Profesional","A Medida","Tienda","Salud","Restaurantes","Bienestar","Fitness","Comercio","Servicios"].filter((filter) => filter === "Todos" || publishedConcepts.some((item) => item.package.includes(filter) || item.packageType === filter || item.category === filter || item.industry === filter));
       const grid = document.getElementById("catalog-grid");
       const filterBar = document.getElementById("filters");
-      const nexo = "https://wa.me/message/ZPTEPGUHA3O2B1";
+      const nexoNumber = "5215517973390";
       const statusLabels = {
         published: "Publicado"
       };
       if (!publishedConcepts.length) {
         filterBar.hidden = true;
+      }
+      function whatsappFor(item) {
+        const message = item.whatsappMessage || "Hola, vi un concepto de NEXO26 y me gustaría adaptar una experiencia similar a mi negocio.";
+        return "https://wa.me/" + nexoNumber + "?text=" + encodeURIComponent(message);
       }
       function render(filter = "Todos") {
         const visible = filter === "Todos" ? publishedConcepts : publishedConcepts.filter((item) => item.package.includes(filter) || item.packageType === filter || item.category === filter || item.industry === filter);
@@ -358,16 +386,18 @@
           grid.innerHTML = '<div class="empty-state"><h2>No hay conceptos públicos disponibles por ahora.</h2><p>Los conceptos en estado draft permanecen ocultos hasta recibir aprobación visual, comercial y técnica.</p></div>';
           return;
         }
-        grid.innerHTML = visible.map((item) => '<article class="card"><img src="' + item.preview + '" alt="" loading="lazy" /><div class="card-body"><div class="meta"><span>' + item.industry + '</span><span>' + item.package + '</span><span>' + item.type + '</span><span>' + (statusLabels[item.status] || item.status) + '</span></div><h2>' + item.name + '</h2><p>' + item.description + '</p><div class="features">' + item.functions.map((feature) => '<span>' + feature + '</span>').join("") + '</div><div class="actions"><a class="button primary" href="' + item.liveUrl + '">Enlace en vivo</a><a class="button ghost" href="' + nexo + '" target="_blank" rel="noopener noreferrer">CTA NEXO26</a></div></div></article>').join("");
+        grid.innerHTML = visible.map((item) => '<article class="card"><img src="' + item.preview + '" alt="" loading="lazy" /><div class="card-body"><div class="meta"><span>' + item.industry + '</span><span>' + item.package + '</span><span>' + item.type + '</span><span>' + (statusLabels[item.status] || item.status) + '</span></div><h2>' + item.name + '</h2><p>' + item.description + '</p><div class="features">' + item.functions.map((feature) => '<span>' + feature + '</span>').join("") + '</div><div class="actions"><a class="button primary" href="' + item.liveUrl + '">Explorar concepto</a><a class="button ghost" href="' + whatsappFor(item) + '" target="_blank" rel="noopener noreferrer">' + item.cta + '</a></div></div></article>').join("");
       }
-      filterBar.innerHTML = filters.map((filter, index) => '<button type="button" aria-pressed="' + (index === 0) + '" data-filter="' + filter + '">' + filter + '</button>').join("");
-      filterBar.addEventListener("click", (event) => {
-        const button = event.target.closest("[data-filter]");
-        if (!button) return;
-        filterBar.querySelectorAll("button").forEach((item) => item.setAttribute("aria-pressed", "false"));
-        button.setAttribute("aria-pressed", "true");
-        render(button.dataset.filter);
-      });
+      if (publishedConcepts.length) {
+        filterBar.innerHTML = filters.map((filter, index) => '<button type="button" aria-pressed="' + (index === 0) + '" data-filter="' + filter + '">' + filter + '</button>').join("");
+        filterBar.addEventListener("click", (event) => {
+          const button = event.target.closest("[data-filter]");
+          if (!button) return;
+          filterBar.querySelectorAll("button").forEach((item) => item.setAttribute("aria-pressed", "false"));
+          button.setAttribute("aria-pressed", "true");
+          render(button.dataset.filter);
+        });
+      }
       render();
     </script>
   </body>

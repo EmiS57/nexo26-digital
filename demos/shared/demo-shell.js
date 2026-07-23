@@ -11,7 +11,7 @@
   }
 
   function nexoWhatsappHref() {
-    const base = config.nexoWhatsappUrl || "https://wa.me/message/ZPTEPGUHA3O2B1";
+    const base = config.nexoWhatsappUrl || "https://wa.me/5215517973390";
     if (base.includes("/message/")) return base;
     return base + (base.includes("?") ? "&" : "?") + "text=" + encodeMessage(config.contextualMessage);
   }
