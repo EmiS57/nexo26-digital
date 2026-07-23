@@ -783,6 +783,15 @@ button {
   margin: 0;
 }
 
+.ecosystem-card-main span,
+.ecosystem-card-details span {
+  color: var(--nexo-gold-dark);
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .ecosystem-card-details {
   display: grid;
   gap: 12px;
@@ -793,14 +802,6 @@ button {
   gap: 7px;
   border-top: 1px solid var(--nexo-line-light);
   padding-top: 12px;
-}
-
-.ecosystem-card-details span {
-  color: var(--nexo-gold-dark);
-  font-size: 0.76rem;
-  font-weight: 950;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 .ecosystem-card-details ul {

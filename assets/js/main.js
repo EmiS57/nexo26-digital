@@ -258,7 +258,7 @@
     const target = $("#ecosystems-grid");
     if (!target || !Array.isArray(data.ecosystems)) return;
 
-    const ecosystems = data.ecosystems.filter((item) => item && item.name && item.problem && item.route);
+    const ecosystems = data.ecosystems.filter((item) => item && item.name && item.problem && item.objective && item.route);
     if (!ecosystems.length) {
       target.hidden = true;
       return;
@@ -276,9 +276,14 @@
             <div class="ecosystem-card-main">
               <p class="eyebrow">${escapeHTML(item.name)}</p>
               <h3>${escapeHTML(item.audience || item.name)}</h3>
+              <span>Problema habitual</span>
               <p>${escapeHTML(item.problem)}</p>
             </div>
             <div class="ecosystem-card-details">
+              <div>
+                <span>Objetivo de la pagina</span>
+                <p>${escapeHTML(item.objective)}</p>
+              </div>
               <div>
                 <span>Ruta recomendada</span>
                 <p>${escapeHTML(item.route)}</p>
