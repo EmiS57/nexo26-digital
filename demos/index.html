@@ -345,7 +345,7 @@
       const filters = ["Todos","Esencial","Profesional","A Medida","Tienda","Salud","Restaurantes","Bienestar","Fitness","Comercio","Servicios"].filter((filter) => filter === "Todos" || publishedConcepts.some((item) => item.package.includes(filter) || item.packageType === filter || item.category === filter || item.industry === filter));
       const grid = document.getElementById("catalog-grid");
       const filterBar = document.getElementById("filters");
-      const nexo = "https://wa.me/message/ZPTEPGUHA3O2B1";
+      const nexo = "https://wa.me/5215517973390?text=Hola%2C%20estuve%20revisando%20el%20cat%C3%A1logo%20de%20conceptos%20NEXO26%20y%20me%20gustar%C3%ADa%20adaptar%20una%20experiencia%20similar%20a%20mi%20negocio.";
       const statusLabels = {
         published: "Publicado"
       };
@@ -360,14 +360,16 @@
         }
         grid.innerHTML = visible.map((item) => '<article class="card"><img src="' + item.preview + '" alt="" loading="lazy" /><div class="card-body"><div class="meta"><span>' + item.industry + '</span><span>' + item.package + '</span><span>' + item.type + '</span><span>' + (statusLabels[item.status] || item.status) + '</span></div><h2>' + item.name + '</h2><p>' + item.description + '</p><div class="features">' + item.functions.map((feature) => '<span>' + feature + '</span>').join("") + '</div><div class="actions"><a class="button primary" href="' + item.liveUrl + '">Enlace en vivo</a><a class="button ghost" href="' + nexo + '" target="_blank" rel="noopener noreferrer">CTA NEXO26</a></div></div></article>').join("");
       }
-      filterBar.innerHTML = filters.map((filter, index) => '<button type="button" aria-pressed="' + (index === 0) + '" data-filter="' + filter + '">' + filter + '</button>').join("");
-      filterBar.addEventListener("click", (event) => {
-        const button = event.target.closest("[data-filter]");
-        if (!button) return;
-        filterBar.querySelectorAll("button").forEach((item) => item.setAttribute("aria-pressed", "false"));
-        button.setAttribute("aria-pressed", "true");
-        render(button.dataset.filter);
-      });
+      if (publishedConcepts.length) {
+        filterBar.innerHTML = filters.map((filter, index) => '<button type="button" aria-pressed="' + (index === 0) + '" data-filter="' + filter + '">' + filter + '</button>').join("");
+        filterBar.addEventListener("click", (event) => {
+          const button = event.target.closest("[data-filter]");
+          if (!button) return;
+          filterBar.querySelectorAll("button").forEach((item) => item.setAttribute("aria-pressed", "false"));
+          button.setAttribute("aria-pressed", "true");
+          render(button.dataset.filter);
+        });
+      }
       render();
     </script>
   </body>
