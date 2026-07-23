@@ -19,7 +19,7 @@ window.DEMO_CONFIG = {
   "businessFacebook": "",
   "businessMapUrl": "",
   "nexoSiteUrl": "https://emis57.github.io/nexo26-digital/?utm_source=demo&utm_medium=referral&utm_campaign=lumbre-cauce",
-  "nexoWhatsappUrl": "https://wa.me/message/ZPTEPGUHA3O2B1",
+  "nexoWhatsappUrl": "https://wa.me/5215517973390",
   "contextualMessage": "Hola, vi el concepto LUMBRE CAUCE (Restaurante) y quiero una solución similar para mi negocio.",
   "packageScope": {
     "sections": "Página larga o hasta 3 páginas, hasta 12 secciones.",

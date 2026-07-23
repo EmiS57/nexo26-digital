@@ -506,27 +506,6 @@ window.NEXO_DATA = {
       featured: false
     },
     {
-      id: "huella-clara-veterinaria",
-      name: "Huella Clara Centro Veterinario",
-      title: "Huella Clara Centro Veterinario",
-      displayTitle: "Huella Clara",
-      industry: "Veterinaria",
-      category: "Salud",
-      filter: "Salud",
-      type: "Concepto base",
-      package: "NEXO Profesional",
-      video: "",
-      poster: "demos/huella-clara-veterinaria/assets/img/social-preview.svg",
-      liveUrl: "demos/huella-clara-veterinaria/",
-      description: "Concepto veterinario con servicios, cuidado por etapas, orientador responsable y contacto demostrativo.",
-      features: ["Atención", "Etapas", "Orientador", "FAQ", "Contacto"],
-      cta: "Quiero algo similar",
-      whatsappMessage: "Hola, tengo una veterinaria y me interesa una página similar al concepto Huella Clara.",
-      status: "draft",
-      published: false,
-      featured: false
-    },
-    {
       id: "arco-claro-dental",
       name: "Arco Claro Clínica Dental",
       title: "Arco Claro Clínica Dental",

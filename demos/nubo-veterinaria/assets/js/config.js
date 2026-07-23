@@ -19,7 +19,7 @@ window.DEMO_CONFIG = {
   "businessFacebook": "",
   "businessMapUrl": "",
   "nexoSiteUrl": "https://emis57.github.io/nexo26-digital/?utm_source=demo&utm_medium=referral&utm_campaign=nubo-veterinaria",
-  "nexoWhatsappUrl": "https://wa.me/message/ZPTEPGUHA3O2B1",
+  "nexoWhatsappUrl": "https://wa.me/5215517973390",
   "contextualMessage": "Hola, vi el concepto NUBO Centro Veterinario (Veterinaria) y quiero una solución similar para mi negocio.",
   "packageScope": {
     "sections": "Una página de una sola vista, hasta 8 secciones.",

@@ -23,7 +23,7 @@ window.DEMO_CONFIG = {
   "businessFacebook": "",
   "businessMapUrl": "",
   "nexoSiteUrl": "../../?utm_source=demo&utm_medium=referral&utm_campaign=foco-vivo-optica",
-  "nexoWhatsappUrl": "https://wa.me/message/ZPTEPGUHA3O2B1",
+  "nexoWhatsappUrl": "https://wa.me/5215517973390",
   "contextualMessage": "Hola, quiero una solución similar al concepto Foco Vivo para un negocio de Óptica.",
   "packageScope": {
     "sections": "Una página, hasta 8 secciones.",

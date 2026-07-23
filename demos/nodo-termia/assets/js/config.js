@@ -19,7 +19,7 @@ window.DEMO_CONFIG = {
   "businessFacebook": "",
   "businessMapUrl": "",
   "nexoSiteUrl": "https://emis57.github.io/nexo26-digital/?utm_source=demo&utm_medium=referral&utm_campaign=nodo-termia",
-  "nexoWhatsappUrl": "https://wa.me/message/ZPTEPGUHA3O2B1",
+  "nexoWhatsappUrl": "https://wa.me/5215517973390",
   "contextualMessage": "Hola, vi el concepto NODO TERMIA Servicio Técnico (Servicio técnico) y quiero una solución similar para mi negocio.",
   "packageScope": {
     "sections": "Una vista, hasta 5 secciones.",

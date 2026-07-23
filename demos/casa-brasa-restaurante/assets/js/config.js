@@ -23,7 +23,7 @@ window.DEMO_CONFIG = {
   "businessFacebook": "",
   "businessMapUrl": "",
   "nexoSiteUrl": "../../?utm_source=demo&utm_medium=referral&utm_campaign=casa-brasa-restaurante",
-  "nexoWhatsappUrl": "https://wa.me/message/ZPTEPGUHA3O2B1",
+  "nexoWhatsappUrl": "https://wa.me/5215517973390",
   "contextualMessage": "Hola, quiero una solución similar al concepto Casa Brasa para un negocio de Restaurante.",
   "packageScope": {
     "sections": "Página larga o hasta 3 páginas.",

@@ -9,7 +9,7 @@ Los conceptos en estado draft permanecen ocultos del catálogo público hasta re
 1. Verifica el nombre con búsqueda exacta y documenta el resultado en `NAME_CHECKS.md`.
 2. Define giro, paquete representado, funciones incluidas y funciones no incluidas.
 3. Crea `demos/slug/index.html`, `assets/css/styles.css`, `assets/js/config.js`, `assets/js/main.js`, `assets/img/favicon.svg` y `assets/img/social-preview.svg`.
-4. Usa rutas relativas, nunca rutas de Windows, localhost ni rutas absolutas desde la raíz del dominio.
+4. Usa rutas relativas del sitio, nunca rutas absolutas ni enlaces de desarrollo local.
 5. Configura `window.DEMO_CONFIG` con UTM `utm_campaign=slug`.
 6. Agrega el concepto al catálogo y al portafolio solo si tiene URL publicada o ruta local funcional.
 
@@ -24,7 +24,6 @@ Los conceptos en estado draft permanecen ocultos del catálogo público hasta re
 | SENDA NÍTIDA Óptica | senda-nitida | NEXO Profesional | Óptica |
 | SURCO LENTO Objetos | surco-lento | NEXO Tienda Inicial | Tienda |
 | NODO TERMIA Servicio Técnico | nodo-termia | NEXO Esencial | Servicio técnico |
-| Huella Clara Centro Veterinario | huella-clara-veterinaria | NEXO Profesional | Veterinaria |
 | Arco Claro Clínica Dental | arco-claro-dental | NEXO Profesional | Dental |
 | Casa Brasa Cocina | casa-brasa-restaurante | NEXO A Medida | Restaurante |
 | Ritmo Base Entrenamiento | ritmo-base-entrenamiento | NEXO Profesional | Gimnasio |
