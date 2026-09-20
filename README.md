@@ -1,21 +1,23 @@
-# NEXO26 ? Public Flagship Sovereign House
+﻿# NEXO26 — Public Flagship Sovereign House
 
-Despliegue p?blico oficial de la presencia web est?tica de **NEXO26** (Premier Business + Creative Intelligence Operating System).
+Despliegue público oficial de la presencia web estática de **NEXO26** (Premier Business + Creative Intelligence Operating System).
 
 - **Destino GitHub Pages**: https://emis57.github.io/nexo26-digital/
-- **Repositorio de Ingenier?a**: Monorepo de ingenier?a NEXO26.
-- **Identidad Visual**: Mark 2.0 (Identidad est?tica inmutable congelada).
-- **Rendimiento**: Generaci?n est?tica pura, zero trackers, Core Web Vitals 100/100.
-- **Archivo Hist?rico**: El historial previo a esta versi?n g?nesis se encuentra preservado de forma inmutable en la rama `legacy-archive-before-genesis`.
+- **Repositorio de Ingeniería**: Monorepo de ingeniería NEXO26 (C:\Users\eltio\Documents\NEXO26-Engineering).
+- **Identidad Visual**: Mark 2.0 (Identidad estática inmutable congelada).
+- **Rendimiento**: Generación estática pura, zero trackers externos, Core Web Vitals 100/100.
+- **Archivo Histórico**: Preservado de forma inmutable en la rama legacy-archive-before-genesis.
 
-## Estructura de Rutas P?blicas
+## Estructura de Rutas Públicas
 
-- `/`: Portada Flagship con living mark, manifiesto, showroom verificado, autor?a fundacional y motor de causalidad.
-- `/work/`: Cat?logo editorial de proyectos clasificados (Kraken, Tatanka, Creator, Flagship).
-- `/creator/`: Filosof?a y manual de operaci?n del pipeline de 8 fases.
-- `/services/`: Cinco disciplinas soberanas (Gemelo cuantitativo, Direcci?n creativa, Agentes aut?nomos, Conversi?n alto ticket, Gobernanza).
-- `/process/`: Metodolog?a en 5 fases (Descubrimiento a Verificaci?n y Traspaso).
-- `/contact/`: Cuestionario de admisi?n y enlace a l?nea verificada WhatsApp.
+- /: Portada Flagship con System Twin 3D, axioma de no falsedad, proyectos y simulador.
+- /projects/: Catálogo editorial de proyectos con procedencia verificada (R&D Interno, Estudios Conceptuales, Clientes).
+- /solutions/: Inversión transparente en MXN (Esencial $999, Profesional $2,299, A Medida $3,999, Tienda $6,999).
+- /creator/: Workbench soberano con serialización paramétrica de Build Codes y switch táctil responsive.
+- /impact/: Simulador interactivo de conversión, cálculo de payback y pabellón de causalidad de 5 niveles.
+- /method/: Metodología en 5 fases (Entender, Modelar, Dirigir, Construir, Medir).
+- /contact/: Admisión de proyectos y enlace a línea verificada WhatsApp.
+- /process/, /services/, /work/: Redirecciones de compatibilidad hacia las rutas canónicas.
 
 ---
-NEXO26 DIGITAL SYSTEMS ? 2026. Todos los derechos reservados. Ciudad de M?xico.
+NEXO26 DIGITAL SYSTEMS · 2026. Todos los derechos reservados. Ciudad de México.

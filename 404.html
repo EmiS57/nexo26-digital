@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Página no encontrada — NEXO26</title>
   <meta name="description" content="La ruta solicitada no existe en la arquitectura soberana de NEXO26.">
-  <meta name="theme-color" content="#040506">
+  <meta name="theme-color" content="#050608">
   <meta property="og:title" content="Página no encontrada — NEXO26">
   <meta property="og:description" content="La ruta solicitada no existe en la arquitectura soberana de NEXO26.">
   <meta property="og:type" content="website">
@@ -14,309 +14,335 @@
   <link rel="stylesheet" href="/nexo26-digital/assets/site.css">
 </head>
 <body>
+  <div class="studio-lighting" aria-hidden="true"></div>
+  <div class="cursor-light-glow" aria-hidden="true"></div>
+
   <header class="site-header">
     <a class="brand-link" href="/nexo26-digital/" aria-label="NEXO26, inicio">
       <img class="wordmark" src="/nexo26-digital/assets/wordmark.svg" alt="NEXO26">
-      <span class="header-badge">OS 2.0</span>
+      <span class="badge-version">OS 2.0</span>
     </a>
     <nav class="nav" aria-label="Navegación principal">
-      <a href="/nexo26-digital/work/" class="">Work</a>
+      <a href="/nexo26-digital/projects/" class="">Projects</a>
+      <a href="/nexo26-digital/solutions/" class="">Solutions</a>
       <a href="/nexo26-digital/creator/" class="">Creator</a>
-      <a href="/nexo26-digital/services/" class="">Servicios</a>
-      <a href="/nexo26-digital/process/" class="">Proceso</a>
-      <a href="/nexo26-digital/contact/" class="">Contacto</a>
-      
-        <a class="nav-studio-link" href="#studio">Studio</a>
-      
+      <a href="/nexo26-digital/impact/" class="">Impact</a>
+      <a href="/nexo26-digital/method/" class="">Method</a>
+      <a class="studio-link" id="open-studio-gate" href="#studio">Studio</a>
     </nav>
-    <a class="header-cta" href="/nexo26-digital/contact/">Iniciar proyecto ↗</a>
-    <button class="menu" aria-label="Abrir menú de navegación" aria-expanded="false">Menú</button>
+    <a class="header-cta" href="/nexo26-digital/contact/">Iniciar Proyecto ↗</a>
+    <button class="menu-toggle" aria-label="Abrir menú">MENÚ</button>
   </header>
 
-  <main class="page">
-    <section class="hero">
-      
-      <span class="eyebrow">ERROR 404 / NO LOCALIZADO</span>
-      <h1>Esta ruta no existe en el sistema.</h1>
-      <p>El recurso solicitado no forma parte de la arquitectura pública de NEXO26 o fue reubicado para preservar la integridad del catálogo.</p>
-      <div class="actions">
-        <a class="button copper btn-tactile" href="/nexo26-digital/contact/">
-          Volver al inicio <span>↗</span>
-        </a>
-        <a class="button" href="/nexo26-digital/work/">
-          Ver showroom <span>↓</span>
-        </a>
-      </div>
-      
-    </section>
-
-    <section class="section" style="text-align:center; padding:40px 0;"><a class="button copper btn-tactile" href="/nexo26-digital/">Volver al inicio <span>←</span></a></section>
+  <main>
+    <section class="hero-scene" style="min-height:70vh;"><div class="container"><span class="kicker">ERROR 404</span><h1 class="monumental-headline">Ruta no localizada.</h1><p class="lead-p">El recurso solicitado no forma parte de la arquitectura pública de NEXO26.</p><a class="btn-primary" href="/nexo26-digital/">Volver al inicio <span>←</span></a></div></section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img class="wordmark" src="/nexo26-digital/assets/wordmark.svg" alt="NEXO26" style="width:115px;">
-        <p>Premier Business + Creative Intelligence Operating System. Construido para quienes exigen rigor técnico y estética innegociable.</p>
+  <!-- MODAL DE DOSSIER DE PROYECTO -->
+  <dialog id="project-modal" aria-labelledby="pm-title">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:20px;">
+      <div>
+        <span class="kicker" id="pm-badge">PROVENANCE</span>
+        <h3 id="pm-title" style="font-size:24px; font-weight:700; color:var(--optic-white); margin-top:4px;"></h3>
+        <p id="pm-classification" style="font-family:var(--font-mono); font-size:11px; color:var(--technical-copper); margin-top:2px;"></p>
       </div>
-      <nav class="footer-nav" aria-label="Navegación del pie">
-        <a href="/nexo26-digital/work/">Work</a>
-        <a href="/nexo26-digital/creator/">Creator</a>
-        <a href="/nexo26-digital/services/">Servicios</a>
-        <a href="/nexo26-digital/process/">Proceso</a>
-        <a href="/nexo26-digital/contact/">Contacto</a>
-      </nav>
+      <button id="close-pm" style="background:transparent; border:none; color:var(--text-muted); font-size:18px; cursor:pointer;" aria-label="Cerrar">✕</button>
     </div>
-    <div class="footer-bottom">
-      <span>NEXO26 DIGITAL SYSTEMS © 2026. Todos los derechos reservados.</span>
-      <span>GENESIS PRODUCTION BASELINE · CIUDAD DE MÉXICO</span>
-      <span>ARQUITECTURA SOBERANA SIN RASTREADORES</span>
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <p id="pm-summary" style="font-size:15px; color:var(--text-secondary); line-height:1.6;"></p>
+      <div style="background:rgba(5,6,8,0.6); border:1px solid var(--graphite-border); border-radius:12px; padding:16px; font-family:var(--font-mono); font-size:11px; display:flex; flex-direction:column; gap:8px;">
+        <div><strong style="color:var(--text-dim);">ROL: </strong><span id="pm-role" style="color:var(--text-primary);"></span></div>
+        <div><strong style="color:var(--text-dim);">STACK: </strong><span id="pm-stack" style="color:var(--text-primary);"></span></div>
+        <div><strong style="color:var(--text-dim);">DESAFÍO: </strong><span id="pm-challenge" style="color:var(--text-primary);"></span></div>
+        <div><strong style="color:var(--text-dim);">DECISIÓN TÉCNICA: </strong><span id="pm-decision" style="color:var(--text-primary);"></span></div>
+        <div><strong style="color:var(--text-dim);">ENTREGABLES: </strong><span id="pm-deliverables" style="color:var(--text-primary);"></span></div>
+        <div><strong style="color:var(--text-dim);">VERIFICACIÓN: </strong><span id="pm-verification" style="color:#10b981;"></span></div>
+      </div>
+      <a class="btn-primary" href="/nexo26-digital/contact/">Consultar una solución similar ↗</a>
+    </div>
+  </dialog>
+
+  <!-- MODAL DE CONSOLA STUDIO -->
+  <dialog id="studio-modal" aria-labelledby="sm-title">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:20px;">
+      <div>
+        <span class="kicker">CONSOLA SOBERANA</span>
+        <h3 id="sm-title" style="font-size:24px; font-weight:700; color:var(--optic-white); margin-top:4px;">NEXO26 Studio</h3>
+      </div>
+      <button id="close-sm" style="background:transparent; border:none; color:var(--text-muted); font-size:18px; cursor:pointer;" aria-label="Cerrar">✕</button>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <p style="font-size:15px; color:var(--text-secondary); line-height:1.6;">
+        NEXO26 Studio es el entorno operativo privado para fundadores y operadores. Conecta el gemelo cuantitativo, la orquestación multi-agente con bloqueo secuencial, y el ledger inmutable de decisiones.
+      </p>
+      <div style="background:rgba(5,6,8,0.6); border:1px solid var(--graphite-border); border-radius:12px; padding:16px; font-family:var(--font-mono); font-size:11px; display:flex; flex-direction:column; gap:8px;">
+        <div><strong style="color:var(--text-dim);">ACCESO FUNDADOR: </strong><span style="color:var(--text-primary);">Credencial criptográfica emii5.7</span></div>
+        <div><strong style="color:var(--text-dim);">PORTAL CLIENTE: </strong><span style="color:var(--text-primary);">Invitación firmada por proyecto</span></div>
+        <div><strong style="color:var(--text-dim);">AISLAMIENTO GUEST: </strong><span style="color:var(--text-primary);">Solo lectura sobre revisiones públicas</span></div>
+        <div><strong style="color:var(--text-dim);">INFRAESTRUCTURA: </strong><span style="color:#10b981;">PostgreSQL Persistente / Neonaws</span></div>
+      </div>
+      <a class="btn-primary" href="/nexo26-digital/contact/">Solicitar acceso a la suite privada ↗</a>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div style="display:flex; align-items:center; gap:14px;">
+          <img src="/nexo26-digital/assets/lockup-horizontal.svg" alt="NEXO26" style="height:18px; width:auto;">
+          <span style="color:var(--text-dim);">SOVEREIGN PRODUCT HOUSE</span>
+        </div>
+        <div style="display:flex; gap:20px;">
+          <a href="/nexo26-digital/projects/" style="color:var(--text-secondary); text-decoration:none;">Projects</a>
+          <a href="/nexo26-digital/solutions/" style="color:var(--text-secondary); text-decoration:none;">Solutions</a>
+          <a href="/nexo26-digital/creator/" style="color:var(--text-secondary); text-decoration:none;">Creator</a>
+          <a href="/nexo26-digital/impact/" style="color:var(--text-secondary); text-decoration:none;">Impact</a>
+          <a href="/nexo26-digital/contact/" style="color:var(--text-secondary); text-decoration:none;">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 NEXO26 Engineering. Todos los derechos reservados.</div>
+        <div>Dirección Fundacional: Emilio Ahmed (emii5.7) · Cero rastreadores externos.</div>
+      </div>
     </div>
   </footer>
 
-  <!-- MODAL DE PROYECTOS -->
-  <dialog id="project-modal" aria-labelledby="modal-title">
-    <div class="modal-header">
-      <div>
-        <span class="eyebrow" id="modal-classification">CLASIFICACIÓN</span>
-        <h3 id="modal-title">Título del Proyecto</h3>
-      </div>
-      <button class="modal-close-btn" id="close-project-modal" aria-label="Cerrar modal">✕</button>
-    </div>
-    <div class="modal-body">
-      <p id="modal-summary">Resumen del proyecto...</p>
-      <div class="modal-details-grid">
-        <div><strong>RETO TÉCNICO</strong><span id="modal-challenge">—</span></div>
-        <div><strong>TESIS INNEGOCIABLE</strong><span id="modal-thesis">—</span></div>
-        <div><strong>ENTREGABLE SOBERANO</strong><span id="modal-deliverables">—</span></div>
-        <div><strong>VERIFICACIÓN EMPÍRICA</strong><span id="modal-verification">—</span></div>
-      </div>
-      <a class="button copper btn-tactile" href="/nexo26-digital/contact/">Consultar un proyecto similar <span>↗</span></a>
-    </div>
-  </dialog>
-
-  <!-- MODAL DE ACCESO A STUDIO -->
-  <dialog id="studio-modal" aria-labelledby="studio-modal-title">
-    <div class="modal-header">
-      <div>
-        <span class="eyebrow">CONSOLA SOBERANA</span>
-        <h3 id="studio-modal-title">NEXO26 Studio</h3>
-      </div>
-      <button class="modal-close-btn" id="close-studio-modal" aria-label="Cerrar modal">✕</button>
-    </div>
-    <div class="modal-body">
-      <p>
-        NEXO26 Studio es la consola operativa privada para fundadores y operadores. Ejecuta el gemelo de negocio cuantitativo, la orquestación multi-agente con bloqueo secuencial y el ledger inmutable de decisiones.
-      </p>
-      <div class="modal-details-grid">
-        <div><strong>ACCESO FUNDACIONAL</strong><span>Credencial criptográfica emii5.7</span></div>
-        <div><strong>ACCESO CLIENTE</strong><span>Invitación firmada por proyecto</span></div>
-        <div><strong>AISLAMIENTO GUEST</strong><span>Solo lectura sobre revisiones</span></div>
-        <div><strong>SOBERANÍA TOTAL</strong><span>Cero almacenamiento externo foráneo</span></div>
-      </div>
-      <a class="button copper btn-tactile" href="/nexo26-digital/contact/">Solicitar acceso a la suite privada <span>↗</span></a>
-    </div>
-  </dialog>
-
   <script>
-// 1. Mobile Navigation & Glass Drawer
-const menuBtn = document.querySelector('.menu');
-const nav = document.querySelector('.nav');
-const closeNav = () => {
-  menuBtn?.setAttribute('aria-expanded', 'false');
-  nav?.classList.remove('open');
-  document.body.style.overflow = '';
-};
-menuBtn?.addEventListener('click', () => {
-  const isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
-  if (isOpen) {
-    closeNav();
-  } else {
-    menuBtn.setAttribute('aria-expanded', 'true');
-    nav?.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-});
-
-// 2. Translucent Header Dynamic Shadow on Scroll
+// 1. Navigation Scroll Treatment
 const header = document.querySelector('.site-header');
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 40) {
-    header?.classList.add('scrolled');
-  } else {
-    header?.classList.remove('scrolled');
-  }
+  if (window.scrollY > 40) header?.classList.add('scrolled');
+  else header?.classList.remove('scrolled');
 }, { passive: true });
 
-// 3. Ambient Pointer Glow (Desktop Only)
-const cursorGlow = document.createElement('div');
-cursorGlow.className = 'cursor-light-glow';
-document.body.appendChild(cursorGlow);
-
-if (window.matchMedia('(pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  window.addEventListener('mousemove', (e) => {
-    cursorGlow.style.opacity = '1';
-    cursorGlow.style.left = e.clientX + 'px';
-    cursorGlow.style.top = e.clientY + 'px';
-  }, { passive: true });
-
-  window.addEventListener('mouseleave', () => {
-    cursorGlow.style.opacity = '0';
-  });
-}
-
-// 4. Scroll Choreography (IntersectionObserver for Reveal)
-const revealElements = document.querySelectorAll('.reveal-on-scroll');
-if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-revealed');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  revealElements.forEach(el => observer.observe(el));
-} else {
-  revealElements.forEach(el => el.classList.add('is-revealed'));
-}
-
-// 5. Interactive Creator Sticky Tabs & Stage Switcher
-const tabs = document.querySelectorAll('.creator-tab');
-const panels = document.querySelectorAll('.stage-panel');
-const stageTitle = document.getElementById('current-stage-title');
-
-const stageTitles = {
-  evidence: 'FASE 01: EVIDENCE & QUANTITATIVE FORENSICS',
-  direction: 'FASE 02: AESTHETIC THESIS & SWISS PRECISION',
-  dna: 'FASE 03: DESIGN DNA & LUXURY TOKENS',
-  configure: 'FASE 04: LIVE PARAMETRIC CONFIGURATION',
-  compare: 'FASE 05: DIFFERENTIATION MATRIX (GENERIC VS NEXO)',
-  testdrive: 'FASE 06: MULTI-VIEWPORT RESPONSIVE SIMULATOR'
-};
-
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    const target = tab.getAttribute('data-tab');
-    if (!target) return;
-
-    tabs.forEach(t => {
-      t.classList.remove('active');
-      t.setAttribute('aria-selected', 'false');
-    });
-    panels.forEach(p => p.classList.remove('active'));
-
-    tab.classList.add('active');
-    tab.setAttribute('aria-selected', 'true');
-
-    const activePanel = document.getElementById('panel-' + target);
-    if (activePanel) activePanel.classList.add('active');
-    if (stageTitle && stageTitles[target]) stageTitle.textContent = stageTitles[target];
-  });
-});
-
-// 6. Interactive Configurator Sliders (Panel 4)
-const densityRange = document.getElementById('density-range');
-const copperRange = document.getElementById('copper-range');
-const densityVal = document.getElementById('density-val');
-const copperVal = document.getElementById('copper-val');
-const toyGlow = document.getElementById('toy-glow');
-
-densityRange?.addEventListener('input', (e) => {
-  if (densityVal) densityVal.textContent = e.target.value + '%';
-});
-
-copperRange?.addEventListener('input', (e) => {
-  const val = e.target.value;
-  if (copperVal) copperVal.textContent = val + '%';
-  if (toyGlow) {
-    toyGlow.style.opacity = (val / 100).toString();
-    toyGlow.style.transform = 'translate(-50%, -50%) scale(' + (0.5 + val / 100) + ')';
+// 2. Mobile Menu Toggle
+const menuBtn = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.nav');
+menuBtn?.addEventListener('click', () => {
+  nav?.classList.toggle('open');
+  if (nav?.classList.contains('open')) {
+    menuBtn.textContent = '✕ CERRAR';
+  } else {
+    menuBtn.textContent = 'MENÚ';
   }
 });
 
-// 7. Interactive Test Drive Viewport Switcher (Panel 6)
-const vpButtons = document.querySelectorAll('.vp-btn');
-const testdriveCanvas = document.getElementById('testdrive-canvas');
+// 3. Desktop Cursor Glow
+const glow = document.querySelector('.cursor-light-glow');
+if (window.matchMedia('(pointer: fine)').matches) {
+  window.addEventListener('pointermove', (e) => {
+    if (glow) {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    }
+  }, { passive: true });
+}
 
+// 4. System Twin 3D Interaction
+const twinChassis = document.querySelector('.system-twin-chassis');
+const twinStage = document.querySelector('.system-twin-stage');
+if (twinStage && twinChassis && window.matchMedia('(pointer: fine)').matches) {
+  twinStage.addEventListener('pointermove', (e) => {
+    const rect = twinStage.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    twinChassis.style.transform = `rotateX(${-y * 22}deg) rotateY(${x * 22}deg)`;
+  });
+  twinStage.addEventListener('pointerleave', () => {
+    twinChassis.style.transform = 'rotateX(12deg) rotateY(-8deg)';
+  });
+}
+
+// 5. Creator Tabs
+const tabButtons = document.querySelectorAll('.c-tab-btn');
+const tabPanels = document.querySelectorAll('.c-panel');
+tabButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.getAttribute('data-tab');
+    tabButtons.forEach(b => b.classList.remove('active'));
+    tabPanels.forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    const panel = document.getElementById('panel-' + target);
+    if (panel) panel.classList.add('active');
+  });
+});
+
+// 6. Configurator Sliders & Build Code Serialization
+const densityInput = document.getElementById('density-input');
+const copperInput = document.getElementById('copper-input');
+const densityVal = document.getElementById('density-val');
+const copperVal = document.getElementById('copper-val');
+const buildCodeText = document.getElementById('build-code-val');
+
+function updateBuildCode() {
+  const d = Math.round(Number(densityInput?.value) || 75);
+  const c = Math.round(Number(copperInput?.value) || 60);
+  if (densityVal) densityVal.textContent = d + '%';
+  if (copperVal) copperVal.textContent = c + '%';
+
+  const dHex = d.toString(16).padStart(2, '0').toUpperCase();
+  const cHex = c.toString(16).padStart(2, '0').toUpperCase();
+  const code = `NX-ATE-HD-${dHex}${cHex}`;
+  if (buildCodeText) buildCodeText.textContent = code;
+}
+
+densityInput?.addEventListener('input', updateBuildCode);
+copperInput?.addEventListener('input', updateBuildCode);
+if (densityInput) {
+  updateBuildCode();
+}
+
+document.getElementById('btn-copy-code')?.addEventListener('click', () => {
+  const code = buildCodeText?.textContent || '';
+  navigator.clipboard.writeText(code).then(() => {
+    const btn = document.getElementById('btn-copy-code');
+    if (btn) {
+      btn.textContent = '✓ COPIADO';
+      setTimeout(() => { btn.textContent = 'COPIAR CÓDIGO'; }, 2000);
+    }
+  });
+});
+
+// 7. Test Drive Viewport Switcher
+const vpButtons = document.querySelectorAll('.vp-btn');
+const vpFrame = document.getElementById('testdrive-frame');
 vpButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     vpButtons.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const vp = btn.getAttribute('data-vp');
-    if (!testdriveCanvas) return;
-    if (vp === 'desktop') {
-      testdriveCanvas.style.maxWidth = '100%';
-    } else if (vp === 'tablet') {
-      testdriveCanvas.style.maxWidth = '560px';
-    } else if (vp === 'mobile') {
-      testdriveCanvas.style.maxWidth = '300px';
-    }
+    if (!vpFrame) return;
+    if (vp === 'desktop') vpFrame.style.maxWidth = '100%';
+    if (vp === 'tablet') vpFrame.style.maxWidth = '560px';
+    if (vp === 'mobile') vpFrame.style.maxWidth = '320px';
   });
 });
 
-// 8. 3D Card Hover Tilt Effect (Desktop)
-if (window.matchMedia('(pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  document.querySelectorAll('.glass-card-interactive').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const midX = rect.width / 2;
-      const midY = rect.height / 2;
-      const rotX = ((y - midY) / midY) * -4;
-      const rotY = ((x - midX) / midX) * 4;
-      card.style.transform = 'perspective(1000px) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg) translateY(-4px)';
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-    });
-  });
+// 8. Public Impact Simulator Calculations
+const simVisitors = document.getElementById('sim-visitors');
+const simCurRate = document.getElementById('sim-cur-rate');
+const simTgtRate = document.getElementById('sim-tgt-rate');
+const simTicket = document.getElementById('sim-ticket');
+const simFixed = document.getElementById('sim-fixed');
+const simPackage = document.getElementById('sim-package');
+
+const outCurClients = document.getElementById('out-cur-clients');
+const outTgtClients = document.getElementById('out-tgt-clients');
+const outCustomerDelta = document.getElementById('out-client-delta');
+const outCurRevenue = document.getElementById('out-cur-revenue');
+const outTgtRevenue = document.getElementById('out-tgt-revenue');
+const outIncRevenue = document.getElementById('out-inc-revenue');
+const outRecoverClients = document.getElementById('out-recover-clients');
+const outBreakEven = document.getElementById('out-break-even');
+const outMarginSafety = document.getElementById('out-margin-safety');
+
+function calculateSimulator() {
+  if (!simVisitors) return;
+  const v = Math.max(0, Number(simVisitors?.value) || 2000);
+  const curR = (Math.max(0, Number(simCurRate?.value) || 1.0)) / 100;
+  const tgtR = (Math.max(0, Number(simTgtRate?.value) || 2.5)) / 100;
+  const t = Math.max(0, Number(simTicket?.value) || 1500);
+  const f = Math.max(0, Number(simFixed?.value) || 15000);
+  const pkgCost = Number(simPackage?.value) || 2299;
+
+  const simVisitorsVal = document.getElementById('sim-visitors-val');
+  const simCurRateVal = document.getElementById('sim-cur-rate-val');
+  const simTgtRateVal = document.getElementById('sim-tgt-rate-val');
+  if (simVisitorsVal) simVisitorsVal.textContent = v.toLocaleString('es-MX');
+  if (simCurRateVal) simCurRateVal.textContent = (curR * 100).toFixed(1) + '%';
+  if (simTgtRateVal) simTgtRateVal.textContent = (tgtR * 100).toFixed(1) + '%';
+
+  const curClients = Math.round(v * curR);
+  const tgtClients = Math.round(v * tgtR);
+  const deltaClients = tgtClients - curClients;
+
+  const curRev = curClients * t;
+  const tgtRev = tgtClients * t;
+  const incRev = tgtRev - curRev;
+
+  // Assuming 80% unit contribution (20% var costs)
+  const unitContrib = t * 0.8;
+  const recoverClients = unitContrib > 0 ? Math.ceil(pkgCost / unitContrib) : 0;
+  const beClients = unitContrib > 0 ? Math.ceil(f / unitContrib) : 0;
+  const marginSafety = tgtClients > 0 ? Math.max(0, ((tgtClients - beClients) / tgtClients) * 100) : 0;
+
+  if (outCurClients) outCurClients.textContent = curClients.toLocaleString('es-MX');
+  if (outTgtClients) outTgtClients.textContent = tgtClients.toLocaleString('es-MX');
+  if (outCustomerDelta) outCustomerDelta.textContent = '+' + deltaClients.toLocaleString('es-MX');
+  if (outCurRevenue) outCurRevenue.textContent = '$' + curRev.toLocaleString('es-MX') + ' MXN';
+  if (outTgtRevenue) outTgtRevenue.textContent = '$' + tgtRev.toLocaleString('es-MX') + ' MXN';
+  if (outIncRevenue) outIncRevenue.textContent = '+$' + incRev.toLocaleString('es-MX') + ' MXN/mes';
+  if (outRecoverClients) outRecoverClients.textContent = recoverClients + ' clientes';
+  if (outBreakEven) outBreakEven.textContent = beClients + ' clientes/mes';
+  if (outMarginSafety) outMarginSafety.textContent = marginSafety.toFixed(0) + '%';
 }
 
-// 9. Modal Logic (Projects & Studio)
-const projectsData = {"kraken":{"id":"kraken","index":"01","title":"Kraken / Sistema Editorial","classification":"CONCEPTO INTERNO · ARQUITECTURA EDITORIAL","summary":"Arquitectura de contenido de alta densidad y navegación no lineal para publicaciones técnicas y finanzas soberanas.","challenge":"Las interfaces digitales modernas fragmentan la atención o banalizan el contenido especializado en feeds efímeros.","thesis":"El rigor tipográfico suizo combinado con navegación contextual eleva la retención de lectura técnica por encima del 70%.","deliverables":"Sistema tipográfico de 8 escalas, índice contextual flotante, motor de búsqueda determinístico en cliente, cero trackers externos.","verification":"100% WCAG AA, CLS = 0.00, tiempo de render inicial sub-50ms en redes 3G.","badge":"CONCEPTO","mark":"K"},"tatanka":{"id":"tatanka","index":"02","title":"Tatanka / Presencia con Intención","classification":"DEMO DE SISTEMA · CONVERSIÓN DE ALTO TICKET","summary":"Arquitectura de conversión deliberada para servicios y consultoría de alto valor con calificación previa de clientes.","challenge":"Los embudos genéricos inundan al equipo comercial de leads descalificados y abaratan la percepción de la marca.","thesis":"La micro-fricción intencional en el formulario de entrada aumenta la tasa de cierre comercial y preserva la exclusividad.","deliverables":"Cuestionario de diagnóstico estructurado, cálculo automático de horizonte de inversión, ruteo directo a canal privado.","verification":"Flujo verificado en entorno de prueba; cero almacenamiento de datos confidenciales en servidores no soberanos.","badge":"DEMO","mark":"T"},"creator":{"id":"creator","index":"03","title":"Creator / Método Soberano NEXO26","classification":"PLATAFORMA INTERNA · INTELIGENCIA CREATIVA","summary":"La mesa de trabajo unificada que conecta el diagnóstico forense del negocio con la arquitectura de código y el diseño visual.","challenge":"La desconexión habitual entre estrategia comercial, diseñadores visuales e ingenieros de software arruina la visión fundacional.","thesis":"Un gemelo cuantitativo que alimenta directamente los tokens de diseño y los contratos de API garantiza coherencia total.","deliverables":"Pipeline de 8 fases, memoria de decisiones inmutable, orquestación de agentes con bloqueo de concurrencia y roles RBAC.","verification":"Más de 100 pruebas automatizadas pasando; cero credenciales o secretos en código cliente.","badge":"INTERNO","mark":"C"},"genesis":{"id":"genesis","index":"04","title":"NEXO26 / Flagship Sovereign House","classification":"PRODUCCIÓN · INFRAESTRUCTURA WEB","summary":"El portal insignia desplegado en GitHub Pages con rendimiento estático puro y arquitectura desacoplada de NEXO26 Studio.","challenge":"Las aplicaciones web monolíticas son pesadas, lentas de cargar en conexiones móviles y difíciles de auditar públicamente.","thesis":"Separar la presencia pública estática de la suite dinámica de gobernanza Studio garantiza 100/100 en Core Web Vitals.","deliverables":"Generador estático determinista, CSS cinemático con aceleración por GPU, identidad Mark 2.0 congelada, 100% responsive.","verification":"Verificación automatizada en viewports 1440, 1024, 768 y 390; Lighthouse audit 100 en Accesibilidad y SEO.","badge":"PRODUCCIÓN","mark":"N"}};
-const projectModal = document.getElementById('project-modal');
-const studioModal = document.getElementById('studio-modal');
+[simVisitors, simCurRate, simTgtRate, simTicket, simFixed, simPackage].forEach(el => {
+  el?.addEventListener('input', calculateSimulator);
+});
+if (simVisitors) {
+  calculateSimulator();
+}
 
-function openProject(id) {
+// 9. Project Filtering
+const pFilterBtns = document.querySelectorAll('.filter-btn');
+const pCards = document.querySelectorAll('.project-card');
+pFilterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    pFilterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.getAttribute('data-filter');
+    pCards.forEach(card => {
+      if (filter === 'ALL' || card.getAttribute('data-provenance') === filter) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+// 10. Project Modal Logic
+const projectsData = {"kraken":{"id":"kraken","index":"01","title":"Kraken / Sistema Editorial","provenance":"INTERNAL R&D","provenanceBadge":"R&D INTERNO","classification":"ARQUITECTURA EDITORIAL · FINANZAS SOBERANAS","summary":"Arquitectura de contenido de alta densidad y navegación no lineal para publicaciones técnicas y finanzas soberanas.","role":"Arquitectura integral, tokens de diseño y motor de indexación.","stack":"Next.js 16 · TypeScript · CSS3 Hardware Accelerated · SQLite / PG","challenge":"Organizar cientos de piezas de investigación financiera profunda sin sobrecargar la memoria del navegador ni perder coherencia estética.","decision":"Estructura de grafo desacoplado con precarga determinista y renderizado estático puro con 0 bytes de rastreadores externos.","deliverables":"Motor de búsqueda local, tipografía suiza con métricas de contraste, generador determinista y diseño responsive.","verification":"Core Web Vitals 100/100 · Tiempo de primer render sub-40ms · WCAG AA.","status":"PRODUCCIÓN INTERNA","badge":"R&D"},"tatanka":{"id":"tatanka","index":"02","title":"Tatanka / Presencia con Intención","provenance":"CONCEPT STUDY","provenanceBadge":"CONCEPT STUDY","classification":"SISTEMA DE CALIFICACIÓN · ALTO TICKET","summary":"Arquitectura de conversión deliberada para servicios y consultoría de alto valor con micro-fricción previa.","role":"Dirección de arte, cuestionario de diagnóstico forense y ruteo a canal privado.","stack":"TypeScript · Vanilla JS · Optical Glass CSS · Cifrado local","challenge":"Los embudos genéricos inundan al equipo comercial de prospectos descalificados y abaratan la percepción de marca.","decision":"Micro-fricción deliberada: el prospecto declara su horizonte de inversión y objetivos antes de desbloquear el canal con el Fundador.","deliverables":"Diagnóstico estructurado, cálculo automático de punto de equilibrio y ruteo directo.","verification":"Flujo verificado en entorno de prueba; cero almacenamiento externo de datos confidenciales.","status":"ESTUDIO VERIFICADO","badge":"STUDY"},"marea":{"id":"marea","index":"03","title":"Marea Wellness Studio","provenance":"CONCEPT STUDY","provenanceBadge":"CONCEPT STUDY","classification":"ECOSISTEMA LOCAL · RESERVAS Y SERVICIOS","summary":"Sistema de conversión y reservaciones para centros de bienestar con catálogo estructurado y confirmación directa.","role":"Diseño de interfaz táctil, flujo de reservación en 4 pasos y optimización móvil.","stack":"HTML5 Semántico · CSS Grid / Flexbox · Vanilla JS · Integración WhatsApp","challenge":"Centros de servicios locales que pierden citas por procesos de reserva largos, lentos o que exigen crear cuentas innecesarias.","decision":"Flujo en 4 pasos sin fricción de registro: selección de ritual, especialista, horario y confirmación con enlace a WhatsApp.","deliverables":"Catálogo de rituales con pricing en MXN, selector de horarios y confirmación local.","verification":"Prueba técnica en celulares de gama baja; tiempo de carga menor a 300ms en red 4G.","status":"ESTUDIO VERIFICADO","badge":"STUDY"},"nexo_studio":{"id":"nexo_studio","index":"04","title":"NEXO Studio Pro","provenance":"INTERNAL R&D","provenanceBadge":"R&D INTERNO","classification":"SISTEMA OPERATIVO · GOBIERNO & DECISIONES","summary":"La consola operativa privada de NEXO26 que conecta el gemelo cuantitativo con el ledger inmutable de decisiones.","role":"Ingeniería de software, control de concurrencia multi-agente y persistencia PostgreSQL.","stack":"Next.js 16 · PostgreSQL / Neon · RBAC Multi-rol · Criptografía SHA-256","challenge":"Gobernar múltiples agentes de software concurrentes sin riesgo de sobreescritura de archivos ni pérdida de memoria de decisiones.","decision":"Bloqueo secuencial con token atómico, verificación de roles RBAC con aislamiento Guest y ledger inmutable.","deliverables":"Atelier financiero, centro de auditorías, orquestador de agentes y reportes de impacto.","verification":"50 pruebas automatizadas de aceptación pasando al 100% · Cero credenciales expuestas.","status":"OPERACIONES EN VIVO","badge":"R&D"},"vistaelite":{"id":"vistaelite","index":"05","title":"VistaElite Óptica","provenance":"CONCEPT STUDY","provenanceBadge":"CONCEPT STUDY","classification":"COMERCIO TÁCTIL · SALUD VISUAL","summary":"Concepto de comercio de alta gama para óptica con agendamiento de examen de la vista y catálogo estructurado.","role":"Arquitectura de catálogo de armazones, agendamiento de citas clínicas y mapa de sucursal.","stack":"CSS Moderno · Responsive Typography · JavaScript Vanilla · Local Storage","challenge":"Presentar productos de salud visual premium sin parecer una tienda de descuento genérica ni ocultar la información técnica.","decision":"Fichas técnicas con filtros por tipo de mica y graduación, acompañadas de reservación directa de examen clínico.","deliverables":"Catálogo visual, agendador de consulta, mapa interactivo y botón comercial.","verification":"Verificado en 5 viewports sin desbordamiento horizontal.","status":"ESTUDIO VERIFICADO","badge":"STUDY"}};
+const projectModal = document.getElementById('project-modal');
+function openProjectDossier(id) {
   const p = projectsData[id];
   if (!p || !projectModal) return;
-  document.getElementById('modal-classification').textContent = p.classification;
-  document.getElementById('modal-title').textContent = p.title;
-  document.getElementById('modal-summary').textContent = p.summary;
-  document.getElementById('modal-challenge').textContent = p.challenge;
-  document.getElementById('modal-thesis').textContent = p.thesis;
-  document.getElementById('modal-deliverables').textContent = p.deliverables;
-  document.getElementById('modal-verification').textContent = p.verification;
+  document.getElementById('pm-badge').textContent = p.provenanceBadge;
+  document.getElementById('pm-title').textContent = p.title;
+  document.getElementById('pm-classification').textContent = p.classification;
+  document.getElementById('pm-summary').textContent = p.summary;
+  document.getElementById('pm-role').textContent = p.role;
+  document.getElementById('pm-stack').textContent = p.stack;
+  document.getElementById('pm-challenge').textContent = p.challenge;
+  document.getElementById('pm-decision').textContent = p.decision;
+  document.getElementById('pm-deliverables').textContent = p.deliverables;
+  document.getElementById('pm-verification').textContent = p.verification;
   projectModal.showModal();
 }
 
-document.querySelectorAll('[data-project]').forEach(el => {
+document.querySelectorAll('[data-project-id]').forEach(el => {
   el.addEventListener('click', () => {
-    const id = el.getAttribute('data-project');
-    if (id) openProject(id);
-  });
-  el.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      const id = el.getAttribute('data-project');
-      if (id) openProject(id);
-    }
+    const id = el.getAttribute('data-project-id');
+    if (id) openProjectDossier(id);
   });
 });
 
-document.getElementById('close-project-modal')?.addEventListener('click', () => projectModal?.close());
+document.getElementById('close-pm')?.addEventListener('click', () => projectModal?.close());
 projectModal?.addEventListener('click', (e) => { if (e.target === projectModal) projectModal.close(); });
 
-document.getElementById('open-studio-gate')?.addEventListener('click', () => studioModal?.showModal());
-document.getElementById('close-studio-modal')?.addEventListener('click', () => studioModal?.close());
+// Studio Modal
+const studioModal = document.getElementById('studio-modal');
+document.getElementById('open-studio-gate')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  studioModal?.showModal();
+});
+document.getElementById('close-sm')?.addEventListener('click', () => studioModal?.close());
 studioModal?.addEventListener('click', (e) => { if (e.target === studioModal) studioModal.close(); });
 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
-    closeNav();
+    nav?.classList.remove('open');
     projectModal?.close();
     studioModal?.close();
   }

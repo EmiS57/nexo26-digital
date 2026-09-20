@@ -6,7 +6,12 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://emis57.github.io/nexo26-digital/work/</loc>
+    <loc>https://emis57.github.io/nexo26-digital/projects/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://emis57.github.io/nexo26-digital/solutions/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -16,12 +21,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://emis57.github.io/nexo26-digital/services/</loc>
+    <loc>https://emis57.github.io/nexo26-digital/impact/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://emis57.github.io/nexo26-digital/process/</loc>
+    <loc>https://emis57.github.io/nexo26-digital/method/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
