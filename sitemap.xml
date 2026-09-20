@@ -1,4 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>/nexo26-digital/</loc></url>\n  <url><loc>/nexo26-digital/work/</loc></url>\n  <url><loc>/nexo26-digital/creator/</loc></url>\n  <url><loc>/nexo26-digital/services/</loc></url>\n  <url><loc>/nexo26-digital/process/</loc></url>\n  <url><loc>/nexo26-digital/contact/</loc></url>
+  <url>
+    <loc>https://emis57.github.io/nexo26-digital/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://emis57.github.io/nexo26-digital/work/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://emis57.github.io/nexo26-digital/creator/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://emis57.github.io/nexo26-digital/services/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://emis57.github.io/nexo26-digital/process/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://emis57.github.io/nexo26-digital/contact/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

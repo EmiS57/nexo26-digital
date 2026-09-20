@@ -1,1 +1,3 @@
-User-agent: *\nAllow: /\nSitemap: /nexo26-digital/sitemap.xml\n
+User-agent: *
+Allow: /
+Sitemap: https://emis57.github.io/nexo26-digital/sitemap.xml
